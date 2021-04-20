@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Required meta tags for the browser -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Thayene Lorens" content="Creating an interactive Website">
+
+    <!-- Bootstrap CSS version 4.5.2 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- My CSS file-->
+    <link rel="stylesheet" type=text/css href="css/style.css">
+
+    <!-- My JavaScript file-->
+    <script src="js/script.js"></script>
+
+
+    <!--My home page title-->
+    <title>Pizza Loca</title>
+</head>
+
+<body>
+
+
+    <!--Make a navbar or a jumbotron-->
+
+    
+
+    <!-- Using Bootstrap 4 container-->
+    <!--This div embodies all my other divs.-->
+    <div class="container">
+        <!--Creating a class for my restaurant's logo-->
+        <img class="logo" src="img/staff.jpg" alt="logo">
+        <!--Using Bootstrap to create a basic 50/50 grid layout-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6">
+                    <!--Lines 36-59 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_form_validation_was&stacked=h -->
+                    <h2>Login</h2>
+                    <form action="/action_page.php" class="was-validated">
+                        <div class="form-group">
+                            <label for="uname">Username:</label>
+                            <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname"
+                                required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd">Password:</label>
+                            <input type="password" class="form-control" pattern ="\^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[\s\S]).{8}$\g" id="pwd" placeholder="Enter password"
+                                name="pswd" required>
+                            <div class="valid-feedback">Valid.</div>
+                            <div class="invalid-feedback">Please fill out this field.</div>
+                        </div>
+                        <div class="form-group form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="checkbox" name="remember" required> I am not a
+                                robot.
+                                <div class="valid-feedback">Valid.</div>
+                                <div class="invalid-feedback">Check this checkbox to continue.</div>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </form>
+                </div>
+                <!--I applied here CSS inline because I did not want to change the other half background of my 50/50 grid layout-->
+                <div class="col-sm-6" style="background-color:beige">
+                    <!--Created this div to contain the avatar profile picture-->
+                    <div class="image_box">
+                        <!-- I added a title property: when hovering the mouse over the photo, the name of the employee appears-->
+                        <img id="avatar" src="img/employee.jpg" alt="staff" title="Thayene Lorens">
+                    </div>
+                </div>
+            </div>
+            <!--Make a footer with info from the restaurant-->
+        </div>
+    </div>
+</body>
+
+</html>
