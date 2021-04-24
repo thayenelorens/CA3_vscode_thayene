@@ -4,15 +4,27 @@ body {
 
    /* background-image: url(../img/background.jpg);*/
     background-color: black;
+    background-image: url(../img/body.jpg);
     margin:10px;
 }
 /*I set customized margins for both of my jumbotrons.
 Set an image for the background of this element. The image is stored in the img folder.*/
 .jumbotron {
-    margin:10px 0 10px 0;
-    background-image: url(../img/food_making.gif);
+    margin:10px 0 0px 0;
+    background-color: black;
     opacity: 0.9;
     color: #fff;
+}
+/*Change the background-color of my navbar elements when I hover my mouse onto it - not active class.*/
+.nav-item a:hover:not(.active) {
+    background-color: rgb(182, 176, 176);
+}
+/*Change the background-color of my active item in the navbar*/
+.nav-item.active {
+    background-color: grey;
+}
+.navbar {
+    margin: 15px 0;
 }
 /*ADD COMMENTS HERE*/
 .logo {
@@ -30,8 +42,7 @@ Set an image for the background of this element. The image is stored in the img 
   .col-sm-6 {
     background-color:white;
     text-align:center;
-    border:#fff double 5px;
-    
+    border:#fff double 5px;   
 }
 
 /*Selecting a width to this div that contains my avatar profile picture.*/
@@ -39,7 +50,7 @@ Set an image for the background of this element. The image is stored in the img 
     width:auto;
 }
 /*Selecting a width to this div, so the picture gets more centralized.*/
-#avatar {
+.right_row_pic {
     height:100%;
     width:100%;
     object-fit:cover;

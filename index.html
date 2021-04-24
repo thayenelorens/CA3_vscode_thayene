@@ -15,20 +15,12 @@
     <!-- My CSS file-->
     <link rel="stylesheet" type=text/css href="css/style.css">
 
-    <!-- My JavaScript file-->
-    <script src="js/script.js"></script>
-
-
     <!--My home page title-->
     <title>Pizza Loca</title>
 </head>
 
 <body>
 
-
-    <!--Make a navbar or a jumbotron-->
-
-    
 
     <!-- Using Bootstrap 4 container-->
     <!--This div embodies all my other divs.-->
@@ -37,6 +29,20 @@
             <h1>Assignment Overview</h1>
             <p>How to create your own website using HTML, CSS and Javascript</p>
         </div>
+        <!--Using Bootstrap to insert a navigation bar.-->
+        <!--Lines 3-53 have been sourced from from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <!--Home will look active in this page.-->
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="page2.html">Page 2</a>
+                </li>
+            </ul>
+        </nav>
+
         <!--Using Bootstrap to create a basic 50/50 grid layout-->
         <div class="container-fluid">
             <div class="row">
@@ -46,16 +52,24 @@
                     <h2>Login</h2>
                     <form action="/action_page.php" class="was-validated">
                         <div class="form-group">
-                            <label for="uname">Username:</label>
-                            <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname"
-                                required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
+                            <!--<label for="uname">Username:</label>-->
+                            <!--<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname"
+                                required>-->
+                            <!--<div class="valid-feedback">Valid.</div>-->
+                            <!--<div class="invalid-feedback">Please fill out this field.</div>-->
+                            <!--The block of code below calls a method that changes the attribute of an image-->
+                            <button class="btn btn-success" onclick="login()">Login as Brad</button>
+
+                            <img id="myImage" src="img/user_logo.jpg" style="width:100px">
+
+                            <button class="btn btn-success" onclick="login2()">Login as Claire</button>
+                            <hr>
                         </div>
                         <div class="form-group">
                             <label for="pwd">Password:</label>
-                            <input type="password" class="form-control" pattern ="\^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[\s\S]).{8}$\g" id="pwd" placeholder="Enter password"
-                                name="pswd" required>
+                            <input type="password" class="form-control"
+                                pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$/g" id="pwd"
+                                placeholder="Enter password" name="pswd" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
                         </div>
@@ -74,18 +88,30 @@
                 <div class="col-sm-6" style="background-color:beige">
                     <!--Created this div to contain the avatar profile picture-->
                     <div class="image_box">
+                        
                         <!-- I added a title property: when hovering the mouse over the photo, the name of the employee appears-->
-                        <img id="avatar" src="img/employee.jpg" alt="staff" title="Thayene Lorens">
+                        <img class="right_row_pic" src="img/pizza_making.gif" alt="pizza making" title="GIF">
+                        <hr>
+                        <img class="right_row_pic" src="img/vintage.jpg" alt="pizza making" title="GIF">
+                        <hr>
+                        <img class="right_row_pic" src="img/eating_pizza.jpg" alt="group" title="Propaganda">
                     </div>
                 </div>
             </div>
             <!--Make a footer with info from the restaurant-->
         </div>
+        <button class="btn btn-warning" id="getRandUsers">Get Random</button>
+        <div id="output"></div>
+
+   
+        
         <div class="jumbotron">
             <h1>Assignment Overview</h1>
             <p>How to create your own website using HTML, CSS and Javascript</p>
         </div>
     </div>
+    <!-- My JavaScript file-->
+    <script src="js/script.js"></script>
 </body>
 
 </html>

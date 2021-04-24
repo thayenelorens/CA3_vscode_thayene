@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Required meta tags for the browser -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Thayene Lorens" content="Creating an interactive Website">
+
+    <!-- Bootstrap CSS version 4.5.2 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!--CSS comes here-->
+
+    <!-- My JavaScript file-->
+    <script src="js/script.js"></script>
+
+    <!--My home page title-->
+    <title>Pizza Loca</title>
+</head>
+<body>
+    <h2>Staff Login form</h2>
+    <div class="container">
+        <form>
+          <label for="user">Username</label>
+          <input type="text" id="userName" name="userName" placeholder="username@gmail.com" title="Please, fill out this field" required>
+          <br>
+          <label for="user">Password</label>
+          <input type="text" id="userName" name="userName" pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$/" placeholder="password" title="It must contain digits, special characters, uppercase and lowercase letters" required>
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      <div id="message">
+  <h3>The password must contain the following:</h3>
+  <p id="rules">
+<ul>
+    <li>At least 1 lowercase letter</li>
+    <li>At least 1 uppercase letter</li>
+    <li>At least 1 digit</li>
+    <li>At least 1 special character. Ex: $%#@</li>
+</ul>
+</p>
+</div>
+<script>
+    var myInput = document.getElementById("username");
+    var rule = document.getElementById("rules");
+    var length = document.getElementById("length");
+    
+    // When the user clicks on the credit card input field, show the message box
+    myInput.onfocus = function() {
+      document.getElementById("message").style.display = "block";
+    }
+    
+    // When the user clicks outside of the credit card input field, hide the message box
+    myInput.onblur = function() {
+      document.getElementById("message").style.display = "none";
+    }
+    
+    // When the user starts to type something inside the the credit card input field
+    myInput.onkeyup = function() {
+      // Validate numbers
+     
+      var validation = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$/g;  // CHALLENGE: change this line here to include your regex for a 16 digit credit card number
+    
+    // checking to see if their all numbers
+      if(myInput.value.match(validation)) {  
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+      } else {
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+      }
+    
+      // checking to see if there is at least one capital letter
+    
+      
+      
+      //    Note more on classlists can be found here: https://www.w3schools.com/jsref/prop_element_classlist.asp
+    
+    }
+    </script>
+    
+                   
+</body>
