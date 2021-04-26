@@ -68,7 +68,7 @@
                         <div class="form-group">
                             <label for="pwd">Password:</label>
                             <input type="password" class="form-control"
-                                pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$/g" id="pwd"
+                                pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$" id="pwd"
                                 placeholder="Enter password" name="pswd" required>
                             <div class="valid-feedback">Valid.</div>
                             <div class="invalid-feedback">Please fill out this field.</div>
@@ -100,8 +100,12 @@
             </div>
             <!--Make a footer with info from the restaurant-->
         </div>
-        <button class="btn btn-warning" id="getRandUsers">Get Random</button>
-        <div id="output"></div>
+        <div id="randomCustomers">
+        <button class="btn btn-warning" id="getRandUsers">Check Customers</button>
+        <hr>
+        <div id="output"></div> 
+
+    </div>
 
    
         

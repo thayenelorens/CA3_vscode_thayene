@@ -55,3 +55,12 @@ Set an image for the background of this element. The image is stored in the img 
     width:100%;
     object-fit:cover;
 }
+#randomCustomers {
+    background-color: white;
+    padding: 20px;
+    border: powderblue 10px solid;
+}
+#output {
+    border: powderblue 1px solid;
+    padding: 10px;
+}

@@ -13,26 +13,37 @@ function getRandUsers() {
     fetch('https://randomuser.me/api/?results=5')
         .then((res) => res.json())
         .then((data) => {
-            let author = data.results;
-            let output = '<h2>Users</h2>';
+            let customers = data.results;
+            let output = '<h3>Customers</h3>';
             console.log(data);
 
-            author.forEach(function(user) {//change data to author
+            customers.forEach(function(user) {
 
                 output += `
         <div>
-            <h3> ${user.name.first} ${user.name.last}</h3>
-
-            <p> ${user.gender}</p>
-            <br>
-           
+        <br>
+            <h4> ${user.name.first} ${user.name.last}</h4>
+            <p> ${user.gender} -  ${user.nat}</p>
             <img id=pic" src=${user.picture.thumbnail}>
-            <p>${user.nat}</p>
+            <br>
+            <p> Age: ${user.dob.age}</p>
+            
+          <h6>Address info</h6>
+           
+            <p>${user.location.city}</p>
+            <p>${user.location.state}</p>
+            <p>${user.location.postcode}</p>
+
+            <hr>
+            <h6>Contact Details</h6>
+            <p> Contact: ${user.cell}</p>
+            <p> Email: ${user.email}</p>
+            <hr>   
            
             </div>
             `;
             });
             document.getElementById('output').innerHTML = output;
-        })
+        }) //Embelish my title elements later on. Tables within tables. Divs within divs
 
 }
