@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Required meta tags for the browser -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Thayene Lorens" content="Creating an interactive Website">
+    <!-- Bootstrap CSS version 4.5.2 -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <style>
+        h1,
+        h2,
+        p,
+        li {
+            font-family: cursive;
+        }
+
+        body {
+            background-image: url(../img/body.jpg);
+        }
+
+        .container {
+            background-color: black;
+        }
+
+        #menu {
+            border: 5px solid black;
+            color: white;
+            padding: 100px 20px;
+            background-color: black;
+
+        }
+        #heading {
+            font-size: 70px;
+            text-align: center;
+        }
+      
+        .table_of_contents,
+        .table_of_contents1,
+        .table_of_contents2,
+        .table_of_contents3,
+        .table_of_contents4,
+        .table_of_contents5 {
+            background-color: white;
+            color: black;
+            border: 1px solid black;
+        
+        }
+        td, th, tr{
+            padding: 0 25px;
+        }
+
+        .nav-item a:hover:not(.active) {
+            background-color: red;
+        }
+
+        .nav-item.active {
+            background-color: red;
+                     
+        }
+
+        .navbar {
+            border: 1px solid white;
+            background-color: black;
+        }
+        
+
+        .nav-item {
+            padding: 2px;
+            font-size: 20px;
+        }
+      
+        .navbar-nav > li{
+  padding-left:15px;
+  padding-right:15px;
+  margin-left:15px;
+  margin-right:15px;
+  display: block;
+}
+        th {
+            background-color: black;
+            color: white;
+            padding: 30px;
+
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2
+        }
+    </style>
+ 
+    <!--My home page title-->
+    <title>Pizza Loca</title>
+</head>
+
+<body>
+          
+    <!-- Start Content -->
+    <div class="container">
+
+        <!-- Menu -->
+        <div id="menu">
+            <h1 id="heading">THE MENU</h1>
+          
+            
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">MENU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#starters">STARTERS</a>
+                    </li>
+                    <!--Now page 1 will be the active item, instead of home as in the previous page-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pizza">PIZZA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#desserts">DESSERTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#drinks">DRINKS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vegetarian">VEGETARIAN</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="table_of_contents">
+                <table>
+
+                    <tr>
+                        <th scope="col" id="pizza">
+                            <h1>PIZZA</h1>
+                        </th>
+                        <th scope="col">
+                            <h1><span class="badge badge-secondary">QUANTITY</span></h1>
+                        </th>
+
+                        <th scope="col">
+                            <h1><span class="badge badge-secondary">PRICE</span></h1>
+                        </th>
+                        <th>&nbsp;</th>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <br>
+                            <!--<input type="checkbox" id="check">-->
+                            <h1><b>Margherita</b> $12.50 <input name="check" type="checkbox" id="check" value=""
+                                    size="3"></h1>
+                            <p>Fresh tomatoes, fresh mozzarella, fresh basil</p>
+                            <hr>
+                        </td>
+                        <td><input name="qnt_1" type="text" id="qnt_1" value="0" size="3" data-price="100"></td>
+
+                        <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                        <td>&nbsp;</td>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1><b>Formaggio</b> $15.50</h1>
+                            <p>Four cheeses (mozzarella, parmesan, pecorino, jarlsberg)</p>
+                            <hr>
+                        </td>
+                        <td><input name="qnt_2" type="text" id="qnt_2" value="0" size="3" data-price="100"></td>
+                        <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                        <td>&nbsp;</td>
+                        
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1><b>Chicken</b> $17.00</h1>
+                            <p>Fresh tomatoes, mozzarella, chicken, onions</p>
+                            <hr>
+                        </td>
+
+                        <td><input name="qnt_3" type="text" id="qnt_3" value="0" size="3" data-price="100"></td>
+                        <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1><b>Pineapple'o'clock</b> $16.50</h1>
+                            <p>Fresh tomatoes, mozzarella, fresh pineapple, bacon, fresh basil</p>
+                            <hr>
+                        </td>
+                        <td><input name="qnt_4" type="text" id="qnt_4" value="0" size="3" data-price="100"></td>
+                        <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1><b>Diavola</b> <span class="badge badge-danger">Hot!</span></h1>
+                            <p>Fresh tomatoes, mozzarella, hot pepporoni, hot sausage, beef, chicken</p>
+                            <hr>
+                        </td>
+                        <td><input name="qnt_5" type="text" id="qnt_5" value="0" size="3" data-price="100"></td>
+                        <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                        <td>&nbsp;</td>
+                    </tr>
+            </div>
+           
+            <div id="table_of_contents2">
+
+                <tr>
+                    <th id="starters">
+                        <h1 id="table_heading">STARTERS</h1>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+                        <h1><b>Garlic Bread</b><span class="badge badge-warning">Popular</span></h1>
+                        <p>Special sauce, mozzarella, parmesan, ground beef</p>
+
+                        <hr>
+                    </td>
+                    <td><input name="qnt_6" type="text" id="qnt_6" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Bruschetta</b> $14.50</h1>
+                        <p>Ravioli filled with cheese</p>
+                        <hr>
+                    </td>
+                    <td><input name="qnt_7" type="text" id="qnt_7" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Today's Soup</b><span class="badge badge-warning">Seasonal</span></h1>
+                        <p>Ask the waiter</p>
+                        <hr>
+                    </td>
+                    <td><input name="qnt_8" type="text" id="qnt_8" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+
+            </div>
+
+            <div class="table_of_contents3">
+
+
+
+                <tr>
+                    <th id="desserts">
+                        <h1>DESSERTS</h1>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Cheesecake</b><span class="badge badge-warning">Popular</span></h1>
+                        <p>Special sauce, mozzarella, parmesan, ground beef</p>
+
+                        <hr>
+                    </td>
+                    <td><input name="qnt_9" type="text" id="qnt_9" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Petit Gateau</b><span class="badge badge-warning">Chef's Specialty</span></h1>
+                        <p>Ravioli filled with cheese</p>
+                    </td>
+                    <td><input name="qnt_10" type="text" id="qnt_10" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+
+                </tr>
+
+            </div>
+
+            <div class="table_of_contents4">
+
+
+                <tr>
+                    <th id="drinks">
+                        <h1>DRINKS</h1>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Soft Drinks</b> $3.50</h1>
+                        <p>Special sauce, mozzarella, parmesan, ground beef</p>
+                        <hr>
+                    </td>
+
+                    <td><input name="qnt_11" type="text" id="qnt_11" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Sparkling water</b> $4.50</h1>
+                        <p>Ravioli filled with cheese</p>
+                        <hr>
+                    </td>
+                    <td><input name="qnt_12" type="text" id="qnt_12" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>wine</b> $44.50</h1>
+                        <p>Ravioli filled with cheese</p>
+                        <hr>
+                    </td>
+                    <td><input name="qnt_13" type="text" id="qnt_13" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+
+            </div>
+
+            <div class="table_of_contents5">
+
+
+
+
+                <tr>
+                    <th id="vegetarian">
+                        <h1>VEGETARIAN</h1>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Veggie pizza</b> Popular $13.50</h1>
+                        <p>Special sauce, mozzarella, parmesan, ground beef</p>
+
+                        <hr>
+                    </td>
+                    <td><input name="qnt_14" type="text" id="qnt_14" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Sweetcorn pizza</b> $14.50</h1>
+                        <p>Ravioli filled with cheese</p>
+                        <hr>
+                    </td>
+                    <td><input name="qnt_15" type="text" id="qnt_15" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Palmito pizza</b> >Seasonal $5.50</h1>
+                        <p>Ask the waiter</p>
+
+                        <hr>
+                    </td>
+                    <td><input name="qnt_16" type="text" id="qnt_16" value="0" size="3" data-price="100"></td>
+                    <td><h1><span class="badge badge-dark">€40.00</span></h1></td>
+                    <td>&nbsp;</td>
+                </tr>
+
+            </div>
+            <div class="totalPrice">
+
+                <tr>
+                    <td class="total">&nbsp</td>
+                    <td class="total right"><h1><b>Total:</b></h1></td>
+                    <td class="total">
+                           
+                        
+                        <h2><div id="ItemsTotal"></div><span class="badge badge-success">0</span></h2></td>
+                        <td>&nbsp;</td>
+                </tr>
+                </table>
+            </div>
+
+
+        </div>
+    </div>
+    <script>
+        var total_items = 16;
+
+        function CalculateItemsValue() {
+            var total = 0;
+            for (let i = 1; i <= total_items; i++) {
+               itemID =  document.getElementById("qnt_" + i);
+                total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+
+            }
+            document.getElementById('ItemsTotal').innerHTML = "$" + total;
+        }
+        document.querySelectorAll('[id^="qnt_"]').forEach(item => {
+            item.addEventListener('keyup', CalculateItemsValue);
+        });
+    </script>
+
+    <!--VER SE USO BOOTSTRAP NOS MEUS DIVS OU SE OPTO POR FAZER CSS SEGUINDO O W3-->
+    <!--FAZER JS-->
+    <!--ORGANIZAR MENU E CÓDIGO-->
+    <!--REVER AULA DO PROFESSOR E VER COMO ELE ORGANIZOU O CÓDIGO DELE PRA FICAR TUDO ALINHADINHO-->
+    <!--DISPLAY TOTAL em outra tabela-->
+    <!--DESMEMBRAR COMO FIZ VÁRIAS TABELAS OU TODAS COMO PARTE DE UMA ÚNICA, ATÉ O TOTAL-->
+
+
+    <!-- End Content -->
+
+
+
+
+</body>
+
+</html>
