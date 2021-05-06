@@ -43,6 +43,38 @@
             </ul>
         </nav>
 
+        <h1>Staff Login</h1><br>
+        <div class="login_box">
+
+            <button class="btn btn-success" onclick="login()">Login as Brad</button>
+
+            <img id="myImage" src="img/user_logo.jpg" style="width:100px">
+
+            <button class="btn btn-success" onclick="login2()">Login as Claire</button>
+
+            <br><br>
+            <label for="staff_pass" id="pass"><b>Password</b></label>
+            <input type="password" name="pword" id="pword" placeholder="Enter Password" required>
+            <label id="invalid">Invalid password</label><br>
+            <label id="valid">Valid password</label>
+            <br>
+            <br>
+            <button onclick="validate()" class="btn btn-primary" id="button" type="submit">Login</button>
+
+            <br><br>
+            <input type="checkbox" id="validation">
+            <span>I am not a robot</span>
+            <br><br>
+            <!--</form>-->
+
+            <div id="message">
+                <p id="validation"></p>
+            </div>
+            <div id="message1">
+                <p style="color:white">You must fill out this field</p>
+            </div>
+        </div>
+
         <!--Using Bootstrap to create a basic 50/50 grid layout-->
         <div class="container-fluid">
             <div class="row">
@@ -88,7 +120,7 @@
                 <div class="col-sm-6" style="background-color:beige">
                     <!--Created this div to contain the avatar profile picture-->
                     <div class="image_box">
-                        
+
                         <!-- I added a title property: when hovering the mouse over the photo, the name of the employee appears-->
                         <img class="right_row_pic" src="img/pizza_making.gif" alt="pizza making" title="GIF">
                         <hr>
@@ -101,13 +133,376 @@
             <!--Make a footer with info from the restaurant-->
         </div>
         <div id="randomCustomers">
-        <button class="btn btn-warning" id="getRandUsers">Check Customers</button>
-        <hr>
-        <div id="output"></div> 
+            <button class="btn btn-warning" id="getRandUsers">Check Customers</button>
+            <br><br>
 
-    </div>
-  
-        
+            <div id="output"></div>
+
+        </div>
+        <!-- Menu -->
+        <div id="menu">
+            <h1 id="heading">THE MENU</h1>
+
+
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">MENU</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#starters">STARTERS</a>
+                    </li>
+                    <!--Now page 1 will be the active item, instead of home as in the previous page-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#pizza">PIZZA</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#desserts">DESSERTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#drinks">DRINKS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#vegetarian">VEGETARIAN</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="table_of_contents">
+                <table>
+
+                    <tr>
+                        <th scope="col" id="starters">
+                            <h1>STARTERS</h1>
+                        </th>
+                        <th scope="col">
+                            <h1><span class="badge badge-secondary">QUANTITY</span></h1>
+                        </th>
+
+                        <th scope="col">
+                            <h1><span class="badge badge-secondary">PRICE</span></h1>
+                        </th>
+                        <th>&nbsp;</th>
+
+                    </tr>
+                    <tr>
+                        <td>
+                            <br>
+
+                            <h1><b>Garlic Bread</b><span class="badge badge-warning">Popular</span></h1>
+                            <p>Fire-baked baguette topped with garlic, olive oil and butter</p>
+
+                            <hr>
+                        </td>
+                        <td><input name="opt_1" type="checkbox" id="opt_1" value="1" size="3" data-price="7.50"
+                                onclick="getTotalCost()"></td>
+                        <td>
+                            <h1><span class="badge badge-dark">€7.50</span></h1>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1><b>Bruschetta</b></h1>
+                            <p>Fire-baked flat bread filled with cherry tomatoes, mozzarella and olive oil</p>
+                            <hr>
+                        </td>
+                        <td><input name="opt_2" type="checkbox" id="opt_2" value="1" size="3" data-price="6.50"
+                                onclick="getTotalCost()"></td>
+                        <td>
+                            <h1><span class="badge badge-dark">€6.50</span></h1>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1><b>Today's Soup</b><span class="badge badge-warning">Seasonal</span></h1>
+                            <p>Ask the waiter</p>
+                            <hr>
+                        </td>
+                        <td><input name="opt_3" type="checkbox" id="opt_3" value="1" size="3" data-price="5.90"
+                                onclick="getTotalCost()"></td>
+                        <td>
+                            <h1><span class="badge badge-dark">€5.90</span></h1>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h1><b>Fried Calamari</b><span class="badge badge-success"></span>For two</h1>
+                            <p>Fried calamari served with a side salad and garlic mayo dip</p>
+                            <hr>
+                        </td>
+                        <td><input name="opt_4" type="checkbox" id="opt_4" value="1" size="3" data-price="6.50"
+                                onclick="getTotalCost()"></td>
+                        <td>
+                            <h1><span class="badge badge-dark">€6.50</span></h1>
+                        </td>
+                        <td>&nbsp;</td>
+                    </tr>
+
+            </div>
+
+            <div id="table_of_contents2">
+
+                <tr>
+                    <th id="pizza">
+                        <h1 id="table_heading">PIZZA</h1>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <br>
+
+                        <h1><b>Margherita</b></h1>
+                        <p>Fresh tomatoes, fresh mozzarella, fresh basil</p>
+                        <hr>
+                    </td>
+                    <td><input name="opt_5" type="checkbox" id="opt_5" value="1" size="3" data-price="10.00"
+                            onclick="getTotalCost()"></td>
+
+                    <td>
+                        <h1><span class="badge badge-dark">€10.00</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Formaggio</b></h1>
+                        <p>Four cheeses (mozzarella, parmesan, pecorino, cashel blue cheese)</p>
+                        <hr>
+                    </td>
+                    <td><input name="opt_6" type="checkbox" id="opt_6" value="1" size="3" data-price="13.50"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€13.50</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Marinara</b></h1>
+                        <p>Fresh tomatoes, mozzarella, parmesan, basil, onions and extra virgin oil</p>
+                        <hr>
+                    </td>
+
+                    <td><input name="opt_7" type="checkbox" id="opt_7" value="1" size="3" data-price="11.50"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€11.50</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>La Bianca</b><span class="badge badge-warning">Chef's Specialty!</h1>
+                        <p>Fresh tomatoes, mozzarella, scamorza, mushrooms, garlic, oregano oil and fresh basil</p>
+                        <hr>
+                    </td>
+                    <td><input name="opt_8" type="checkbox" id="opt_8" value="1" size="3" data-price="18.00"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€18.00</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Diavola</b> <span class="badge badge-danger">Hot!</span></h1>
+                        <p>Fresh tomatoes, mozzarella, hot pepperoni, hot sausage, beef, parmesan, basil and extra
+                            virgin oil</p>
+                        <hr>
+                    </td>
+                    <td><input name="opt_9" type="checkbox" id="opt_9" value="1" size="3" data-price="15.50"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€15.50</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+            </div>
+
+            <div class="table_of_contents3">
+                <tr>
+                    <th id="desserts">
+                        <h1>DESSERTS</h1>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Strawberry Cheesecake</b><span class="badge badge-warning">Popular</span></h1>
+                        <p>Topped with fresh strawberries</p>
+
+                        <hr>
+                    </td>
+                    <td><input name="opt_10" type="checkbox" id="opt_10" value="1" size="3" data-price="7.00"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€7.00</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Petit Gateau</b><span class="badge badge-warning">Chef's Specialty</span></h1>
+                        <p>Hot chocolate brownie filled with chocolate sauce. Served with vanilla ice cream on the side
+                        </p>
+                    </td>
+                    <td><input name="opt_11" type="checkbox" id="opt_11" value="1" size="3" data-price="9.50"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€9.50</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+
+                </tr>
+
+            </div>
+
+            <div class="table_of_contents4">
+
+                <tr>
+                    <th id="drinks">
+                        <h1>DRINKS</h1>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>300 ml Soft Drink cans</b></h1>
+                        <p>Coke, club orange, sprite and Guaraná</p>
+                        <hr>
+                    </td>
+
+                    <td><input name="opt_12" type="checkbox" id="opt_12" value="1" size="3" data-price="1.50"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€1.50</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>500 ml Bottles of water</b></h1>
+                        <p>San Pellegrino sparkling and Tipperary still water</p>
+                        <hr>
+                    </td>
+                    <td><input name="opt_13" type="checkbox" id="opt_13" value="1" size="3" data-price="2.50"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€2.50</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+            </div>
+
+            <div class="table_of_contents5">
+                <tr>
+                    <th id="vegetarian">
+                        <h1>VEGETARIAN</h1>
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>&nbsp;</th>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Veggie pizza</b></h1>
+                        <p>Tomato sauce, rosted aubergine, red onion, cherry tomatoes, garlic oil and balsamic vinegar
+                        </p>
+
+                        <hr>
+                    </td>
+                    <td><input name="opt_14" type="checkbox" id="opt_14" value="1" size="3" data-price="15.00"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€15.00</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Chicken Caesar Salad</b></h1>
+                        <p>Chicken, anchovies, croutons, free-range egg, Caesar dressing</p>
+                        <hr>
+                    </td>
+                    <td><input name="opt_15" type="checkbox" id="opt_15" value="1" size="3" data-price="14.75"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€14.75</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <h1><b>Niçoise Salad</b></h1>
+                        <p>Tuna, anchovies, black olives, free-range egg, mixed leaves, cucumber and tomato. Served with
+                            house dressing, lemon and rosemary</p>
+
+                        <hr>
+                    </td>
+                    <td><input name="opt_16" type="checkbox" id="opt_16" value="1" data-price="14.50"
+                            onclick="getTotalCost()"></td>
+                    <!--Should I use onchange instead?-->
+
+                    <!--ADD a td with input type number-->
+                    <td><input name="qnt_16" type="number" id="qnt_16" value="0" min="0" data-price="14.50"
+                            onkeyup="CalculateItemsValue()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€14.50</span></h1>
+                    </td>
+                </tr>
+
+            </div>
+            <div class="priceCalculation">
+
+                <tr>
+                    <td class="total">&nbsp</td>
+                    <td class="total-right">
+                        <h1><b>Total:</b></h1>
+                    </td>
+                    <td class="total">
+                        <h2>
+                            <div id="totalPrice">€0</div>
+                        </h2>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+                </table>
+            </div>
+        </div>
+
+        <!--FAZER JS para input type number-->
+        <!--ORGANIZAR MENU E CÓDIGO, acrescentar comentários-->
+        <!--COLOCAR NA PÁGINA 2 - ABOUT: LINK DO REPOSITÓRIO GITHUB E ABOUT THE FAMILY THAT MADE THE PIZZA PLACE-->>
+        <!--FAZER TAB PARA COCKTAILS?????-->
+        <!--COLOCAR NO JUMBOTRON: since 1887-->
+        <!--ADD FAIXA DE MUSICA AO FUNDO?-->
+        <!--FOTOS NO MENU?-->
+        <!--TENTAR "DEFER" NO JS AO INÍCIO DO CÓDIGO SÓ DE CURIOSIDADE-->
+        <!--EXCLUIR <hr> DO MENU-->
+        <!--FAZER TABELA NO RANDOM USERS-->
+
+        <ul class="pagination">
+            <!--I disabled the opion "previous", since this is the 1st page of the website-->
+            <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
+            <!--I set Home as my active page-->
+            <!--Title links for both home and next pages, target:_self means that the next page will open in the same window/tab as it was clicked-->
+            <li class="page-item active"><a class="page-link" href="index.html" title="home" target=_self>Home</a></li>
+            <!--My next page is page 1-->
+            <li class="page-item"><a class="page-link" href="page2.html" title="Page 1" target=_self>Next</a></li>
+        </ul>
+
         <div class="jumbotron">
             <h1>Assignment Overview</h1>
             <p>How to create your own website using HTML, CSS and Javascript</p>

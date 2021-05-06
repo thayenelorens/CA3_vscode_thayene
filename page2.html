@@ -2,85 +2,118 @@
 <html lang="en-US">
 
 <head>
-    <!-- Required meta tags for the browser -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="Thayene Lorens" content="Creating an interactive Website">
+  <!-- Required meta tags for the browser -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Thayene Lorens" content="Creating an interactive Website">
 
-    <!-- Bootstrap CSS version 4.5.2 -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <!-- Bootstrap CSS version 4.5.2 -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!--CSS comes here-->
+  <!--CSS comes here-->
+  <link rel="stylesheet" type=text/css href="css/style.css">
 
-    <!-- My JavaScript file-->
-    <script src="js/script.js"></script>
+  <!-- My JavaScript file-->
+  <script src="js/script.js"></script>
 
-    <!--My home page title-->
-    <title>Pizza Loca</title>
+  <!-- JQuery 3.5.1-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <!--My home page title-->
+  <title>Pizza Loca</title>
 </head>
+
 <body>
-    <h2>Staff Login form</h2>
-    <div class="container">
-        <form>
-          <label for="user">Username</label>
-          <input type="text" id="userName" name="userName" placeholder="username@gmail.com" title="Please, fill out this field" required>
-          <br>
-          <label for="user">Password</label>
-          <input type="text" id="userName" name="userName" pattern="/^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$/" placeholder="password" title="It must contain digits, special characters, uppercase and lowercase letters" required>
-          <input type="submit" value="Submit">
-        </form>
+  <div class="container">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <!--Home will look active in this page.-->
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="page2.html">Page 2</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="jumbotron">
+      <div id="flip">
+        <h1>About</h1><br>
+        <p><i>Click here to find out a bit of our history and tradition</i></p>
       </div>
-      <div id="message">
-  <h3>The password must contain the following:</h3>
-  <p id="rules">
-<ul>
-    <li>At least 1 lowercase letter</li>
-    <li>At least 1 uppercase letter</li>
-    <li>At least 1 digit</li>
-    <li>At least 1 special character. Ex: $%#@</li>
-</ul>
-</p>
-</div>
-<script>
-    var myInput = document.getElementById("username");
-    var rule = document.getElementById("rules");
-    var length = document.getElementById("length");
-    
-    // When the user clicks on the credit card input field, show the message box
-    myInput.onfocus = function() {
-      document.getElementById("message").style.display = "block";
-    }
-    
-    // When the user clicks outside of the credit card input field, hide the message box
-    myInput.onblur = function() {
-      document.getElementById("message").style.display = "none";
-    }
-    
-    // When the user starts to type something inside the the credit card input field
-    myInput.onkeyup = function() {
-      // Validate numbers
-     
-      var validation = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$/g;  // CHALLENGE: change this line here to include your regex for a 16 digit credit card number
-    
-    // checking to see if their all numbers
-      if(myInput.value.match(validation)) {  
-        number.classList.remove("invalid");
-        number.classList.add("valid");
-      } else {
-        number.classList.remove("valid");
-        number.classList.add("invalid");
-      }
-    
-      // checking to see if there is at least one capital letter
-    
-      
-      
-      //    Note more on classlists can be found here: https://www.w3schools.com/jsref/prop_element_classlist.asp
-    
-    }
-    </script>
-    
-                   
+
+      <button class=" btn btn-primary">Find out more</button><br><br>
+      <p id="history">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis earum dolorum. Molestias,
+        a assumenda
+        possimus delectus quod vel. Iste, sint aut qui incidunt repudiandae doloribus suscipit perferendis accusantium
+        fuga?</p>
+      <br>
+      <p id="tradition">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste facilis sunt rem ab blanditiis
+        delectus sequi voluptatibus nemo tempore reprehenderit fugiat, quos quo consequatur soluta beatae quis optio
+        odio distinctio.</p>
+      <br>
+      <p id="specialty">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum illum rerum laboriosam
+        dignissimos placeat consectetur ducimus eum expedita aliquam id neque, voluptatem ipsa corrupti maxime deleniti
+        exercitationem sunt, soluta dolorum?</p>
+    </div>
+    <img id="panel" src="img/vintage_pizzeria.jpg" width="100%">
+    <div class="jumbotron">
+      <div class="container-fluid">
+        <!-- Control the column width, and how they should appear on different devices -->
+        <div class="row">
+          <div class="col-sm-6">
+            <h1>Opening hours</h1>
+            <br>
+            <p>Mon &amp; Tue CLOSED</p>
+            <p>Wednesday 10.00 - 24.00</p>
+            <p>Thursday 10:00 - 24:00</p>
+          </div>
+          <div class="col-sm-6">
+            <h1>Assignment Overview</h1>
+            <p>How to create your own website using HTML, CSS and Javascript</p>
+            <p>Friday 10:00 - 12:00</p>
+            <p>Saturday 10:00 - 23:00</p>
+            <p>Sunday Closed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ul class="pagination">
+      <!--I disabled the opion "previous", since this is the 1st page of the website-->
+      <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
+      <!--I set Home as my active page-->
+      <li class="page-item active"><a class="page-link" href="page2.html">Page 2</a></li>
+      <!--My next page is page 1-->
+      <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+    </ul>
+    <br><br>
+  </div>
+  <script>
+
+    //https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_toggle
+    $(document).ready(function () {
+      $("#flip").click(function () {
+        $("#history").slideToggle("slow");
+      });
+    });
+
+  </script>
+  <script>
+    //COMO FAZER EXTERNO?? - REVER AULA DO DIA 01/05
+    //https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_fadetoggle
+    $(document).ready(function () {
+      $("button").click(function () {
+        $("#history").fadeToggle();
+        $("#tradition").fadeToggle("slow");
+        $("#specialty").fadeToggle(3000);
+      });
+    });
+  </script>
+
+
+
 </body>
+
+</html>

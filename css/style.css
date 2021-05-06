@@ -42,7 +42,8 @@ Set an image for the background of this element. The image is stored in the img 
   .col-sm-6 {
     background-color:white;
     text-align:center;
-    border:#fff double 5px;   
+    border:#fff double 5px;  
+    color:black; 
 }
 
 /*Selecting a width to this div that contains my avatar profile picture.*/
@@ -58,15 +59,17 @@ Set an image for the background of this element. The image is stored in the img 
 #randomCustomers {
     background-color: white;
     padding: 20px;
-    border: powderblue 10px solid;
+    
 }
+
 #output {
     border: powderblue 1px solid;
-    padding: 10px;
+    padding: 50px;
 }
 .menu{
     background-color: white;
 }
+/*
 table, th, td {
     border: 1px solid black;
     border-collapse: separate;
@@ -82,4 +85,156 @@ table, th, td {
   td {
     background-color: beige;
     color:black;
+  }*/
+  h1,
+  h2,
+  p,
+  li {
+      font-family: cursive;
   }
+
+  .container {
+      background-color: black;
+  }
+
+  #menu {
+      border: 5px solid black;
+      color: white;
+      padding: 100px 20px;
+      background-color: black;
+
+  }
+
+  #heading {
+      font-size: 70px;
+      text-align: center;
+  }
+
+  .table_of_contents,
+  .table_of_contents1,
+  .table_of_contents2,
+  .table_of_contents3,
+  .table_of_contents4,
+  .table_of_contents5 {
+      background-color: white;
+      color: black;
+      border: 1px solid black;
+
+  }
+
+  td,
+  th,
+  tr {
+      padding: 0 25px;
+  }
+
+  .nav-item a:hover:not(.active) {
+      background-color: red;
+  }
+
+  .nav-item.active {
+      background-color: red;
+
+  }
+
+  .navbar {
+      border: 1px solid white;
+      background-color: black;
+  }
+
+
+  .nav-item {
+      padding: 2px;
+      font-size: 20px;
+  }
+
+  .navbar-nav>li {
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-left: 15px;
+      margin-right: 15px;
+      display: block;
+  }
+
+  th {
+      background-color: black;
+      color: white;
+      padding: 30px;
+
+  }
+
+  tr:nth-child(even) {
+      background-color: #f2f2f2
+  }
+  #totalPrice {
+      background-color: rgb(22, 197, 22);
+  }
+  .login_box {
+    width: 700px;
+    overflow: hidden;
+    margin: auto;
+    padding: 80px;
+    background: #1e3d37;
+    border-radius: 25px;
+    border: 5px solid white;
+
+}
+
+#button {
+    width: 100%;
+    color: white;
+    padding: 15px;
+    margin: auto;
+    border: none;
+    cursor:pointer;
+
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+label {
+    color: orangered;
+    font-size: 20px;
+}
+
+#username {
+    width: 100%;
+    display: inline-block;
+    border: 2px solid white;
+    margin: 8px 0;
+    padding: 10px 10px;
+    border-radius: 3px;
+
+}
+
+#pword {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px 10px;
+    display: inline-block;
+    border: 2px solid white;
+    border-radius: 3px;
+
+}
+
+span {
+    color: white;
+    font-size: 17px;
+}
+
+#username::placeholder{
+color:red;
+}
+#pword::placeholder {
+    color:red;
+}
+
+#invalid, #valid {
+color: red;
+visibility: hidden;
+}
+.pagination {
+    padding-left: 400px;
+}
