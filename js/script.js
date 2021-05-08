@@ -6,7 +6,8 @@ function login2(){
     document.getElementById('myImage').src='img/Claire.jpg';
 }
 
-document.getElementById('getRandUsers').addEventListener('click', getRandUsers);
+document.getElementById('getRandUsers').addEventListener('mouseover', getRandUsers);
+document.getElementById('getRandUsers').addEventListener('mouseout', getRandUsers);
 
 function getRandUsers() {
 
@@ -140,3 +141,5 @@ myInput.onblur = function() {
     alert('invalid');
    }
 }
+
+

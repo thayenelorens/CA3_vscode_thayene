@@ -235,6 +235,77 @@ color:red;
 color: red;
 visibility: hidden;
 }
+
+.discover {
+    display: none;
+    color: white;
+}
 .pagination {
     padding-left: 400px;
 }
+.reviews {
+    display: none;
+    padding-top: 30px;
+  }
+
+  #getJSON {
+
+    margin-left: 100px;
+    margin-bottom: 10px;
+  }
+
+  #show {
+
+    margin-left: 600px;
+    margin-bottom: 10px;
+
+  }
+  #founders {
+    margin-left: 150px;
+    display:none;
+  }
+  .history {
+      display: none;
+      color:white;
+  }
+
+  #toggle {
+    width: 100%;
+    color: white;
+    padding: 15px;
+    margin: auto;
+    border: none;
+    cursor:pointer;
+
+}
+.pagination {
+    padding-top: 10px;;
+}
+
+#group {
+  
+    margin-left: 200px;
+   border-radius: 13px;
+   padding-bottom: 20px;
+}
+.gallery {
+    display: none;
+}
+.content {
+    color:white;
+}
+.content2 {
+    background-color: white;
+    color:black;
+}
+.content3 {
+    background-color: white;
+}
+.discover {
+    display: none;
+}
+  
+  #panel1 {
+    padding: 50px;
+    display: none;
+  }

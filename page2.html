@@ -15,104 +15,305 @@
   <!--CSS comes here-->
   <link rel="stylesheet" type=text/css href="css/style.css">
 
-  <!-- My JavaScript file-->
-  <script src="js/script.js"></script>
+  <!-- JQuery 3.6.0-->
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
 
-  <!-- JQuery 3.5.1-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <!-- My JavaScript file-->
+  <script defer src="js/script.js"></script>
+
+  <!-- My JQuery file-->
+  <script defer src="js/jquery.js"></script>
 
   <!--My home page title-->
   <title>Pizza Loca</title>
+
 </head>
 
 <body>
+
   <div class="container">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <ul class="navbar-nav">
-        <li class="nav-item active">
-          <!--Home will look active in this page.-->
+        <li class="nav-item">
           <a class="nav-link" href="index.html">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="page2.html">Page 2</a>
         </li>
       </ul>
     </nav>
     <div class="jumbotron">
-      <div id="flip">
-        <h1>About</h1><br>
-        <p><i>Click here to find out a bit of our history and tradition</i></p>
-      </div>
-
-      <button class=" btn btn-primary">Find out more</button><br><br>
-      <p id="history">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci quis earum dolorum. Molestias,
-        a assumenda
-        possimus delectus quod vel. Iste, sint aut qui incidunt repudiandae doloribus suscipit perferendis accusantium
-        fuga?</p>
-      <br>
-      <p id="tradition">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste facilis sunt rem ab blanditiis
-        delectus sequi voluptatibus nemo tempore reprehenderit fugiat, quos quo consequatur soluta beatae quis optio
-        odio distinctio.</p>
-      <br>
-      <p id="specialty">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum illum rerum laboriosam
-        dignissimos placeat consectetur ducimus eum expedita aliquam id neque, voluptatem ipsa corrupti maxime deleniti
-        exercitationem sunt, soluta dolorum?</p>
+      <h1>About</h1><br>
     </div>
+
+    <div class="content">
+
+        <p><i>Click here to find out a bit of our history and tradition</i></p>
+        <button class="btn btn-warning" id="toggle">Discover</button>
+
+        <div class="history">
+          <br>
+
+          <img id="group" src="img/eating_pizza.jpg" alt="Eating pizza">
+          <p>This pizzeria originated in Petrópolis, Brazil and came to be known as one of the finest
+            restaurants in town.
+            The first restaurant proprietor is believed to have been an aristocrat, a known cheese vendor, who started
+            his business in
+            in 1978.</p>
+          <p>What started as a small business is nowadays one of the biggest chains in the country with its 17 branches
+            spreaded in national territory.
+            In "Pizza Loca" we are proud of our homemade doughes and sauces that remains kept as a family secret recipe
+            over all these years.
+          </p>
+        </div>
+     
+      <br><br>
+
+      <button id="button" class=" btn btn-primary">Find out more</button>
+      
+      <div class="discover">
+        <p>The italian family that founded the first restaurant was composed of four members: two daughters, the father
+          and the mamma. The
+          mamma was a talented cook, she would prepare the pizzas herself, while the father as a cheese vendor would
+          provide
+          the best quality cheese of the whole area. The daughters would help the family business by announcing it to
+          the outlanders that would arrive
+          in the city.
+        </p>
+        <br>
+      </div>
+      <div class="photo">
+      <button class="btn btn-warning" id="pic">Click to fade image</button><br><br>
+      <img id="founders" class="rounded" src="img/founders.jpg" alt="founders" title="Founders">
+    </div>
+    
     <img id="panel" src="img/vintage_pizzeria.jpg" width="100%">
+
+    <div class="content2">
+
+    <!-- Gallery Extracted from: https://mdbootstrap.com/docs/standard/extended/gallery/#! -->
+
+    <!-- header de estilo pra esse heading igual do outro trabalho-->
+    <h1>Gallery</h1>
+    <button class= "btn btn-primary" id="gal">Gallery</button>
+    <div class="gallery">
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+
+        <img 
+        src="img/pizza.gif"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="GIF"
+        title="GIF"
+      />
+
+        <img
+          src="img/pizza1.jpg"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="la bianca"
+          title="la bianca"
+        />
+    
+        <img
+          src="img/pizza2.jpg_large"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="veggie"
+          title="vegetarian"
+        />
+
+        <img
+        src="img/vintage_chef.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="chef vintage"
+      />
+      </div>
+    
+      <div class="col-lg-4 mb-4 mb-lg-0">
+
+        <img
+        src="img/food.gif"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="GIF"
+        title="GIF"
+      />
+      <img
+      src="img/pizza_making.gif"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt="Pizza making"
+      title="GIF"
+    />
+        <img
+          src="img/petit_gateau.jpg"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="petit gateau"
+          title="petit gateau"
+        />
+    
+        <img
+          src="img/bruschetta.jpg"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Bruschetta"
+          title="bruschetta"
+        />
+
+      </div>
+    
+      <div class="col-lg-4 mb-4 mb-lg-0">
+
+        <img
+        src="img/food_making.gif"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Food making"
+        title="GIF"
+      />
+        <img
+          src="img/caesar salad.jpg"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt="Caesar salad"
+          title="caesar salad"
+        />
+    
+        <img
+          src="img/cocktails.jpg"
+          class="w-100 shadow-1-strong rounded mb-4"
+          alt=""
+        />
+
+        <img
+        src="img/vintage.jpg"
+        class="w-100 shadow-1-strong rounded mb-4"
+        alt="Pizza dough"
+      />
+      </div>
+    </div>
+    </div>
+    </div>
+    <!-- Gallery -->
+    <hr>
+    
+    
+    <hr>
+    <button class="btn btn-secondary" id="getJSON">Get JSON</button>
+    <button class="btn btn-secondary" id="show">Reviews</button>
+    <div class="content3">
+
+    <div class="container-fluid">
+      <div class="row">
+        <div id="people" class="col-sm-6">
+
+        </div>
+        <div class="col-sm-6">
+          <div class="reviews">
+          <br>
+          <!--Review examples extracted from: https://eatsleepwander.com/good-restaurant-review-examples-to-copy-paste/3/-->
+          <h1>Reviews</h1>
+
+          <p>"Absolutely amazing! The place is beautiful and staff are super friendly and the food is
+            delicious. I love that you get a lot of food as well for the price. It’s definitely not like other
+            expensive restaurants and you only get a small amount of food. I am definitely going back."</p>
+            <img src="img/5star.jpg" width="150">
+          <br><br><br>
+          <p>"The menus options are an excellent value. The dining experience overall is very
+            pleasant.
+            I highly recommend this restaurant."</p>
+            <img src="img/5star.jpg" width="150">
+          <br><br><br>
+          <p>"Amaazing food! The whole experience from start to finish is great waitress is always so
+            friendly and kind. The food can’t get better and the prices are fair for the portion size. Always a great
+            spot to get great food."</p>
+            <img src="img/5star.jpg" width="150">
+            <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--<img src="img/review-rate.jpg" width= 50%>-->
+  
     <div class="jumbotron">
       <div class="container-fluid">
         <!-- Control the column width, and how they should appear on different devices -->
         <div class="row">
-          <div class="col-sm-6">
+          <div class="col-sm-4">
             <h1>Opening hours</h1>
             <br>
-            <p>Mon &amp; Tue CLOSED</p>
-            <p>Wednesday 10.00 - 24.00</p>
-            <p>Thursday 10:00 - 24:00</p>
+            <p>Monday &amp; Tuesday CLOSED</p>
+            <p>Wednesday 15:00 - 02:00</p>
+            <p>Thursday 15::00 - 02:00</p>
           </div>
-          <div class="col-sm-6">
-            <h1>Assignment Overview</h1>
-            <p>How to create your own website using HTML, CSS and Javascript</p>
-            <p>Friday 10:00 - 12:00</p>
-            <p>Saturday 10:00 - 23:00</p>
-            <p>Sunday Closed</p>
+          <div class="col-sm-4">
+            <p>&nbsp;</p>
+            <p>&nbsp;</p>
+            <p>Friday 10:00 - 02:00</p>
+            <p>Saturday 10:00 - 02:00</p>
+            <p>Sunday 12:00 - 20:00</p>
           </div>
+          <div class="col-sm-4">
+            <button class= "btn btn-primary" id="contact1">Contact</button>
+            <div id="panel1">
+            <h2>CONTACT</h2>
+            <hr>
+            <p>Student name: Thayene Lorens</p>
+            <p>Student number: 2020293</p>
+            <p>email: thayenelorens@gmail.com</p>
+            <p>Professor: John Snel</p>
+            <p>Github repository link:</p>
+            </div>
         </div>
       </div>
     </div>
-    <ul class="pagination">
-      <!--I disabled the opion "previous", since this is the 1st page of the website-->
-      <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
-      <!--I set Home as my active page-->
-      <li class="page-item active"><a class="page-link" href="page2.html">Page 2</a></li>
-      <!--My next page is page 1-->
-      <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
-    </ul>
-    <br><br>
+
+      
+      <ul class="pagination">
+        <!--I disabled the opion "previous", since this is the 1st page of the website-->
+        <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
+        <!--I set Home as my active page-->
+        <li class="page-item active"><a class="page-link" href="page2.html">Page 2</a></li>
+        <!--My next page is page 1-->
+        <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+      </ul>
+      <br><br>
+   
   </div>
+ 
   <script>
+    document.getElementById('getJSON').addEventListener('click', getJSON);
 
-    //https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_slide_toggle
-    $(document).ready(function () {
-      $("#flip").click(function () {
-        $("#history").slideToggle("slow");
-      });
-    });
+    function getJSON() {
 
+      fetch('people.json')
+        .then((action) => action.json())
+        .then((dat) => {
+
+          let output = '<br><br><h1>Customers</h1>';
+
+          dat.forEach(function (person) {
+            output += `
+            
+            <br>
+               <h3>Name: ${person.name}</h3>
+            <h3>Surname: ${person.lastname}</h3>
+            <h3>Email: ${person.email}</h3> 
+            <br><br>                     
+        `;
+          });
+          document.getElementById('people').innerHTML = output;
+        })
+
+    };
   </script>
-  <script>
-    //COMO FAZER EXTERNO?? - REVER AULA DO DIA 01/05
-    //https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_fadetoggle
-    $(document).ready(function () {
-      $("button").click(function () {
-        $("#history").fadeToggle();
-        $("#tradition").fadeToggle("slow");
-        $("#specialty").fadeToggle(3000);
-      });
-    });
-  </script>
 
 
+  <!--PASTE GITHUB REPOSITORY LINK-->
+  <!--SUCCINT PRESENTATION ABOUT ME AS THE OWNER (BLACK AND WHITE PHOTO of mine)-->
+  <!--Talvez retirar o find out more-->
+  <!--change the name of my pizzeria-->
+  <!-- jogar meu json no js file-->
+  <!--pegar config headings do meu trabalho anterior-->
+  <!--Arrumar código, comentário, nome de fotos e de elementos com calma ao longo da semana-->
+  <!--Colocar a foto dos cozinheiros como background de div e fazer um div por cima falando de mim-->
 
 </body>
 
