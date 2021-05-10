@@ -26,12 +26,14 @@
   <script defer src="js/jquery.js"></script>
 
   <!--My home page title-->
-  <title>Pizza Loca</title>
+  <title>Mamma Mia</title>
 
 </head>
 
 <body>
 
+  <!-- Using Bootstrap 4 container-->
+    <!--This div embodies all my other divs-->
   <div class="container">
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <ul class="navbar-nav">
@@ -70,7 +72,7 @@
      
       <br><br>
 
-      <button id="button" class=" btn btn-primary">Find out more</button>
+      <button id="large-button" class=" btn btn-primary">Find out more</button>
       
       <div class="discover">
         <p>The italian family that founded the first restaurant was composed of four members: two daughters, the father
@@ -194,13 +196,13 @@
     
     
     <hr>
-    <button class="btn btn-secondary" id="getJSON">Get JSON</button>
+    <button class="btn btn-secondary" id="getJSON">Customers</button>
     <button class="btn btn-secondary" id="show">Reviews</button>
     <div class="content3">
 
     <div class="container-fluid">
       <div class="row">
-        <div id="people" class="col-sm-6">
+        <div id="people" class="col-sm-6" style="background-color: rgb(179, 179, 155);">
 
         </div>
         <div class="col-sm-6">
@@ -259,7 +261,8 @@
             <p>Student number: 2020293</p>
             <p>email: thayenelorens@gmail.com</p>
             <p>Professor: John Snel</p>
-            <p>Github repository link:</p>
+            <!--target blank, opens link in different page-->
+            <p>Github repository link:<a href="https://github.com/thayenelorens/CA3_vscode_thayene.git" target="_blank"> Click here</a></p>
             </div>
         </div>
       </div>
@@ -279,36 +282,38 @@
   </div>
  
   <script>
-    document.getElementById('getJSON').addEventListener('click', getJSON);
+   document.getElementById('getJSON').addEventListener('click', getJSON);
 
-    function getJSON() {
+function getJSON() {
 
-      fetch('people.json')
-        .then((action) => action.json())
-        .then((dat) => {
+  fetch('js/people.json')
+    .then((action) => action.json())
+    .then((dat) => {
 
-          let output = '<br><br><h1>Customers</h1>';
+      let result = '<br><br><h1>Customers</h1>';
 
-          dat.forEach(function (person) {
-            output += `
-            
-            <br>
-               <h3>Name: ${person.name}</h3>
-            <h3>Surname: ${person.lastname}</h3>
-            <h3>Email: ${person.email}</h3> 
-            <br><br>                     
-        `;
-          });
-          document.getElementById('people').innerHTML = output;
-        })
+      dat.forEach(function (person) {
+        result += `
+        
+        <br>
+           <h3>Name: ${person.name}</h3>
+        <h3>Surname: ${person.lastname}</h3>
+        <h3>Email: ${person.email}</h3> 
+        <br><br>                     
+    `;
+      });
+      document.getElementById('people').innerHTML = result;
+    })
 
-    };
+};
+
+
+
   </script>
 
 
-  <!--PASTE GITHUB REPOSITORY LINK-->
   <!--SUCCINT PRESENTATION ABOUT ME AS THE OWNER (BLACK AND WHITE PHOTO of mine)-->
-  <!--Talvez retirar o find out more-->
+
   <!--change the name of my pizzeria-->
   <!-- jogar meu json no js file-->
   <!--pegar config headings do meu trabalho anterior-->

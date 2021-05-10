@@ -19,21 +19,24 @@
     <script defer src="js/script.js"></script>
 
     <!--My home page title-->
-    <title>Pizza Loca</title>
+    <title>Mamma Mia</title>
 </head>
 
 <body>
 
-
     <!-- Using Bootstrap 4 container-->
-    <!--This div embodies all my other divs.-->
+    <!--This div embodies all my other divs-->
     <div class="container">
+
+        <!-- Using Bootstrap 4 jumbotron-->
         <div class="jumbotron">
-            <h1>Assignment Overview</h1>
-            <p>How to create your own website using HTML, CSS and Javascript</p>
+            <h1>MAMMA MIA PIZZERIA</h1>
+            <p><i>Making the finest pizza since 1857</i></p>
         </div>
+        <!--End of jumbotron-->
+
         <!--Using Bootstrap to insert a navigation bar.-->
-        <!--Lines 3-53 have been sourced from from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
+        <!--Lines 37-48 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <ul class="navbar-nav">
                 <li class="nav-item active">
@@ -45,117 +48,105 @@
                 </li>
             </ul>
         </nav>
+        <!--End of navbar-->
 
-        <h1>Staff Login</h1><br>
+        <!--Welcome message-->
+        <!--By making a class for the heading, I can commit style changes in the CSS external file, where all of the elements from this class present in both pages will be altered accordingly.-->
+        <div class="text_heading">
+            <h1>WELCOME TO MAMMA MIA</h1>
+            <hr>
+        <!--Lines 59-61 were sourced from: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play-->
+            <audio id="bellanotte">
+            <!--I created an audio file w/ an mp3 audio track called "bellanotte"-->
+                <source src="audio/bellanotte.mp3" type="audio/mp3">
+            </audio>
+        <!--Calling both functions "play" and "pause" when clicking the buttons below-->
+            <button class="btn btn-warning" onclick="play()" type="button">Play me</button>
+            <hr>
+            <button class="btn btn-warning" onclick="pause()" type="button">Pause me</button>
+        </div>
+
+        <!-- I added a title property: when hovering the mouse over the photo, the 'GIF' word appears-->
+        <img id="welcome_pic" src="img/pizza_making.gif" alt="pizza making" title="GIF">
+        <hr>
+
+        <div class="text_heading">
+            <h1>Staff Login</h1><br>
+        </div>
+
+        <!--LOGIN-->
+
+        <!--I created this div for the staff password validator-->
         <div class="login_box">
 
-            <button class="btn btn-success" onclick="login()">Login as Brad</button>
+            <div class="username">
+                <!--The block of code below (lines 68-74) calls two methods that change the attribute of an image-->
+                <!--Calling the 'login' function present in my js external file-->
+                <button class="btn btn-success" onclick="login()">Login as Brad</button>
 
-            <img id="myImage" src="img/user_logo.jpg" style="width:100px">
+                <!--Default photo for the user login-->
+                <img id="myImage" src="img/user_logo.jpg" style="width:100px">
 
-            <button class="btn btn-success" onclick="login2()">Login as Claire</button>
-
-            <br><br>
-            <label for="staff_pass" id="pass"><b>Password</b></label>
-            <input type="password" name="pword" id="pword" placeholder="Enter Password" required>
-            <label id="invalid">Invalid password</label><br>
-            <label id="valid">Valid password</label>
-            <br>
-            <br>
-            <button onclick="validate()" class="btn btn-primary" id="button" type="submit">Login</button>
-
-            <br><br>
-            <input type="checkbox" id="validation">
-            <span>I am not a robot</span>
-            <br><br>
-            <!--</form>-->
-
-            <div id="message">
-                <p id="validation"></p>
+                <!--Calling the 'login2' function present in my js external file-->
+                <button class="btn btn-success" onclick="login2()">Login as Claire</button>
+                <br><br>
             </div>
-            <div id="message1">
-                <p style="color:white">You must fill out this field</p>
-            </div>
+
+            <!--Beginning of the form-->
+            <form>
+                <!--Creating a label for the password field-->
+                <label for="staff_pass" id="pass"><b>Password</b></label>
+                <!--Input type set as "password" - so it is hidden by the bullet points when typing. I opted for putting the "pattern" attribute for my regex-->
+                <input type="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$"
+                    name="pword" id="pword" placeholder="Enter Password">
+                <div id="invalid">Invalid password</div>
+                <div id="valid">Valid password</div>
+                <br><br>
+
+                <!--By pressing this button the "validate" function is triggered-->
+                <button onclick="staff_Validation()" class="btn btn-primary" id="large-button" type="button">Login</button>
+                <br><br>
+
+                <!--Password criteria - Message box to be output as a reminder for the staff when deciding to login-->
+                <div id="pass_criteria">
+                    <p>The password must contain at least:</p>
+                    <p><i>- one lowercase letter.</i></p>
+                    <p><i>- one uppercase letter.</i></p>
+                    <p><i>- one digit and one special character.</i></p>
+                    <p><i> - It must be at least eight characters long.</i></p>
+                </div>
+            </form>
+            <!--End of the form-->
         </div>
 
-        <!--Using Bootstrap to create a basic 50/50 grid layout-->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-sm-6">
-                    <img id="chef" src="img/pizza_chef.jpg" alt="chef" width=50%>
-                    <!--Lines 36-59 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_form_validation_was&stacked=h -->
-                    <h2>Login</h2>
-                    <form action="/action_page.php" class="was-validated">
-                        <div class="form-group">
-                            <!--<label for="uname">Username:</label>-->
-                            <!--<input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname"
-                                required>-->
-                            <!--<div class="valid-feedback">Valid.</div>-->
-                            <!--<div class="invalid-feedback">Please fill out this field.</div>-->
-                            <!--The block of code below calls a method that changes the attribute of an image-->
-                            <button class="btn btn-success" onclick="login()">Login as Brad</button>
-
-                            <img id="myImage" src="img/user_logo.jpg" style="width:100px">
-
-                            <button class="btn btn-success" onclick="login2()">Login as Claire</button>
-                            <hr>
-                        </div>
-                        <div class="form-group">
-                            <label for="pwd">Password:</label>
-                            <input type="password" class="form-control"
-                                pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$" id="pwd"
-                                placeholder="Enter password" name="pswd" required>
-                            <div class="valid-feedback">Valid.</div>
-                            <div class="invalid-feedback">Please fill out this field.</div>
-                        </div>
-                        <div class="form-group form-check">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="checkbox" name="remember" required> I am not a
-                                robot.
-                                <div class="valid-feedback">Valid.</div>
-                                <div class="invalid-feedback">Check this checkbox to continue.</div>
-                            </label>
-                        </div>
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </form>
-                </div>
-                <!--I applied here CSS inline because I did not want to change the other half background of my 50/50 grid layout-->
-                <div class="col-sm-6" style="background-color:beige">
-                    <!--Created this div to contain the avatar profile picture-->
-                    <div class="image_box">
-
-                        <!-- I added a title property: when hovering the mouse over the photo, the name of the employee appears-->
-                        <img class="right_row_pic" src="img/pizza_making.gif" alt="pizza making" title="GIF">
-                        <hr>
-                        <img class="right_row_pic" src="img/vintage.jpg" alt="pizza making" title="GIF">
-                        <hr>
-                        <img class="right_row_pic" src="img/eating_pizza.jpg" alt="group" title="Propaganda">
-                    </div>
-                </div>
-            </div>
-            <!--Make a footer with info from the restaurant-->
-        </div>
+        <!--User Generation: This section is for the output of 5 random customer profiles-->
         <div id="randomCustomers">
-            <button class="btn btn-warning" id="getRandUsers">Check Customers</button>
+            <!--This button triggers the function "getRandomCustomers" present in my js file -->
+            <button class="btn btn-warning" id="getRandCustomers">Check Customers</button>
             <br><br>
 
+            <!--The result from the javaScript is displayed into this div. -->
             <div id="output"></div>
-
         </div>
+
         <!-- Menu -->
         <div id="menu">
             <h1 id="heading">THE MENU</h1>
 
-
+            <!--Using Bootstrap to insert a navigation bar.-->
+            <!--Lines 126-148 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <ul class="navbar-nav">
+                    <!--"MENU" option will look active in this page.-->
                     <li class="nav-item active">
                         <a class="nav-link" href="#">MENU</a>
                     </li>
+                    <!--All the href are linked with the id of my header elements <th> from the table to be displayed. 
+            So, when clicking on the items in the navbar, you'll be directed to the specific part you want to check
+            from the menu.-->
                     <li class="nav-item">
                         <a class="nav-link" href="#starters">STARTERS</a>
                     </li>
-                    <!--Now page 1 will be the active item, instead of home as in the previous page-->
                     <li class="nav-item">
                         <a class="nav-link" href="#pizza">PIZZA</a>
                     </li>
@@ -170,31 +161,30 @@
                     </li>
                 </ul>
             </nav>
-            <div class="table_of_contents">
-                <table>
 
+            <!--Beginning of the table-->
+            <div class="table_of_contents">
+
+                <table>
+                    <!--Table headers-->
                     <tr>
-                        <th scope="col" id="starters">
+                        <th id="starters">
                             <h1>STARTERS</h1>
                         </th>
-                        <th scope="col">
+                        <th>
                             <h1><span class="badge badge-secondary">QUANTITY</span></h1>
                         </th>
-
-                        <th scope="col">
+                        <th>
                             <h1><span class="badge badge-secondary">PRICE</span></h1>
                         </th>
                         <th>&nbsp;</th>
-
                     </tr>
+                    <!--When ticking the checkbox the function getTotalCost is triggered-->
                     <tr>
                         <td>
                             <br>
-
                             <h1><b>Garlic Bread</b><span class="badge badge-warning">Popular</span></h1>
                             <p>Fire-baked baguette topped with garlic, olive oil and butter</p>
-
-                            <hr>
                         </td>
                         <td><input name="opt_1" type="checkbox" id="opt_1" value="1" size="3" data-price="7.50"
                                 onclick="getTotalCost()"></td>
@@ -203,11 +193,11 @@
                         </td>
                         <td>&nbsp;</td>
                     </tr>
+
                     <tr>
                         <td>
                             <h1><b>Bruschetta</b></h1>
                             <p>Fire-baked flat bread filled with cherry tomatoes, mozzarella and olive oil</p>
-                            <hr>
                         </td>
                         <td><input name="opt_2" type="checkbox" id="opt_2" value="1" size="3" data-price="6.50"
                                 onclick="getTotalCost()"></td>
@@ -216,11 +206,11 @@
                         </td>
                         <td>&nbsp;</td>
                     </tr>
+
                     <tr>
                         <td>
                             <h1><b>Today's Soup</b><span class="badge badge-warning">Seasonal</span></h1>
                             <p>Ask the waiter</p>
-                            <hr>
                         </td>
                         <td><input name="opt_3" type="checkbox" id="opt_3" value="1" size="3" data-price="5.90"
                                 onclick="getTotalCost()"></td>
@@ -229,11 +219,11 @@
                         </td>
                         <td>&nbsp;</td>
                     </tr>
+
                     <tr>
                         <td>
                             <h1><b>Fried Calamari</b><span class="badge badge-success">For two</span></h1>
                             <p>Fried calamari served with a side salad and garlic mayo dip</p>
-                            <hr>
                         </td>
                         <td><input name="opt_4" type="checkbox" id="opt_4" value="1" size="3" data-price="6.50"
                                 onclick="getTotalCost()"></td>
@@ -242,11 +232,9 @@
                         </td>
                         <td>&nbsp;</td>
                     </tr>
-
             </div>
 
             <div id="table_of_contents2">
-
                 <tr>
                     <th id="pizza">
                         <h1 id="table_heading">PIZZA</h1>
@@ -255,13 +243,12 @@
                     <th></th>
                     <th>&nbsp;</th>
                 </tr>
+
                 <tr>
                     <td>
                         <br>
-
                         <h1><b>Margherita</b></h1>
                         <p>Fresh tomatoes, fresh mozzarella, fresh basil</p>
-                        <hr>
                     </td>
                     <td><input name="opt_5" type="checkbox" id="opt_5" value="1" size="3" data-price="10.00"
                             onclick="getTotalCost()"></td>
@@ -270,13 +257,12 @@
                         <h1><span class="badge badge-dark">€10.00</span></h1>
                     </td>
                     <td>&nbsp;</td>
-
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>Formaggio</b></h1>
                         <p>Four cheeses (mozzarella, parmesan, pecorino, cashel blue cheese)</p>
-                        <hr>
                     </td>
                     <td><input name="opt_6" type="checkbox" id="opt_6" value="1" size="3" data-price="13.50"
                             onclick="getTotalCost()"></td>
@@ -284,15 +270,13 @@
                         <h1><span class="badge badge-dark">€13.50</span></h1>
                     </td>
                     <td>&nbsp;</td>
-
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>Marinara</b></h1>
                         <p>Fresh tomatoes, mozzarella, parmesan, basil, onions and extra virgin oil</p>
-                        <hr>
                     </td>
-
                     <td><input name="opt_7" type="checkbox" id="opt_7" value="1" size="3" data-price="11.50"
                             onclick="getTotalCost()"></td>
                     <td>
@@ -300,11 +284,11 @@
                     </td>
                     <td>&nbsp;</td>
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>La Bianca</b><span class="badge badge-warning">Chef's Specialty!</h1>
                         <p>Fresh tomatoes, mozzarella, scamorza, mushrooms, garlic, oregano oil and fresh basil</p>
-                        <hr>
                     </td>
                     <td><input name="opt_8" type="checkbox" id="opt_8" value="1" size="3" data-price="18.00"
                             onclick="getTotalCost()"></td>
@@ -313,12 +297,12 @@
                     </td>
                     <td>&nbsp;</td>
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>Diavola</b> <span class="badge badge-danger">Hot!</span></h1>
                         <p>Fresh tomatoes, mozzarella, hot pepperoni, hot sausage, beef, parmesan, basil and extra
                             virgin oil</p>
-                        <hr>
                     </td>
                     <td><input name="opt_9" type="checkbox" id="opt_9" value="1" size="3" data-price="15.50"
                             onclick="getTotalCost()"></td>
@@ -338,12 +322,11 @@
                     <th></th>
                     <th>&nbsp;</th>
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>Strawberry Cheesecake</b><span class="badge badge-warning">Popular</span></h1>
                         <p>Topped with fresh strawberries</p>
-
-                        <hr>
                     </td>
                     <td><input name="opt_10" type="checkbox" id="opt_10" value="1" size="3" data-price="7.00"
                             onclick="getTotalCost()"></td>
@@ -352,6 +335,7 @@
                     </td>
                     <td>&nbsp;</td>
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>Petit Gateau</b><span class="badge badge-warning">Chef's Specialty</span></h1>
@@ -364,13 +348,10 @@
                         <h1><span class="badge badge-dark">€9.50</span></h1>
                     </td>
                     <td>&nbsp;</td>
-
                 </tr>
-
             </div>
 
             <div class="table_of_contents4">
-
                 <tr>
                     <th id="drinks">
                         <h1>DRINKS</h1>
@@ -379,13 +360,12 @@
                     <th></th>
                     <th>&nbsp;</th>
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>300 ml Soft Drink cans</b></h1>
                         <p>Coke, club orange, sprite and Guaraná</p>
-                        <hr>
                     </td>
-
                     <td><input name="opt_12" type="checkbox" id="opt_12" value="1" size="3" data-price="1.50"
                             onclick="getTotalCost()"></td>
                     <td>
@@ -393,11 +373,11 @@
                     </td>
                     <td>&nbsp;</td>
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>500 ml Bottles of water</b></h1>
                         <p>San Pellegrino sparkling and Tipperary still water</p>
-                        <hr>
                     </td>
                     <td><input name="opt_13" type="checkbox" id="opt_13" value="1" size="3" data-price="2.50"
                             onclick="getTotalCost()"></td>
@@ -407,6 +387,18 @@
                     <td>&nbsp;</td>
                 </tr>
 
+                <tr>
+                    <td>
+                        <h1><b>Cocktails</b></h1>
+                        <p>Pornstar martini, Flat white martini, piña colada and non-alcoholic fruit cocktail</p>
+                    </td>
+                    <td><input name="opt_14" type="checkbox" id="opt_14" value="1" size="3" data-price="12.50"
+                            onclick="getTotalCost()"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€12.50</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
             </div>
 
             <div class="table_of_contents5">
@@ -418,110 +410,115 @@
                     <th></th>
                     <th>&nbsp;</th>
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>Veggie pizza</b></h1>
                         <p>Tomato sauce, rosted aubergine, red onion, cherry tomatoes, garlic oil and balsamic vinegar
                         </p>
-
-                        <hr>
                     </td>
-                    <td><input name="opt_14" type="checkbox" id="opt_14" value="1" size="3" data-price="15.00"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="opt_15" type="checkbox" id="opt_15" value="1" size="3" data-price="15.00"
+                            data-veg="true" onclick="getTotalCost()"></td>
                     <td>
                         <h1><span class="badge badge-dark">€15.00</span></h1>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
+
                 <tr>
                     <td>
                         <h1><b>Chicken Caesar Salad</b></h1>
                         <p>Chicken, anchovies, croutons, free-range egg, Caesar dressing</p>
-                        <hr>
                     </td>
-                    <td><input name="opt_15" type="checkbox" id="opt_15" value="1" size="3" data-price="14.75"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="opt_16" type="checkbox" id="opt_16" value="1" size="3" data-price="14.75"
+                            data-veg="true" onclick="getTotalCost()"></td>
                     <td>
                         <h1><span class="badge badge-dark">€14.75</span></h1>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
+
                 <tr>
                     <td>
-                        <h1><b>Niçoise Salad</b></h1>
-                        <p>Tuna, anchovies, black olives, free-range egg, mixed leaves, cucumber and tomato. Served with
-                            house dressing, lemon and rosemary</p>
-
-                        <hr>
+                        <h1><b>Tofu Cheesecake</b></h1>
+                        <p>TDessert prepared without any dairy or eggs, made with tofu instead, it comes filled with
+                            coconut cream, and cashews.
+                            The crunchy crust is made with rolled oats, almonds, and coconut oil</p>
                     </td>
-                    <td><input name="opt_16" type="checkbox" id="opt_16" value="1" data-price="14.50"
+                    <td><input name="opt_17" type="checkbox" id="opt_17" value="1" data-price="14.50" data-veg="true"
                             onclick="getTotalCost()"></td>
-                    <!--Should I use onchange instead?-->
-
-                    <!--ADD a td with input type number-->
-                    <td><input name="qnt_16" type="number" id="qnt_16" value="0" min="0" data-price="14.50"
-                            onkeyup="CalculateItemsValue()"></td>
+                    <td><input name="qnt_17" type="number" id="qnt_17" value="0" min="0" data-price="14.50"
+                            data-veg="true" onkeyup="CalculateItemsValue()"></td>
                     <td>
                         <h1><span class="badge badge-dark">€14.50</span></h1>
                     </td>
                 </tr>
-
             </div>
+
             <div class="priceCalculation">
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <h3>Total Bill</h3>
+                    </td>
+                    <td><input name="totalBill" type="text" id="totalBill" value="0" min="0" data-price=""></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <h3>Starters</h3>
+                    </td>
+                    <td><input name="totalStarters" type="text" id="totalStarters" value="0" min="0" data-price=""></td>
+                </tr>
 
                 <tr>
                     <td>&nbsp;</td>
                     <td>
-                        <h1>Total Bill</h1>
+                        <h3>Pizza</h3>
                     </td>
-                    <td><input name="qnt_16" type="text" id="qnt_16" value="0" min="0" data-price="14.50"></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <h1>Starters</h1>
-                    </td>
-                    <td><input name="qnt_16" type="text" id="qnt_16" value="0" min="0" data-price="14.50"></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <h1>Pizza</h1>
-                    </td>
-                    <td><input name="qnt_16" type="text" id="qnt_16" value="0" min="0" data-price="14.50"></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <h1>Dessert</h1>
-                    </td>
-                    <td><input name="qnt_16" type="text" id="qnt_16" value="0" min="0" data-price="14.50"></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <h1>Drinks</h1>
-                    </td>
-                    <td><input name="qnt_16" type="text" id="qnt_16" value="0" min="0" data-price="14.50"></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <h1>Vegetarian Cost</h1>
-                    </td>
-                    <td><input name="qnt_16" type="text" id="qnt_16" value="0" min="0" data-price="14.50"></td>
-                </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <h1>Non-vegetarian cost</h1>
-                    </td>
-                    <td><input name="qnt_16" type="text" id="qnt_16" value="0" min="0" data-price="14.50"></td>
+                    <td><input name="totalPizza" type="text" id="totalPizza" value="0" min="0" data-price=""></td>
                 </tr>
 
                 <tr>
-                    <td class="total">&nbsp</td>
-                    <td class="total-right">
+                    <td>&nbsp;</td>
+                    <td>
+                        <h3>Dessert</h3>
+                    </td>
+                    <td><input name="totalDessert" type="text" id="totalDessert" value="0" min="0" data-price=""></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <h3>Drinks</h3>
+                    </td>
+                    <td><input name="totalDrinks" type="text" id="totalDrinks" value="0" min="0" data-price=""></td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <h3>Vegetarian Cost</h3>
+                    </td>
+                    <h2>
+                        <td>
+                            <input name="totaVegCost" type="text" id="totalVegCost" value="0" min="0" data-price="">
+                        </td>
+                    </h2>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td>
+                        <h3>Non-vegetarian cost</h3>
+                    </td>
+                    <td><input name="totalNonVeg" type="text" id="totalNonVeg" value="0" min="0" data-price=""></td>
+                </tr>
+
+                <tr>
+                    <td class="total">&nbsp;</td>
+                    <td class="total_right">
                         <h1><b>Total:</b></h1>
                     </td>
                     <td class="total">
@@ -532,9 +529,13 @@
                     <td>&nbsp;</td>
                 </tr>
                 </table>
+                <!--End of table-->
             </div>
         </div>
+        <!--End of menu-->
 
+        <!--Using Bootstrap 4 to implement pagination-->
+        <!--Lines 541- 549 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
         <ul class="pagination">
             <!--I disabled the opion "previous", since this is the 1st page of the website-->
             <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
@@ -544,25 +545,16 @@
             <!--My next page is page 1-->
             <li class="page-item"><a class="page-link" href="page2.html" title="Page 1" target=_self>Next</a></li>
         </ul>
+        <!--End of pagination-->
 
         <div class="jumbotron">
             <h1>Assignment Overview</h1>
             <p>How to create your own website using HTML, CSS and Javascript</p>
         </div>
     </div>
-
-      <!--FAZER JS para input type number-->
-        <!--ORGANIZAR MENU E CÓDIGO, acrescentar comentários-->
-        <!--COLOCAR NA PÁGINA 2 - ABOUT: LINK DO REPOSITÓRIO GITHUB E ABOUT THE FAMILY THAT MADE THE PIZZA PLACE-->>
-        <!--FAZER TAB PARA COCKTAILS?????-->
-        <!--COLOCAR NO JUMBOTRON: since 1887-->
-        <!--ADD FAIXA DE MUSICA AO FUNDO?-->
-        <!--FOTOS NO MENU?-->
-     <!--add mais 1 sobremesa e 1 cocktail-->
-        <!--FAZER TABELA NO RANDOM USERS-->
-        <!--Eliminar checkbox, reassistir aula e colocar if input matches numbers or does not match letters... to calculate total-->
-        
-
+  
+    <!--End-->
+    
 </body>
 
 </html>

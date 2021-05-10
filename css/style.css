@@ -1,20 +1,33 @@
-/*Change the background-color of my body section.
-Selected a margin to the body of this document, so my 50/50 grid would not be all the way to the top of the page, being more centralized instead.*/    
+/*Change the background-image of my body section. The image is stored in the img folder.
+Selected a bit of margin to the body of this document.*/    
 body {
-
-   /* background-image: url(../img/background.jpg);*/
-    background-color: black;
     background-image: url(../img/body.jpg);
-    margin:10px;
+    margin:20px;
 }
-/*I set customized margins for both of my jumbotrons.
-Set an image for the background of this element. The image is stored in the img folder.*/
+/*Changing the font-family of all h1, h2 and p elements.*/
+h1, h2, p  {
+    font-family: cursive;
+}
+
+/*By hovering any button element the opacity should change.*/
+button:hover {
+    opacity: 0.6;
+}
+
+/*Setting a background-color for the div container*/
+.container {
+    background-color: black;
+}
+
+/*  Set the margin-bottom to 0 to eliminate the gap between the jumbotron and my navbar.
+    Set the background-color using rgb and adding some opacity to it.
+    Set the color for every text inside the jumbotron using hexadecimal.*/
 .jumbotron {
     margin:10px 0 0px 0;
-    background-color: black;
-    opacity: 0.9;
+    background-color: rgb(0,0,0, 0.7);
     color: #fff;
 }
+
 /*Change the background-color of my navbar elements when I hover my mouse onto it - not active class.*/
 .nav-item a:hover:not(.active) {
     background-color: rgb(182, 176, 176);
@@ -23,289 +36,282 @@ Set an image for the background of this element. The image is stored in the img 
 .nav-item.active {
     background-color: grey;
 }
+
+/*Setting white solid border to all navbar elements.*/
 .navbar {
-    margin: 15px 0;
+    border: 1px solid white;
 }
-/*ADD COMMENTS HERE*/
-.logo {
 
-    background-color: white;
-    padding: 15px;
+/*Setting a bit of padding for the items in the navbar and increasing the size of their font.*/
+.nav-item {
+    padding: 1px;
+    font-size: 20px;
+}
+
+/*Setting padding and margin properties for the <li> elements of the navbar.*/
+.navbar-nav>li {
+    padding: 0 20px;
+    margin: 0 15px;
+}
+
+/*  Aligning my page heading to the center of the page.
+    Set the margin (top and bottom) to 10px to add some gap between this element and the previous and next divs.
+    Setting a background color for this element (using the name of the color).
+    Adding some padding to it.
+    Adding a border to this element.*/
+.text_heading {
+    text-align: center;
+    margin: 10px 0;
+    color: white;
+    padding: 1px;
     border: white solid 1px;
-    margin: 20px 0px 20px 270px;
-   
 }
 
-/*All text inside this div class will be aligned to the center.
-  Setting a border: color, type of line and density of it.
-  Setting a background-color. Chose white so it wouldn't mix with the background of the other column - beige.*/
-  .col-sm-6 {
-    background-color:white;
-    text-align:center;
-    border:#fff double 5px;  
-    color:black; 
+/*Added some top and left-padding to this element in order to align it where I wanted it to be positioned.*/
+.pagination {
+    padding-top: 10px;
+    padding-left: 400px;
 }
 
-/*Selecting a width to this div that contains my avatar profile picture.*/
-.image_box {
-    width:auto;
+/*Setting width, height and margin properties to this element.*/
+#welcome_pic {
+    width: 70%;
+    height:70%;
+    margin-left: 170px;
 }
-/*Selecting a width to this div, so the picture gets more centralized.*/
-.right_row_pic {
-    height:100%;
-    width:100%;
-    object-fit:cover;
+
+/*  Setting width, height, margin, border and padding properties to this div element.
+    Setting a background color for this element (using rgb).
+    Setting border-radius to make the edges a bit round, instead of square.
+    Setting the overflow as hidden instead of scroll.*/
+.login_box {
+    width: 700px;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    padding: 80px;
+    background: #1e3d37;
+    border-radius: 25px;
+    border: 5px solid white;
 }
+
+/*Setting width, padding, margin and border properties to this specific button element.
+  Text color inside this button should be white.
+  I changed the cursor to default, so instead of having a small hand with a finger point up, I'll have the standard cursor.*/
+#large-button {
+    width: 100%;
+    color: white;
+    padding: 15px;
+    margin: auto;
+    border: none;
+    cursor:default;
+}
+
+/*Setting some padding to this div element.
+  Setting the margin-left to make the elements within this div more centralized.*/
+.username {
+    padding:15px;
+    margin-left: 60px;
+}
+
+/*Added some padding, border, text color to this div element.
+  Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.*/
+#pass_criteria {
+    padding: 15px;
+    border: 1px solid whitesmoke;
+    color:bisque;
+    display: none;
+}
+
+/* Setting a specific text color for every label element.
+   Increasing the font-size and setting the margin to bring this label to the center of its div.*/
+label {
+    color: orangered;
+    font-size: 25px;
+    margin-left: 210px;   
+}
+
+/*Establishing some width, margin, padding and border to the password input field.
+  Setting border-radius to make the edges a bit round, instead of square.*/
+#pword {
+    width: 100%;
+    margin: 8px 0;
+    padding: 10px 10px;
+    border: 2px solid white;
+    border-radius: 3px;
+}
+
+/*Changing text color of password input field placeholder.*/
+#pword::placeholder {
+    color:red;
+}
+
+/*Set both of these to display none, because the content within these elements should be hidden, since javaScript is being
+  implemented to change this behaviour.
+  Setting text color, aligning text to the center, increasing the font and establishing a bold effect.*/
+#invalid, #valid {
+color: red;
+display: none;
+text-align: center;
+font-size: 20px;
+font-weight: bold;
+}
+
+/*Setting a background-color for this div element by using the name of the color and adding some padding to it.*/
 #randomCustomers {
     background-color: white;
-    padding: 20px;
-    
+    padding: 20px;    
 }
 
+/*Setting border and padding properties to this div.*/
 #output {
     border: powderblue 1px solid;
     padding: 50px;
 }
-.menu{
-    background-color: white;
-}
-/*
-table, th, td {
-    border: 1px solid black;
-    border-collapse: separate;
-  }
-  th, td {
-    padding: 15px;
-    text-align: center;
-  }
-  th {
-    background-color: rgb(11, 73, 68,0.8);
-    color: white;
-  }
-  td {
-    background-color: beige;
-    color:black;
-  }*/
-  h1,
-  h2,
-  p,
-  li {
-      font-family: cursive;
-  }
 
-  .container {
-      background-color: black;
-  }
-
+/*Setting border and padding properties for the div menu.
+  Setting text color and background-color.*/
   #menu {
       border: 5px solid black;
       color: white;
       padding: 100px 20px;
       background-color: black;
-
   }
 
+  /*Increasing the font-size for this element and aligning it to the center of the div in which it is located*/
   #heading {
       font-size: 70px;
       text-align: center;
   }
 
+  /*Establishing a background-color for these divs as well as text color and border properties.*/
   .table_of_contents,
   .table_of_contents1,
   .table_of_contents2,
   .table_of_contents3,
   .table_of_contents4,
   .table_of_contents5 {
+
       background-color: white;
       color: black;
       border: 1px solid black;
-
   }
 
-  td,
-  th,
-  tr {
-      padding: 0 25px;
+  /*Adding some padding to the heading, row and column elements of a table.*/
+  th, tr, td {
+
+      padding: 10px 25px;
   }
 
-  .nav-item a:hover:not(.active) {
-      background-color: red;
-  }
-
-  .nav-item.active {
-      background-color: red;
-
-  }
-
-  .navbar {
-      border: 1px solid white;
-      background-color: black;
-  }
-
-
-  .nav-item {
-      padding: 2px;
-      font-size: 20px;
-  }
-
-  .navbar-nav>li {
-      padding-left: 15px;
-      padding-right: 15px;
-      margin-left: 15px;
-      margin-right: 15px;
-      display: block;
-  }
-
+  /*Changing the background-color of all heading elements.
+    Changing text color of the text within this element.
+    Adding some padding to this element.*/
   th {
       background-color: black;
       color: white;
       padding: 30px;
-
   }
 
+  /*The :nth-child(even) selects all the even rows of this table.
+    Setting that all the even rows will have a specific background-color, which is different from the odd rows within the same table.*/
   tr:nth-child(even) {
       background-color: #f2f2f2
   }
-  #totalPrice {
+
+  /*Setting a background-color for both of these div elements.*/
+  #totalPrice, #vegetarianCost {
       background-color: rgb(22, 197, 22);
   }
-  .login_box {
-    width: 700px;
-    overflow: hidden;
-    margin: auto;
-    padding: 80px;
-    background: #1e3d37;
-    border-radius: 25px;
-    border: 5px solid white;
 
-}
+  /*PAGE 2*/
 
-#button {
-    width: 100%;
-    color: white;
-    padding: 15px;
-    margin: auto;
-    border: none;
-    cursor:pointer;
-
-}
-
-button:hover {
-    opacity: 0.7;
-}
-
-label {
-    color: orangered;
-    font-size: 20px;
-}
-
-#username {
-    width: 100%;
-    display: inline-block;
-    border: 2px solid white;
-    margin: 8px 0;
-    padding: 10px 10px;
-    border-radius: 3px;
-
-}
-
-#pword {
-    width: 100%;
-    margin: 8px 0;
-    padding: 10px 10px;
-    display: inline-block;
-    border: 2px solid white;
-    border-radius: 3px;
-
-}
-
-span {
-    color: white;
-    font-size: 17px;
-}
-
-#username::placeholder{
-color:red;
-}
-#pword::placeholder {
-    color:red;
-}
-
-#invalid, #valid {
-color: red;
-visibility: hidden;
-}
-
-.discover {
-    display: none;
+/*Setting the same text color for the elements within these divs.*/
+.content, .content2 {
     color: white;
 }
-.pagination {
-    padding-left: 400px;
-}
-.reviews {
-    display: none;
-    padding-top: 30px;
-  }
 
-  #getJSON {
-
-    margin-left: 100px;
-    margin-bottom: 10px;
-  }
-
-  #show {
-
-    margin-left: 600px;
-    margin-bottom: 10px;
-
-  }
-  #founders {
-    margin-left: 150px;
-    display:none;
-  }
-  .history {
-      display: none;
-      color:white;
-  }
-
+/*Setting width, border and padding properties to this element.
+  Added some text color to it.
+  I changed the cursor to default, so instead of having a small hand with a finger point up, I'll have the standard cursor.*/
   #toggle {
     width: 100%;
     color: white;
     padding: 15px;
     margin: auto;
     border: none;
-    cursor:pointer;
-
-}
-.pagination {
-    padding-top: 10px;;
+    cursor:default;
 }
 
-#group {
+/*Setting it to display none, because the content within this element should be hidden, since javaScript is being 
+  implemented to change this behaviour.
+  Setting text color for the elements within this div.*/
+.history {
+    display: none;
+    color:white;
+}
+
+/*Setting some margin, border and padding to this element.
+  Setting border-radius to make the edges a bit round, instead of square.*/
+  #group {
   
     margin-left: 200px;
-   border-radius: 13px;
-   padding-bottom: 20px;
+    border-radius: 13px;
+    padding-bottom: 20px;
+ }
+
+/*Setting it to display none, because the content within this element should be hidden, since javaScript is being 
+  implemented to change this behaviour.
+  Setting text color for the elements within this div.*/
+.discover {
+    display: none;
+    color: white;
 }
+
+/*Setting it to display none, because the content within this element should be hidden, since javaScript is being 
+  implemented to change this behaviour.
+  Adding some margin-left so that this element is more centralized.*/
+#founders{
+    display: none; 
+    margin-left: 150px;
+}
+
+/*Changing text color.*/
+.content2 {  
+    color:black;
+}
+
+/*Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.*/
 .gallery {
     display: none;
 }
-.content {
-    color:white;
-}
-.content2 {
-    background-color: white;
-    color:black;
-}
-.content3 {
-    background-color: white;
-}
-.discover {
-    display: none;
-}
+
+/*Setting some margin, border and padding to this element.*/
+#show {
+    
+    margin: 0 0 10px 600px;
+  }
   
-  #panel1 {
+/*Setting a background-color. Chose white so it would differ to the other half -different background for the other grid.
+  All text inside this div class will be aligned to the center.
+  Setting a border: color, type of line and density of it.
+  Setting text color.*/
+.col-sm-6 {
+    background-color:white;
+    text-align:center;
+    border:#fff double 5px;  
+    color:black; 
+}
+
+/*/*Setting it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.
+Added some padding-top to align the content within this div to the content from the other half of this 50/50 grid.*/
+.reviews {
+    display: none;    
+    padding-top: 24px;
+  }
+
+/*Added some padding to this element.
+Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.*/
+#panel1 {
     padding: 50px;
     display: none;
   }

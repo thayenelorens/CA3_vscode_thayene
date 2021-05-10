@@ -1,56 +1,164 @@
-function login(){
-    document.getElementById('myImage').src='img/Brad.jpg';
+/*The codes were written here in this JavaScript external file and invoked in the body of page 1.
+This is an efficient way of programming JavaScript once the code doesn't get mixed with the HTML elements.*/
+
+//LOGIN USER FUNCTIONS
+
+/**
+ * I named this function "login".
+ * It swaps 'myImage'id - set as user_logo.jpg picture, saved in my img folder - to Brad.jpg, another picture 
+ * also saved in my img folder.
+ */
+function login() {
+    document.getElementById('myImage').src = 'img/Brad.jpg';
 }
 
-function login2(){
-    document.getElementById('myImage').src='img/Claire.jpg';
+/**
+ * I named this function "login2".
+ * It swaps 'myImage'id - set as user_logo.jpg picture, saved in my img folder - to Claire.jpg, another picture 
+ * also saved in my img folder.
+ */
+function login2() {
+    document.getElementById('myImage').src = 'img/Claire.jpg';
 }
 
-document.getElementById('getRandUsers').addEventListener('mouseover', getRandUsers);
-document.getElementById('getRandUsers').addEventListener('mouseout', getRandUsers);
+//LOGIN CRITERIA - MESSAGE BOX
 
-function getRandUsers() {
+//First I declared a variable to store the 'pword' element - related to the input field for the password.
+var myPassword = document.getElementById("pword");
+
+/**
+ * This is an anonymous function, i.e., it has no name.
+ * When the user clicks on the password input field, a reminder of the password criteria is displayed.
+ * I also set this function to change the background color of the input field to 'powderblue' when clicking on the input field.
+ */
+
+myPassword.onfocus = function () {
+    document.getElementById("pass_criteria").style.display = "block";
+    document.getElementById("pword").style.backgroundColor = "powderblue";
+}
+
+/**
+ * This is an anonymous function, i.e., it has no name.
+ * When the user starts typing the password, the background color of the input field changes to 'pink'.
+ */
+
+myPassword.onkeydown = function () {
+    document.getElementById("pword").style.backgroundColor = "pink";
+}
+
+/**
+ * This is an anonymous function, i.e., it has no name.
+ * When the user clicks outside the password input field, the reminder of the password criteria is displayed no more.
+ */
+
+myPassword.onblur = function () {
+    document.getElementById("pass_criteria").style.display = "none";
+}
+
+document.getElementById('large-button').addEventListener('click', staff_Validation);
+
+//LOGIN VALIDATION
+
+/**
+ * I named this function "staff_Validation".
+ * It tests if the password matches the regex and then it does the following:
+ * -If the password meets criteria, it displays a 'valid' message while it doesn't output the 'invalid' message.
+ * -If correct, it also changes the input field background to yellow.
+ * -If the passord does not meet criteria, it displays an invalid message instead, while it does not display a valid message.
+ * -If incorrect, it also changes the input field background to red.
+ * 
+ */
+function staff_Validation() {
+
+    var password = document.getElementById('pword').value;
+    var regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$/;
+
+    if (regex.test(password)) {
+        document.getElementById('valid').style.display = "block";
+        document.getElementById('invalid').style.display = "none";
+        document.getElementById("pword").style.backgroundColor = "yellow"
+
+    }
+    else if(password == ""){
+        document.getElementById('valid').style.display = "none";
+        document.getElementById('invalid').style.display = "none";
+        alert("Please, enter a password");
+    }
+    else {
+        document.getElementById('invalid').style.display = "block";
+        document.getElementById('valid').style.display = "none";
+        document.getElementById("pword").style.backgroundColor = "red"
+    }
+    
+}
+
+//USER GENERATION - PROFILES 
+
+/**
+ * I named this function "getRandCustomers". It is triggered when clicking on the namesake button.
+ * I used the random user API, https://randomuser.me/ to get data for the customers.
+ * It will get only 5 profiles due to the: ?results=5.
+ * I set it to change the 'output' div in my HTML code and display the following information:
+ * -Heading
+ * -First name + lastname
+ * -Gender + nationality
+ * -Picture thumbnail
+ * -Age
+ * -City
+ * -State
+ * -Postcode
+ * -Cellphone
+ * -Email
+ * 
+ * I used a forEach loop to display all data listed above.
+ */
+
+document.getElementById('getRandCustomers').addEventListener('click', getRandCustomers);
+
+function getRandCustomers() {
 
     fetch('https://randomuser.me/api/?results=5')
         .then((res) => res.json())
         .then((data) => {
-            let customers = data.results;
-            let output = '<h1>Customers</h1>';
-            console.log(data);
+            var customers = data.results;
+            var output = '<h1>Customers</h1>';
 
-            customers.forEach(function(user) {
+            customers.forEach(function (profile) {
 
                 output += `
+
+        <!--Inline CSS here-->
         <div style="border: 1px dotted powderblue">
         <br>
-            <h4> ${user.name.first} ${user.name.last}</h4>
-            <p> ${user.gender} - ${user.nat}</p>
-            <img id=pic" src=${user.picture.thumbnail} width="8%">
+            <h4> ${profile.name.first} ${profile.name.last}</h4>
+            <p> ${profile.gender} - ${profile.nat}</p>
+            <img id=pic" src=${profile.picture.thumbnail} width="8%">
             
-            <p> Age: ${user.dob.age}</p>
+            <p> Age: ${profile.dob.age}</p>
             <hr>
             
-          <h6>Address info</h6>
+          <h4>Address info</h4>
            
-            <p>${user.location.city}</p>
-            <p>${user.location.state}</p>
-            <p>${user.location.postcode}</p>
+            <p>${profile.location.city}</p>
+            <p>${profile.location.state}</p>
+            <p>${profile.location.postcode}</p>
 
             <hr>
-            <h6>Contact Details</h6>
-            <p> Contact: ${user.cell}</p>
-            <p> Email: ${user.email}</p>
+            <h4>Contact Details</h4>
+            <p> Contact: ${profile.cell}</p>
+            <p> Email: ${profile.email}</p>
             <br><br> 
            
             </div>
             `;
             });
             document.getElementById('output').innerHTML = output;
-        }) 
-
+        })
 }
 
-var total_items = 16;
+//MENU
+
+var total_items = 17;
 
 function getTotalCost() {
 
@@ -70,76 +178,42 @@ function getTotalCost() {
 //  item.addEventListener('keyup', getCost);
 //});
 
-/*
-document.getElementById('totalPrice').onclick = function() {
-    var checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
-    var overall = document.querySelector('input[type="number"]');
-            
-        function getTotalCost() {
-            var total = 0.0;
-            var checkbox;
-            var amount;
-          checkbox = document.getElementById("opt_" + i);
-          amount = document.getElementById("qnt_" + i);
-          total = checkbox.value * amount.value;
-        }
-    }*/
 
+//IF INPUTE TYPE IS TEXT - done in class - SKETCH
 
-//IF INPUTE TYPE IS TEXT - done in class
+var total_items = 17;
 
+function CalculateItemsValue() {
+    var total = 0;
+    for (let i = 1; i <= total_items; i++) {
+        itemID = document.getElementById("qnt_" + i);
+        total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
 
-    var total_items = 16;
-
-    function CalculateItemsValue() {
-        var total = 0;
-        for (let i = 1; i <= total_items; i++) {
-            itemID = document.getElementById("qnt_" + i);
-            total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
-
-        }
-        document.getElementById('ItemsTotal').innerHTML = "$" + total;
     }
-    document.querySelectorAll('[id^="qnt_"]').forEach(item => {
-        item.addEventListener('keyup', CalculateItemsValue);
-    });
-
-    var myInput1 = document.getElementById("username");
-var myInput = document.getElementById("pword");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
-
-myInput1.onfocus = function() {
-  document.getElementById("message1").style.display = "block";
+    document.getElementById('ItemsTotal').innerHTML = "$" + total;
 }
-myInput1.onblur = function() {
-  document.getElementById("message1").style.display = "none";
-}
+document.querySelectorAll('[id^="qnt_"]').forEach(item => {
+    item.addEventListener('keyup', CalculateItemsValue);
+});
 
-// When the user clicks on the credit card input field, show the message box
-myInput.onfocus = function() {
-  document.getElementById("message").style.display = "block";
-}
+//AUDIO FILE FUNCTION
 
-// When the user clicks outside of the credit card input field, hide the message box
-myInput.onblur = function() {
-  document.getElementById("message").style.display = "none";
-}
-        function validate(){
-    
-   var password = document.getElementById('pword').value;
-   var regex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$/;
+/**
+ * First I created a variable "track" to store the element "bellanotte", which happens to be an audio file.
+ * I named this function "play".
+ * It gets my audio track and plays it after clicking the button present in my HTML.
+ */
+var track = document.getElementById("bellanotte");
 
-   if(regex.test(password)){
-       document.getElementById('valid').style.visibility = "visible";
-       document.getElementById('invalid').style.visibility = "hidden";
-       alert('valid');
-   }
-   else {
-    document.getElementById('invalid').style.visibility = "visible";
-    document.getElementById('valid').style.visibility = "hidden";
-    alert('invalid');
-   }
-}
-
+        function play() {
+            track.play();
+        }
+/**
+ * First I created a variable "track" to store the element "bellanotte", which happens to be an audio file.
+ * I named this function "pause".
+ * It gets my audio track and pauses it after clicking the button present in my HTML.
+ */
+        function pause() {
+            track.pause();
+        }
 
