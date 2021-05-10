@@ -19,7 +19,7 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
     crossorigin="anonymous"></script>
 
-  <!-- My JavaScript file-->
+  <!-- My JavaScript file - I opted to put this link in the head section by using the attribute "defer"-->
   <script defer src="js/script.js"></script>
 
   <!-- My JQuery file-->
@@ -33,47 +33,58 @@
 <body>
 
   <!-- Using Bootstrap 4 container-->
-    <!--This div embodies all my other divs-->
+  <!--This div embodies all my other divs-->
   <div class="container">
+
+    <!--Using Bootstrap to insert a navigation bar.-->
+    <!--Lines 41-50 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <ul class="navbar-nav">
         <li class="nav-item">
           <a class="nav-link" href="index.html">Home</a>
         </li>
+        <!--Page 2 will look active in this page.-->
         <li class="nav-item active">
           <a class="nav-link" href="page2.html">Page 2</a>
         </li>
       </ul>
     </nav>
+    <!--End of navbar-->
+
+    <!-- Using Bootstrap 4 jumbotron-->
     <div class="jumbotron">
       <h1>About</h1><br>
     </div>
+    <!--End of jumbotron-->
 
     <div class="content">
 
-        <p><i>Click here to find out a bit of our history and tradition</i></p>
-        <button class="btn btn-warning" id="toggle">Discover</button>
+      <p><i>Click here to find out a bit of our history and tradition</i></p>
 
-        <div class="history">
-          <br>
+      <!--This button triggers a jQuery function that changes the behaviour of the "history" div below-->
+      <button class="btn btn-warning" id="toggle">History</button>
 
-          <img id="group" src="img/eating_pizza.jpg" alt="Eating pizza">
-          <p>This pizzeria originated in Petrópolis, Brazil and came to be known as one of the finest
-            restaurants in town.
-            The first restaurant proprietor is believed to have been an aristocrat, a known cheese vendor, who started
-            his business in
-            in 1978.</p>
-          <p>What started as a small business is nowadays one of the biggest chains in the country with its 17 branches
-            spreaded in national territory.
-            In "Pizza Loca" we are proud of our homemade doughes and sauces that remains kept as a family secret recipe
-            over all these years.
-          </p>
-        </div>
-     
+      <div class="history">
+        <br>
+
+        <img id="group" src="img/eating_pizza.jpg" alt="Eating pizza">
+        <p>This pizzeria originated in Petrópolis, Brazil and came to be known as one of the finest
+          restaurants in town.
+          The first restaurant proprietor is believed to have been an aristocrat, a known cheese vendor, who started
+          his business in
+          in 1978.</p>
+        <p>What started as a small business is nowadays one of the biggest chains in the country with its 17 branches
+          spreaded in national territory.
+          In "Pizza Loca" we are proud of our homemade doughes and sauces that remains kept as a family secret recipe
+          over all these years.
+        </p>
+      </div>
+
       <br><br>
 
+      <!--This button triggers a jQuery function that changes the behaviour of the "discovery" div below-->
       <button id="large-button" class=" btn btn-primary">Find out more</button>
-      
+
       <div class="discover">
         <p>The italian family that founded the first restaurant was composed of four members: two daughters, the father
           and the mamma. The
@@ -85,215 +96,196 @@
         </p>
         <br>
       </div>
+
+
       <div class="photo">
-      <button class="btn btn-warning" id="pic">Click to fade image</button><br><br>
-      <img id="founders" class="rounded" src="img/founders.jpg" alt="founders" title="Founders">
-    </div>
-    
-    <img id="panel" src="img/vintage_pizzeria.jpg" width="100%">
-
-    <div class="content2">
-
-    <!-- Gallery Extracted from: https://mdbootstrap.com/docs/standard/extended/gallery/#! -->
-
-    <!-- header de estilo pra esse heading igual do outro trabalho-->
-    <h1>Gallery</h1>
-    <button class= "btn btn-primary" id="gal">Gallery</button>
-    <div class="gallery">
-    <div class="row">
-      <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-
-        <img 
-        src="img/pizza.gif"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="GIF"
-        title="GIF"
-      />
-
-        <img
-          src="img/pizza1.jpg"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="la bianca"
-          title="la bianca"
-        />
-    
-        <img
-          src="img/pizza2.jpg_large"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="veggie"
-          title="vegetarian"
-        />
-
-        <img
-        src="img/vintage_chef.jpg"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="chef vintage"
-      />
+        <!--This button triggers a jQuery function that changes the behaviour of the "founders" image below-->
+        <button class="btn btn-warning" id="pic">Click to fade image</button><br><br>
+        <img id="founders" class="rounded" src="img/founders.jpg" alt="founders" title="Founders">
       </div>
-    
-      <div class="col-lg-4 mb-4 mb-lg-0">
 
-        <img
-        src="img/food.gif"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="GIF"
-        title="GIF"
-      />
-      <img
-      src="img/pizza_making.gif"
-      class="w-100 shadow-1-strong rounded mb-4"
-      alt="Pizza making"
-      title="GIF"
-    />
-        <img
-          src="img/petit_gateau.jpg"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="petit gateau"
-          title="petit gateau"
-        />
-    
-        <img
-          src="img/bruschetta.jpg"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="Bruschetta"
-          title="bruschetta"
-        />
+      <img id="panel" src="img/vintage_pizzeria.jpg" width="100%">
 
-      </div>
-    
-      <div class="col-lg-4 mb-4 mb-lg-0">
+      <div class="content2">
 
-        <img
-        src="img/food_making.gif"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Food making"
-        title="GIF"
-      />
-        <img
-          src="img/caesar salad.jpg"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="Caesar salad"
-          title="caesar salad"
-        />
-    
-        <img
-          src="img/cocktails.jpg"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt=""
-        />
-
-        <img
-        src="img/vintage.jpg"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Pizza dough"
-      />
-      </div>
-    </div>
-    </div>
-    </div>
-    <!-- Gallery -->
-    <hr>
-    
-    
-    <hr>
-    <button class="btn btn-secondary" id="getJSON">Customers</button>
-    <button class="btn btn-secondary" id="show">Reviews</button>
-    <div class="content3">
-
-    <div class="container-fluid">
-      <div class="row">
-        <div id="people" class="col-sm-6" style="background-color: rgb(179, 179, 155);">
-
+        <div class="text_heading">
+          <h1>Gallery</h1><br>
         </div>
-        <div class="col-sm-6">
-          <div class="reviews">
-          <br>
-          <!--Review examples extracted from: https://eatsleepwander.com/good-restaurant-review-examples-to-copy-paste/3/-->
-          <h1>Reviews</h1>
 
-          <p>"Absolutely amazing! The place is beautiful and staff are super friendly and the food is
-            delicious. I love that you get a lot of food as well for the price. It’s definitely not like other
-            expensive restaurants and you only get a small amount of food. I am definitely going back."</p>
-            <img src="img/5star.jpg" width="150">
-          <br><br><br>
-          <p>"The menus options are an excellent value. The dining experience overall is very
-            pleasant.
-            I highly recommend this restaurant."</p>
-            <img src="img/5star.jpg" width="150">
-          <br><br><br>
-          <p>"Amaazing food! The whole experience from start to finish is great waitress is always so
-            friendly and kind. The food can’t get better and the prices are fair for the portion size. Always a great
-            spot to get great food."</p>
-            <img src="img/5star.jpg" width="150">
-            <br><br>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        <!--This button triggers a jQuery function that changes the behaviour of the "gallery" below-->
+        <button class="btn btn-primary" id="gal">Gallery</button>
 
-<!--<img src="img/review-rate.jpg" width= 50%>-->
-  
-    <div class="jumbotron">
-      <div class="container-fluid">
-        <!-- Control the column width, and how they should appear on different devices -->
-        <div class="row">
-          <div class="col-sm-4">
-            <h1>Opening hours</h1>
-            <br>
-            <p>Monday &amp; Tuesday CLOSED</p>
-            <p>Wednesday 15:00 - 02:00</p>
-            <p>Thursday 15::00 - 02:00</p>
-          </div>
-          <div class="col-sm-4">
-            <p>&nbsp;</p>
-            <p>&nbsp;</p>
-            <p>Friday 10:00 - 02:00</p>
-            <p>Saturday 10:00 - 02:00</p>
-            <p>Sunday 12:00 - 20:00</p>
-          </div>
-          <div class="col-sm-4">
-            <button class= "btn btn-primary" id="contact1">Contact</button>
-            <div id="panel1">
-            <h2>CONTACT</h2>
-            <hr>
-            <p>Student name: Thayene Lorens</p>
-            <p>Student number: 2020293</p>
-            <p>email: thayenelorens@gmail.com</p>
-            <p>Professor: John Snel</p>
-            <!--target blank, opens link in different page-->
-            <p>Github repository link:<a href="https://github.com/thayenelorens/CA3_vscode_thayene.git" target="_blank"> Click here</a></p>
+        <div class="gallery">
+          <!--Using Bootstrap to create a gallery.-->
+          <!--Lines 118-209 have been sourced from:https://mdbootstrap.com/docs/standard/extended/gallery/#!-->
+          <div class="row">
+
+            <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+
+              <img src="img/pizza.gif" class="w-100 shadow-1-strong rounded mb-4" alt="GIF" title="GIF" />
+
+              <img src="img/pizza1.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="la bianca" title="la bianca" />
+
+              <img src="img/pizza2.jpg_large" class="w-100 shadow-1-strong rounded mb-4" alt="veggie"
+                title="vegetarian" />
+
+              <img src="img/vintage_chef.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="chef vintage" />
             </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+
+              <img src="img/food.gif" class="w-100 shadow-1-strong rounded mb-4" alt="GIF" title="GIF" />
+              <img src="img/pizza_making.gif" class="w-100 shadow-1-strong rounded mb-4" alt="Pizza making"
+                title="GIF" />
+              <img src="img/petit_gateau.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="petit gateau"
+                title="petit gateau" />
+
+              <img src="img/bruschetta.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Bruschetta"
+                title="bruschetta" />
+
+            </div>
+
+            <div class="col-lg-4 mb-4 mb-lg-0">
+
+              <img src="img/food_making.gif" class="w-100 shadow-1-strong rounded mb-4" alt="Food making" title="GIF" />
+              <img src="img/caesar salad.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Caesar salad"
+                title="caesar salad" />
+
+              <img src="img/cocktails.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
+
+              <img src="img/vintage.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Pizza dough" />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+      <!-- End of Gallery -->
 
-      
+      <hr>
+      <hr>
+      <!--This button triggers a jSON function that displays a short array with info from 'customers'
+      that I created. It is displayed in the div "people below."-->
+      <button class="btn btn-secondary" id="getJSON">Customers</button>
+      <!--This button triggers a jQuery function that changes the behaviour of the "reviews" section below-->
+      <button class="btn btn-secondary" id="show">Reviews</button>
+      <div class="content3">
+
+        <div class="container-fluid">
+
+          <!--Using Bootstrap to create a basic 50/50 grid layout-->
+          <div class="row">
+            <div id="people" class="col-sm-6" style="background-color: rgb(179, 179, 155);">
+            </div>
+
+            <div class="col-sm-6">
+              <div class="reviews">
+                <br>
+                <!-- These review comments are examples I extracted from: https://eatsleepwander.com/good-restaurant-review-examples-to-copy-paste/3/-->
+                <h1>Reviews</h1>
+
+                <p>"Absolutely amazing! The place is beautiful and staff are super friendly and the food is
+                  delicious. I love that you get a lot of food as well for the price. It’s definitely not like other
+                  expensive restaurants and you only get a small amount of food. I am definitely going back."</p>
+                <img src="img/5star.jpg" width="150">
+                <br><br><br>
+                <p>"The menus options are an excellent value. The dining experience overall is very
+                  pleasant.
+                  I highly recommend this restaurant."</p>
+                <img src="img/5star.jpg" width="150">
+                <br><br><br>
+                <p>"Amaazing food! The whole experience from start to finish is great waitress is always so
+                  friendly and kind. The food can’t get better and the prices are fair for the portion size. Always a
+                  great
+                  spot to get great food."</p>
+                <img src="img/5star.jpg" width="150">
+                <br><br>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--End of the 50/50 grid-->
+      </div>
+
+      <!--<img src="img/review-rate.jpg" width= 50%>-->
+
+
+      <!-- Using Bootstrap 4 jumbotron-->
+      <div class="jumbotron">
+
+        <!--Using Bootstrap for to create a 3 column grid system (33.33% each)-->
+        <div class="container-fluid">
+          <!-- Control the column width, and how they should appear on different devices -->
+          <div class="row">
+            <div class="col-sm-4">
+              <h1>Opening hours</h1>
+              <br>
+              <p>Monday &amp; Tuesday CLOSED</p>
+              <p>Wednesday 15:00 - 02:00</p>
+              <p>Thursday 15::00 - 02:00</p>
+            </div>
+            <div class="col-sm-4">
+              <p>&nbsp;</p>
+              <p>&nbsp;</p>
+              <p>Friday 10:00 - 02:00</p>
+              <p>Saturday 10:00 - 02:00</p>
+              <p>Sunday 12:00 - 20:00</p>
+            </div>
+            <div class="col-sm-4">
+              <button class="btn btn-primary" id="contact1">Contact</button>
+              <div id="panel1">
+                <h2>CONTACT</h2>
+                <hr>
+                <p>Student name: Thayene Lorens</p>
+                <p>Student number: 2020293</p>
+                <p>email: thayenelorens@gmail.com</p>
+                <p>Professor: John Snel</p>
+                <!--target blank, opens link in different page-->
+                <p>Github repository link:<a href="https://github.com/thayenelorens/CA3_vscode_thayene.git"
+                    target="_blank"> Click here</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--End of jumbotron-->
+
+      <!--Using Bootstrap 4 to implement pagination-->
+      <!--Lines 300- 307 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
       <ul class="pagination">
-        <!--I disabled the opion "previous", since this is the 1st page of the website-->
+        <!--I enabled the "previous" option, since I have a home page-->
         <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
-        <!--I set Home as my active page-->
+        <!--I set Page 2 as my active page-->
         <li class="page-item active"><a class="page-link" href="page2.html">Page 2</a></li>
-        <!--My next page is page 1-->
+        <!--I disabled the "next" option, since this is the last page of the website-->
         <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
       </ul>
       <br><br>
-   
-  </div>
- 
-  <script>
-   document.getElementById('getJSON').addEventListener('click', getJSON);
 
-function getJSON() {
+      <!--I have done this code here at the end of the page. In this case I did not know how to do it in an external file.-->
+      <script>
+    
+    /**
+      * I named this function "getJSON". It is triggered when clicking on the namesake button.
+      * I created a jSON external file and stored it in the js folder. This file will provide data related to previous customers.
+      * I only created three profiles.
+      * I set it to change the 'people' div in my HTML code and display the following information:
+      * -Heading
+      * -First name + lastname
+      * -Email
+      * -Picture thumbnail
+      * I used a forEach loop to display all data listed above.*/
 
-  fetch('js/people.json')
-    .then((action) => action.json())
-    .then((dat) => {
+        document.getElementById('getJSON').addEventListener('click', getJSON);
 
-      let result = '<br><br><h1>Customers</h1>';
+        function getJSON() {
 
-      dat.forEach(function (person) {
-        result += `
+          fetch('js/people.json')
+            .then((action) => action.json())
+            .then((dat) => {
+
+              let result = '<br><br><h1>Customers</h1>';
+
+              dat.forEach(function (person) {
+                result += `
         
         <br>
            <h3>Name: ${person.name}</h3>
@@ -301,24 +293,23 @@ function getJSON() {
         <h3>Email: ${person.email}</h3> 
         <br><br>                     
     `;
-      });
-      document.getElementById('people').innerHTML = result;
-    })
+              });
+              document.getElementById('people').innerHTML = result;
+            })
 
-};
+        };
+      </script>
+
+      <!--End of script-->
 
 
+      <!--SUCCINT PRESENTATION ABOUT ME AS THE OWNER (BLACK AND WHITE PHOTO of mine)-->
 
-  </script>
-
-
-  <!--SUCCINT PRESENTATION ABOUT ME AS THE OWNER (BLACK AND WHITE PHOTO of mine)-->
-
-  <!--change the name of my pizzeria-->
-  <!-- jogar meu json no js file-->
-  <!--pegar config headings do meu trabalho anterior-->
-  <!--Arrumar código, comentário, nome de fotos e de elementos com calma ao longo da semana-->
-  <!--Colocar a foto dos cozinheiros como background de div e fazer um div por cima falando de mim-->
+      <!--change the name of my pizzeria-->
+      <!-- jogar meu json no js file-->
+      <!--pegar config headings do meu trabalho anterior-->
+      <!--Arrumar código, comentário, nome de fotos e de elementos com calma ao longo da semana-->
+      <!--Colocar a foto dos cozinheiros como background de div e fazer um div por cima falando de mim-->
 
 </body>
 

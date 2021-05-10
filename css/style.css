@@ -171,69 +171,69 @@ font-weight: bold;
 
 /*Setting border and padding properties for the div menu.
   Setting text color and background-color.*/
-  #menu {
+#menu {
       border: 5px solid black;
       color: white;
       padding: 100px 20px;
       background-color: black;
   }
 
-  /*Increasing the font-size for this element and aligning it to the center of the div in which it is located*/
-  #heading {
+/*Increasing the font-size for this element and aligning it to the center of the div in which it is located*/
+#heading {
       font-size: 70px;
       text-align: center;
   }
 
-  /*Establishing a background-color for these divs as well as text color and border properties.*/
-  .table_of_contents,
-  .table_of_contents1,
-  .table_of_contents2,
-  .table_of_contents3,
-  .table_of_contents4,
-  .table_of_contents5 {
+/*Establishing a background-color for these divs as well as text color and border properties.*/
+.table_of_contents,
+.table_of_contents1,
+.table_of_contents2,
+.table_of_contents3,
+.table_of_contents4,
+.table_of_contents5 {
 
       background-color: white;
       color: black;
       border: 1px solid black;
   }
 
-  /*Adding some padding to the heading, row and column elements of a table.*/
-  th, tr, td {
+/*Adding some padding to the heading, row and column elements of a table.*/
+th, tr, td {
 
       padding: 10px 25px;
   }
 
-  /*Changing the background-color of all heading elements.
+/*Changing the background-color of all heading elements.
     Changing text color of the text within this element.
     Adding some padding to this element.*/
-  th {
+th {
       background-color: black;
       color: white;
       padding: 30px;
   }
 
-  /*The :nth-child(even) selects all the even rows of this table.
+/*The :nth-child(even) selects all the even rows of this table.
     Setting that all the even rows will have a specific background-color, which is different from the odd rows within the same table.*/
-  tr:nth-child(even) {
+tr:nth-child(even) {
       background-color: #f2f2f2
   }
 
-  /*Setting a background-color for both of these div elements.*/
-  #totalPrice, #vegetarianCost {
+/*Setting a background-color for both of these div elements.*/
+#totalPrice, #vegetarianCost {
       background-color: rgb(22, 197, 22);
   }
 
   /*PAGE 2*/
 
-/*Setting the same text color for the elements within these divs.*/
-.content, .content2 {
+/*Setting text color for the elements within this div.*/
+.content {
     color: white;
 }
 
 /*Setting width, border and padding properties to this element.
   Added some text color to it.
   I changed the cursor to default, so instead of having a small hand with a finger point up, I'll have the standard cursor.*/
-  #toggle {
+#toggle {
     width: 100%;
     color: white;
     padding: 15px;
@@ -252,7 +252,7 @@ font-weight: bold;
 
 /*Setting some margin, border and padding to this element.
   Setting border-radius to make the edges a bit round, instead of square.*/
-  #group {
+#group {
   
     margin-left: 200px;
     border-radius: 13px;
@@ -273,11 +273,6 @@ font-weight: bold;
 #founders{
     display: none; 
     margin-left: 150px;
-}
-
-/*Changing text color.*/
-.content2 {  
-    color:black;
 }
 
 /*Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.*/
