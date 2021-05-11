@@ -53,17 +53,18 @@
         <!--Welcome message-->
         <!--By making a class for the heading, I can commit style changes in the CSS external file, where all of the elements from this class present in both pages will be altered accordingly.-->
         <div class="text_heading">
+
             <h1>WELCOME TO MAMMA MIA</h1>
             <hr>
-        <!--Lines 59-61 were sourced from: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play-->
+            <!--Lines 59-61 were sourced from: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play-->
             <audio id="bellanotte">
-            <!--I created an audio file w/ an mp3 audio track called "bellanotte"-->
+                <!--I created an audio file w/ an mp3 audio track called "bellanotte"-->
                 <source src="audio/bellanotte.mp3" type="audio/mp3">
             </audio>
-        <!--Calling both functions "play" and "pause" when clicking the buttons below-->
-            <button class="btn btn-warning" onclick="play()" type="button">Play me</button>
+            <!--Calling both functions "play" and "pause" when clicking the buttons below-->
+            <button class="btn btn-success" onclick="play()" type="button">Play me</button>
             <hr>
-            <button class="btn btn-warning" onclick="pause()" type="button">Pause me</button>
+            <button class="btn btn-danger" onclick="pause()" type="button">Pause me</button>
         </div>
 
         <!-- I added a title property: when hovering the mouse over the photo, the 'GIF' word appears-->
@@ -71,7 +72,7 @@
         <hr>
 
         <div class="text_heading">
-            <h1>Staff Login</h1><br>
+            <h1>STAFF LOGIN</h1><br>
         </div>
 
         <!--LOGIN-->
@@ -99,12 +100,17 @@
                 <!--Input type set as "password" - so it is hidden by the bullet points when typing. I opted for putting the "pattern" attribute for my regex-->
                 <input type="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$"
                     name="pword" id="pword" placeholder="Enter Password">
-                <div id="invalid">Invalid password</div>
-                <div id="valid">Valid password</div>
+                <div id="invalid">Invalid password
+                    <hr><img class="locker" src="img/lock.jpeg">
+                </div>
+                <div id="valid">Valid password
+                    <hr><img class="locker" src="img/unlock.jpeg">
+                </div>
                 <br><br>
 
                 <!--By pressing this button the "validate" function is triggered-->
-                <button onclick="staff_Validation()" class="btn btn-primary" id="large-button" type="button">Login</button>
+                <button onclick="staff_Validation()" class="btn btn-primary" id="large-button"
+                    type="button">Login</button>
                 <br><br>
 
                 <!--Password criteria - Message box to be output as a reminder for the staff when deciding to login-->
@@ -122,11 +128,13 @@
         <!--User Generation: This section is for the output of 5 random customer profiles-->
         <div id="randomCustomers">
             <!--This button triggers the function "getRandomCustomers" present in my js file -->
-            <button class="btn btn-warning" id="getRandCustomers">Check Customers</button>
+            <button class="btn btn-success" id="getRandCustomers">Check Customers</button>
             <br><br>
 
             <!--The result from the javaScript is displayed into this div. -->
-            <div id="output"></div>
+            <div id="output">
+                <img id="client" src="img/customers.gif">
+            </div>
         </div>
 
         <!-- Menu -->
@@ -545,16 +553,10 @@
             <!--My next page is page 1-->
             <li class="page-item"><a class="page-link" href="page2.html" title="Page 1" target=_self>Next</a></li>
         </ul>
+        <br><br>
         <!--End of pagination-->
+        <!--End-->
 
-        <div class="jumbotron">
-            <h1>Assignment Overview</h1>
-            <p>How to create your own website using HTML, CSS and Javascript</p>
-        </div>
-    </div>
-  
-    <!--End-->
-    
 </body>
 
 </html>
