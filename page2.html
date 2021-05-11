@@ -55,27 +55,29 @@
     <div class="jumbotron">
       <h1>About</h1><br>
     </div>
+    <br><br>
     <!--End of jumbotron-->
 
     <div class="content">
 
-      <p><i>Click here to find out a bit of our history and tradition</i></p>
+      <p><i>Click here to find out a bit about our history and tradition</i></p>
 
       <!--This button triggers a jQuery function that changes the behaviour of the "history" div below-->
-      <button class="btn btn-warning" id="toggle">History</button>
+      <button class="btn btn-success" id="toggle">Find out more</button>
 
-      <div class="history">
+      <div class="discover">
         <br>
 
         <img id="group" src="img/eating_pizza.jpg" alt="Eating pizza">
-        <p>This pizzeria originated in Petrópolis, Brazil and came to be known as one of the finest
+        <p>Our pizzeria originated in Petrópolis, Brazil and came to be known as one of the finest
           restaurants in town.
           The first restaurant proprietor is believed to have been an aristocrat, a known cheese vendor, who started
-          his business in
-          in 1978.</p>
-        <p>What started as a small business is nowadays one of the biggest chains in the country with its 17 branches
+          his business
+          in 1857.</p>
+        <p>What started as a small business is now one of the biggest chains in the country with its 17 branches
           spreaded in national territory.
-          In "Pizza Loca" we are proud of our homemade doughes and sauces that remains kept as a family secret recipe
+          In <i>Mamma Mia</i>> we are proud of our homemade dough and sauces that are a family secret recipe that has
+          been passed
           over all these years.
         </p>
       </div>
@@ -83,37 +85,110 @@
       <br><br>
 
       <!--This button triggers a jQuery function that changes the behaviour of the "discovery" div below-->
-      <button id="large-button" class=" btn btn-primary">Find out more</button>
+      <button id="large-button" class=" btn btn-danger">History</button>
 
-      <div class="discover">
-        <p>The italian family that founded the first restaurant was composed of four members: two daughters, the father
+      <div class="history">
+        <br><br>
+        <p>The family that founded the first restaurant was composed of four members: two twin daughters, the father
           and the mamma. The
           mamma was a talented cook, she would prepare the pizzas herself, while the father as a cheese vendor would
           provide
-          the best quality cheese of the whole area. The daughters would help the family business by announcing it to
-          the outlanders that would arrive
-          in the city.
+          the best quality cheese of the whole area. The daughters would help the family business grow by announcing it
+          to
+          the travellers that would arrive
+          in the outskirts.
         </p>
+      </div>
+
+      <br><br>
+      <div class="text_heading">
+        <h1>Wall of History and Tradition</h1>
         <br>
       </div>
 
+      <p><i>- Click on the button below to expand content</i></p>
+      <p><i>- Hover the button to close the content</i></p>
 
-      <div class="photo">
-        <!--This button triggers a jQuery function that changes the behaviour of the "founders" image below-->
-        <button class="btn btn-warning" id="pic">Click to fade image</button><br><br>
-        <img id="founders" class="rounded" src="img/founders.jpg" alt="founders" title="Founders">
+      <!--This button triggers a jQuery function that changes the behaviour of the div below-->
+      <button class="btn btn-primary" id="large-button2">View</button><br><br>
+      <!--Using Bootstrap to create a gallery.-->
+      <!--Lines 111-141 have been sourced from:https://mdbootstrap.com/docs/standard/extended/gallery/#!-->
+      <div class="row">
+
+        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+
+          <img class="wall-of-history" src="img/founders.jpg" alt="founders"
+            class="w-100 shadow-1-strong rounded mb-4" />
+
+          <img class="wall-of-history" src="img/vintage_chef.jpg" alt="Chef"
+            class="w-100 shadow-1-strong rounded mb-4" />
+        </div>
+
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <img class="wall-of-history" src="img/woman-eating.jpg" alt="Woman vintage"
+            class="w-100 shadow-1-strong rounded mb-4" />
+        </div>
+
+        <div class="col-lg-4 mb-4 mb-lg-0">
+
+          <img class="wall-of-history" src="img/child_eating.jpg" alt="Child vintage"
+            class="w-100 shadow-1-strong rounded mb-4" />
+
+          <img class="wall-of-history" src="img/vintage_pizzeria.jpg" alt="Restaurant retro"
+            class="w-100 shadow-1-strong rounded mb-4" />
+        </div>
+      </div>
+      <!-- End of Gallery -->
+
+      <div class="text_heading">
+        <br><br>
+        <h1>About the owner</h1><br>
       </div>
 
-      <img id="panel" src="img/vintage_pizzeria.jpg" width="100%">
+
+      <!--Using Bootstrap to create a basic 50/50 grid layout-->
+      <div class="row">
+        <div class="col-sm-6">
+          <!--Using Bootstrap to create a card (it will be part of the left half of this 50/50 grid layout)-->
+          <!--Lines 154- have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_card_image&stacked=h-->
+          <div class="card" style="width:400px">
+            <img class="card-img-top" src="img/twins.jpeg" alt="me" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">Thayene Lorens</h4>
+              <p class="card-text">Student number: 2020293</p>
+              <p id="occupancy">IT student</p>
+              <p>Brazilian, single, 27 years old.</p>
+              <p>My motto: <q>What we do in life echoes in eternity</q></p>
+              <!--Link to my email address + title property: when hovering the mouse over the button, the message "contact me" appears-->
+              <!-- taget:_blank means that after clicking on the button, the new content will open in a different tab-->
+              <a href="mailto:thayenelorens@gmail.com" title="Contact me" target=_blank
+                class="btn btn-primary">Email</a>
+            </div>
+          </div>
+        </div>
+        <!--End of the left column-->
+
+        <div class="col-sm-6">
+          <img src="img/food_making.gif">
+          <br><br>
+          <img src="img/pizza.gif" alt="GIF" title="GIF" />
+          <div id="box">
+            <h3>Don't stop believing</h3>
+          </div>
+        </div>
+      <!--End of left column-->
+      </div>
+      <!--End of 50/50 grid-->
 
       <div class="content2">
 
         <div class="text_heading">
+          <br><br>
           <h1>Gallery</h1><br>
         </div>
 
         <!--This button triggers a jQuery function that changes the behaviour of the "gallery" below-->
-        <button class="btn btn-primary" id="gal">Gallery</button>
+        <button class="btn btn-danger" id="gal">Gallery</button>
 
         <div class="gallery">
           <!--Using Bootstrap to create a gallery.-->
@@ -122,38 +197,35 @@
 
             <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
 
-              <img src="img/pizza.gif" class="w-100 shadow-1-strong rounded mb-4" alt="GIF" title="GIF" />
+              <img src="img/pizza1.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="pizza" title="pizza" />
 
-              <img src="img/pizza1.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="la bianca" title="la bianca" />
+              <img src="img/tofu-cheesecake.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Tofu cheesecake" />
 
-              <img src="img/pizza2.jpg_large" class="w-100 shadow-1-strong rounded mb-4" alt="veggie"
-                title="vegetarian" />
+              <img src="img/soft_drink.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="soft drink" />
 
-              <img src="img/vintage_chef.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="chef vintage" />
             </div>
 
             <div class="col-lg-4 mb-4 mb-lg-0">
 
-              <img src="img/food.gif" class="w-100 shadow-1-strong rounded mb-4" alt="GIF" title="GIF" />
-              <img src="img/pizza_making.gif" class="w-100 shadow-1-strong rounded mb-4" alt="Pizza making"
-                title="GIF" />
+              <img src="img/veggie.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="veggie" title="veggie" />
+
               <img src="img/petit_gateau.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="petit gateau"
                 title="petit gateau" />
 
               <img src="img/bruschetta.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Bruschetta"
-                title="bruschetta" />
-
+                title="bruschetta" /> <img src="img/garlic-bread.jpg" class="w-100 shadow-1-strong rounded mb-4"
+                alt="garlic bread" />
             </div>
 
             <div class="col-lg-4 mb-4 mb-lg-0">
 
-              <img src="img/food_making.gif" class="w-100 shadow-1-strong rounded mb-4" alt="Food making" title="GIF" />
               <img src="img/caesar salad.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Caesar salad"
                 title="caesar salad" />
 
               <img src="img/cocktails.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="" />
 
               <img src="img/vintage.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Pizza dough" />
+
             </div>
           </div>
         </div>
@@ -162,18 +234,26 @@
 
       <hr>
       <hr>
+
+      <div class="text_heading">
+        <br><br>
+        <h1>Reviews</h1><br>
+      </div>
+      <img id="review_rate" src="img/review-rate.jpg">
+      <hr>
       <!--This button triggers a jSON function that displays a short array with info from 'customers'
       that I created. It is displayed in the div "people below."-->
       <button class="btn btn-secondary" id="getJSON">Customers</button>
       <!--This button triggers a jQuery function that changes the behaviour of the "reviews" section below-->
       <button class="btn btn-secondary" id="show">Reviews</button>
+
       <div class="content3">
 
         <div class="container-fluid">
 
           <!--Using Bootstrap to create a basic 50/50 grid layout-->
           <div class="row">
-            <div id="people" class="col-sm-6" style="background-color: rgb(179, 179, 155);">
+            <div id="people" class="col-sm-6">
             </div>
 
             <div class="col-sm-6">
@@ -262,17 +342,17 @@
 
       <!--I have done this code here at the end of the page. In this case I did not know how to do it in an external file.-->
       <script>
-    
-    /**
-      * I named this function "getJSON". It is triggered when clicking on the namesake button.
-      * I created a jSON external file and stored it in the js folder. This file will provide data related to previous customers.
-      * I only created three profiles.
-      * I set it to change the 'people' div in my HTML code and display the following information:
-      * -Heading
-      * -First name + lastname
-      * -Email
-      * -Picture thumbnail
-      * I used a forEach loop to display all data listed above.*/
+
+        /**
+          * I named this function "getJSON". It is triggered when clicking on the namesake button.
+          * I created a jSON external file and stored it in the js folder. This file will provide data related to previous customers.
+          * I only created three profiles.
+          * I set it to change the 'people' div in my HTML code and display the following information:
+          * -Heading
+          * -First name + lastname
+          * -Email
+          * -Picture thumbnail
+          * I used a forEach loop to display all data listed above.*/
 
         document.getElementById('getJSON').addEventListener('click', getJSON);
 
@@ -301,15 +381,6 @@
       </script>
 
       <!--End of script-->
-
-
-      <!--SUCCINT PRESENTATION ABOUT ME AS THE OWNER (BLACK AND WHITE PHOTO of mine)-->
-
-      <!--change the name of my pizzeria-->
-      <!-- jogar meu json no js file-->
-      <!--pegar config headings do meu trabalho anterior-->
-      <!--Arrumar código, comentário, nome de fotos e de elementos com calma ao longo da semana-->
-      <!--Colocar a foto dos cozinheiros como background de div e fazer um div por cima falando de mim-->
 
 </body>
 
