@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- Font Awesome 4.7.0 - For the icons-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <!-- My CSS file-->
     <link rel="stylesheet" type=text/css href="css/style.css">
 
@@ -100,11 +103,15 @@
                 <!--Input type set as "password" - so it is hidden by the bullet points when typing. I opted for putting the "pattern" attribute for my regex-->
                 <input type="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$"
                     name="pword" id="pword" placeholder="Enter Password">
+
+                <!--Using font awesome 4 to use this icon-->
+                <i id="eye" class="fa fa-eye-slash" style="font-size:36px; color:white"></i>
+
                 <div id="invalid">Invalid password
-                    <hr><img class="locker" src="img/lock.jpeg">
+                    <br><br><img class="locker" src="img/lock.jpeg">
                 </div>
                 <div id="valid">Valid password
-                    <hr><img class="locker" src="img/unlock.jpeg">
+                    <br><br><img class="locker" src="img/unlock.jpeg">
                 </div>
                 <br><br>
 
@@ -133,7 +140,9 @@
 
             <!--The result from the javaScript is displayed into this div. -->
             <div id="output">
+
                 <img id="client" src="img/customers.gif">
+
             </div>
         </div>
 
@@ -191,11 +200,12 @@
                     <tr>
                         <td>
                             <br>
-                            <h1><b>Garlic Bread</b><span class="badge badge-warning">Popular</span></h1>
-                            <p>Fire-baked baguette topped with garlic, olive oil and butter</p>
+                            <h1><b>Garlic Bread w/ ham</b><span class="badge badge-warning">Popular</span></h1>
+                            <p>Fire-baked baguette topped with garlic, olive oil and butter. Serverd with prosciutto on
+                                the side.</p>
                         </td>
-                        <td><input name="opt_1" type="checkbox" id="opt_1" value="1" size="3" data-price="7.50"
-                                onclick="getTotalCost()"></td>
+                        <td><input name="starter_1" type="number" id="starter_1" value="0" min="0" size="3"
+                                data-price="7.50"></td>
                         <td>
                             <h1><span class="badge badge-dark">€7.50</span></h1>
                         </td>
@@ -204,11 +214,12 @@
 
                     <tr>
                         <td>
-                            <h1><b>Bruschetta</b></h1>
-                            <p>Fire-baked flat bread filled with cherry tomatoes, mozzarella and olive oil</p>
+                            <h1><b>Chicken wings</b></h1>
+                            <p>Chicken wings served with our finest dips: <i>barbecue, hot sauce and sweet chilli
+                                    sauce</i></p>
                         </td>
-                        <td><input name="opt_2" type="checkbox" id="opt_2" value="1" size="3" data-price="6.50"
-                                onclick="getTotalCost()"></td>
+                        <td><input name="starter_2" type="number" id="starter_2" value="0" min="0" size="3"
+                                data-price="6.50"></td>
                         <td>
                             <h1><span class="badge badge-dark">€6.50</span></h1>
                         </td>
@@ -220,8 +231,8 @@
                             <h1><b>Today's Soup</b><span class="badge badge-warning">Seasonal</span></h1>
                             <p>Ask the waiter</p>
                         </td>
-                        <td><input name="opt_3" type="checkbox" id="opt_3" value="1" size="3" data-price="5.90"
-                                onclick="getTotalCost()"></td>
+                        <td><input name="starter_3" type="number" id="starter_3" value="0" min="0" size="3"
+                                data-price="5.90"></td>
                         <td>
                             <h1><span class="badge badge-dark">€5.90</span></h1>
                         </td>
@@ -233,8 +244,8 @@
                             <h1><b>Fried Calamari</b><span class="badge badge-success">For two</span></h1>
                             <p>Fried calamari served with a side salad and garlic mayo dip</p>
                         </td>
-                        <td><input name="opt_4" type="checkbox" id="opt_4" value="1" size="3" data-price="6.50"
-                                onclick="getTotalCost()"></td>
+                        <td><input name="starter_4" type="number" id="starter_4" value="0" min="0" size="3"
+                                data-price="6.50"></td>
                         <td>
                             <h1><span class="badge badge-dark">€6.50</span></h1>
                         </td>
@@ -254,26 +265,11 @@
 
                 <tr>
                     <td>
-                        <br>
-                        <h1><b>Margherita</b></h1>
-                        <p>Fresh tomatoes, fresh mozzarella, fresh basil</p>
-                    </td>
-                    <td><input name="opt_5" type="checkbox" id="opt_5" value="1" size="3" data-price="10.00"
-                            onclick="getTotalCost()"></td>
-
-                    <td>
-                        <h1><span class="badge badge-dark">€10.00</span></h1>
-                    </td>
-                    <td>&nbsp;</td>
-                </tr>
-
-                <tr>
-                    <td>
                         <h1><b>Formaggio</b></h1>
                         <p>Four cheeses (mozzarella, parmesan, pecorino, cashel blue cheese)</p>
                     </td>
-                    <td><input name="opt_6" type="checkbox" id="opt_6" value="1" size="3" data-price="13.50"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="main_1" type="number" id="main_1" value="0" min="0" size="3" data-price="13.50">
+                    </td>
                     <td>
                         <h1><span class="badge badge-dark">€13.50</span></h1>
                     </td>
@@ -283,10 +279,11 @@
                 <tr>
                     <td>
                         <h1><b>Marinara</b></h1>
-                        <p>Fresh tomatoes, mozzarella, parmesan, basil, onions and extra virgin oil</p>
+                        <p>Fresh tomatoes, mozzarella, parmesan, basil, bacon, calabreza, onions and extra virgin oil
+                        </p>
                     </td>
-                    <td><input name="opt_7" type="checkbox" id="opt_7" value="1" size="3" data-price="11.50"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="main_2" type="number" id="main_2" value="0" min="0" size="3" data-price="11.50">
+                    </td>
                     <td>
                         <h1><span class="badge badge-dark">€11.50</span></h1>
                     </td>
@@ -296,10 +293,11 @@
                 <tr>
                     <td>
                         <h1><b>La Bianca</b><span class="badge badge-warning">Chef's Specialty!</h1>
-                        <p>Fresh tomatoes, mozzarella, scamorza, mushrooms, garlic, oregano oil and fresh basil</p>
+                        <p>Fresh tomatoes, mozzarella, bacon, prosciutto, scamorza, mushrooms, garlic, oregano oil and
+                            fresh basil</p>
                     </td>
-                    <td><input name="opt_8" type="checkbox" id="opt_8" value="1" size="3" data-price="18.00"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="main_3" type="number" id="main_3" value="0" min="0" size="3" data-price="18.00">
+                    </td>
                     <td>
                         <h1><span class="badge badge-dark">€18.00</span></h1>
                     </td>
@@ -312,8 +310,8 @@
                         <p>Fresh tomatoes, mozzarella, hot pepperoni, hot sausage, beef, parmesan, basil and extra
                             virgin oil</p>
                     </td>
-                    <td><input name="opt_9" type="checkbox" id="opt_9" value="1" size="3" data-price="15.50"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="main_4" type="number" id="main_4" value="0" min="0" size="3" data-price="15.50">
+                    </td>
                     <td>
                         <h1><span class="badge badge-dark">€15.50</span></h1>
                     </td>
@@ -336,8 +334,8 @@
                         <h1><b>Strawberry Cheesecake</b><span class="badge badge-warning">Popular</span></h1>
                         <p>Topped with fresh strawberries</p>
                     </td>
-                    <td><input name="opt_10" type="checkbox" id="opt_10" value="1" size="3" data-price="7.00"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="dessert_1" type="number" id="dessert_1" value="0" min="0" size="3"
+                            data-price="7.00"></td>
                     <td>
                         <h1><span class="badge badge-dark">€7.00</span></h1>
                     </td>
@@ -350,13 +348,28 @@
                         <p>Hot chocolate brownie filled with chocolate sauce. Served with vanilla ice cream on the side
                         </p>
                     </td>
-                    <td><input name="opt_11" type="checkbox" id="opt_11" value="1" size="3" data-price="9.50"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="dessert_2" type="number" id="dessert_2" value="0" min="0" size="3"
+                            data-price="9.50"></td>
                     <td>
                         <h1><span class="badge badge-dark">€9.50</span></h1>
                     </td>
                     <td>&nbsp;</td>
                 </tr>
+
+                <tr>
+                    <td>
+                        <h1><b>Ice Cream</b><span class="badge badge-warning">For Kids</span></h1>
+                        <p>Two scoops of our homemade vanilla ice cream.</p>
+                        <p><i>Sauces: chocolate, strawberry or raspberries</i></p>
+                    </td>
+                    <td><input name="dessert_3" type="number" id="dessert_3" value="0" min="0" size="3"
+                            data-price="9.50"></td>
+                    <td>
+                        <h1><span class="badge badge-dark">€9.50</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
             </div>
 
             <div class="table_of_contents4">
@@ -374,8 +387,8 @@
                         <h1><b>300 ml Soft Drink cans</b></h1>
                         <p>Coke, club orange, sprite and Guaraná</p>
                     </td>
-                    <td><input name="opt_12" type="checkbox" id="opt_12" value="1" size="3" data-price="1.50"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="drinks_1" type="number" id="drinks_1" value="0" min="0" size="3" data-price="1.50">
+                    </td>
                     <td>
                         <h1><span class="badge badge-dark">€1.50</span></h1>
                     </td>
@@ -387,8 +400,8 @@
                         <h1><b>500 ml Bottles of water</b></h1>
                         <p>San Pellegrino sparkling and Tipperary still water</p>
                     </td>
-                    <td><input name="opt_13" type="checkbox" id="opt_13" value="1" size="3" data-price="2.50"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="drinks_2" type="number" id="drinks_2" value="0" min="0" size="3" data-price="2.50">
+                    </td>
                     <td>
                         <h1><span class="badge badge-dark">€2.50</span></h1>
                     </td>
@@ -400,8 +413,8 @@
                         <h1><b>Cocktails</b></h1>
                         <p>Pornstar martini, Flat white martini, piña colada and non-alcoholic fruit cocktail</p>
                     </td>
-                    <td><input name="opt_14" type="checkbox" id="opt_14" value="1" size="3" data-price="12.50"
-                            onclick="getTotalCost()"></td>
+                    <td><input name="drinks_3" type="number" id="drinks_3" value="0" min="0" size="3"
+                            data-price="12.50"></td>
                     <td>
                         <h1><span class="badge badge-dark">€12.50</span></h1>
                     </td>
@@ -421,12 +434,27 @@
 
                 <tr>
                     <td>
+                        <br>
+                        <h1><b>Margherita</b></h1>
+                        <p>Fresh tomatoes, fresh mozzarella, fresh basil, bacon</p>
+                    </td>
+                    <td><input name="veggie_1" type="number" id="veggie_1" value="0" min="0" size="3"
+                            data-price="10.00"></td>
+
+                    <td>
+                        <h1><span class="badge badge-dark">€10.00</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
+
+                <tr>
+                    <td>
                         <h1><b>Veggie pizza</b></h1>
                         <p>Tomato sauce, rosted aubergine, red onion, cherry tomatoes, garlic oil and balsamic vinegar
                         </p>
                     </td>
-                    <td><input name="opt_15" type="checkbox" id="opt_15" value="1" size="3" data-price="15.00"
-                            data-veg="true" onclick="getTotalCost()"></td>
+                    <td><input name="veggie_2" type="number" id="veggie_2" value="0" min="0" size="3"
+                            data-price="15.00"></td>
                     <td>
                         <h1><span class="badge badge-dark">€15.00</span></h1>
                     </td>
@@ -438,8 +466,8 @@
                         <h1><b>Chicken Caesar Salad</b></h1>
                         <p>Chicken, anchovies, croutons, free-range egg, Caesar dressing</p>
                     </td>
-                    <td><input name="opt_16" type="checkbox" id="opt_16" value="1" size="3" data-price="14.75"
-                            data-veg="true" onclick="getTotalCost()"></td>
+                    <td><input name="veggie_3" type="number" id="veggie_3" value="0" min="0" size="3"
+                            data-price="14.75"></td>
                     <td>
                         <h1><span class="badge badge-dark">€14.75</span></h1>
                     </td>
@@ -453,31 +481,38 @@
                             coconut cream, and cashews.
                             The crunchy crust is made with rolled oats, almonds, and coconut oil</p>
                     </td>
-                    <td><input name="opt_17" type="checkbox" id="opt_17" value="1" data-price="14.50" data-veg="true"
-                            onclick="getTotalCost()"></td>
-                    <td><input name="qnt_17" type="number" id="qnt_17" value="0" min="0" data-price="14.50"
-                            data-veg="true" onkeyup="CalculateItemsValue()"></td>
+                    <td><input name="veggie_4" type="number" id="veggie_4" value="0" data-price="14.50"></td>
                     <td>
                         <h1><span class="badge badge-dark">€14.50</span></h1>
                     </td>
                 </tr>
+
+                <tr>
+                    <td>
+                        <h1><b>Bruschetta</b></h1>
+                        <p>Fire-baked flat bread filled with cherry tomatoes, mozzarella and olive oil</p>
+                    </td>
+                    <td><input name="veggie_5" type="number" id="veggie_5" value="0" min="0" size="3" data-price="6.50">
+                    </td>
+                    <td>
+                        <h1><span class="badge badge-dark">€6.50</span></h1>
+                    </td>
+                    <td>&nbsp;</td>
+                </tr>
             </div>
 
             <div class="priceCalculation">
-                <tr>
-                    <td>&nbsp;</td>
-                    <td>
-                        <h3>Total Bill</h3>
-                    </td>
-                    <td><input name="totalBill" type="text" id="totalBill" value="0" min="0" data-price=""></td>
-                </tr>
 
                 <tr>
                     <td>&nbsp;</td>
                     <td>
                         <h3>Starters</h3>
                     </td>
-                    <td><input name="totalStarters" type="text" id="totalStarters" value="0" min="0" data-price=""></td>
+                    <td>
+                        <h2>
+                            <div id="totalStarters">€0</div>
+                        </h2>
+                    </td>
                 </tr>
 
                 <tr>
@@ -485,7 +520,11 @@
                     <td>
                         <h3>Pizza</h3>
                     </td>
-                    <td><input name="totalPizza" type="text" id="totalPizza" value="0" min="0" data-price=""></td>
+                    <td>
+                        <h2>
+                            <div id="totalPizza">€0</div>
+                        </h2>
+                    </td>
                 </tr>
 
                 <tr>
@@ -493,7 +532,11 @@
                     <td>
                         <h3>Dessert</h3>
                     </td>
-                    <td><input name="totalDessert" type="text" id="totalDessert" value="0" min="0" data-price=""></td>
+                    <td>
+                        <h2>
+                            <div id="totalDessert">€0</div>
+                        </h2>
+                    </td>
                 </tr>
 
                 <tr>
@@ -501,7 +544,11 @@
                     <td>
                         <h3>Drinks</h3>
                     </td>
-                    <td><input name="totalDrinks" type="text" id="totalDrinks" value="0" min="0" data-price=""></td>
+                    <td>
+                        <h2>
+                            <div id="totalDrinks">€0</div>
+                        </h2>
+                    </td>
                 </tr>
 
                 <tr>
@@ -509,11 +556,13 @@
                     <td>
                         <h3>Vegetarian Cost</h3>
                     </td>
-                    <h2>
-                        <td>
-                            <input name="totaVegCost" type="text" id="totalVegCost" value="0" min="0" data-price="">
-                        </td>
-                    </h2>
+
+                    <td>
+                        <h2>
+                            <div id="totalVeggie">€0</div>
+                        </h2>
+                    </td>
+
                 </tr>
 
                 <tr>
@@ -521,20 +570,19 @@
                     <td>
                         <h3>Non-vegetarian cost</h3>
                     </td>
-                    <td><input name="totalNonVeg" type="text" id="totalNonVeg" value="0" min="0" data-price=""></td>
+                   <td><h2><div id="totalNonVeg">€0</div></h2></td>
                 </tr>
 
                 <tr>
-                    <td class="total">&nbsp;</td>
-                    <td class="total_right">
+                    <td>&nbsp;</td>
+                    <td>
                         <h1><b>Total:</b></h1>
                     </td>
-                    <td class="total">
+                    <td>
                         <h2>
                             <div id="totalPrice">€0</div>
                         </h2>
                     </td>
-                    <td>&nbsp;</td>
                 </tr>
                 </table>
                 <!--End of table-->
@@ -556,7 +604,141 @@
         <br><br>
         <!--End of pagination-->
         <!--End-->
+        <script>
+            var starters_total = 4;
 
+            function Starters() {
+
+                var total = 0.0;
+
+                for (let i = 1; i <= starters_total; i++) {
+                    items = document.getElementById("starter_" + i);
+
+                    total = total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
+                }
+
+                document.getElementById('totalStarters').innerHTML = "€" + total;
+            }
+
+            document.querySelectorAll('[id^="starter_"]').forEach(starter => {
+                starter.addEventListener('change', Starters);
+
+            });
+        </script>
+
+        <script>
+            var main_total = 4;
+
+            function Main() {
+
+                var total = 0.0;
+
+                for (let i = 1; i <= main_total; i++) {
+                    pizza = document.getElementById("main_" + i);
+
+                    total = total + parseInt(pizza.value) * parseFloat(pizza.getAttribute("data-price"));
+                }
+
+                document.getElementById('totalPizza').innerHTML = "€" + total;
+            }
+
+            document.querySelectorAll('[id^="main_"]').forEach(main => {
+                main.addEventListener('change', Main);
+
+            });
+        </script>
+
+        <script>
+            var dessert_total = 3;
+
+            function Dessert() {
+
+                var total = 0.0;
+
+                for (let i = 1; i <= dessert_total; i++) {
+                    sweets = document.getElementById("dessert_" + i);
+
+                    total = total + parseInt(sweets.value) * parseFloat(sweets.getAttribute("data-price"));
+                }
+
+                document.getElementById('totalDessert').innerHTML = "€" + total;
+            }
+
+            document.querySelectorAll('[id^="dessert_"]').forEach(main => {
+                main.addEventListener('change', Dessert);
+
+            });
+        </script>
+
+        <script>
+            var drinks_total = 3;
+
+            function Drinks() {
+
+                var total = 0.0;
+
+                for (let i = 1; i <= drinks_total; i++) {
+                    drinks = document.getElementById("drinks_" + i);
+
+                    total = total + parseInt(drinks.value) * parseFloat(drinks.getAttribute("data-price"));
+                }
+
+                document.getElementById('totalDrinks').innerHTML = "€" + total;
+            }
+
+            document.querySelectorAll('[id^="drinks_"]').forEach(drinks => {
+                drinks.addEventListener('change', Drinks);
+
+            });
+        </script>
+        <script>
+            var veg_total = 5;
+
+            function Vegetarian() {
+
+                var total = 0.0;
+
+                for (let i = 1; i <= veg_total; i++) {
+                    vegetarian = document.getElementById("veggie_" + i);
+
+                    total = total + parseInt(vegetarian.value) * parseFloat(vegetarian.getAttribute("data-price"));
+                }
+
+                document.getElementById('totalVeggie').innerHTML = "€" + total;
+            }
+
+            document.querySelectorAll('[id^="veggie_"]').forEach(drinks => {
+                drinks.addEventListener('change', Vegetarian);
+
+            });
+        </script>
+
+        <!--Mudar isso-->
+        <script>
+            var non_veggie = 14;
+
+            function Non_Vegetarian() {
+
+                var total = 0.0;
+
+                for (let i = 1; i <= non_veggie; i++) {
+                   
+                    non_veg = document.getElementById("starter_" + i);
+
+                    if (non_veg !== Drinks && non_veg !==Vegetarian && non_veg!==Dessert) {
+           
+                        alert("No such item - ");
+                    }
+                    total = total + parseInt(non_veg.value) * parseFloat(non_veg.getAttribute("data-price"));
+                }
+
+                document.getElementById('totalNonVeg').innerHTML = "€" + total;
+            }
+
+            
+
+        
+        </script>
 </body>
 
 </html>

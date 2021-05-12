@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price and Quantity Calculation</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        th,
+        td {
+            padding: 5px;
+        }
+
+        table {
+            font-family: Verdana, Geneva, sans-serif;
+            font-size: 12px;
+            width: 400px;
+        }
+
+        table th {
+            background-color: cadetblue;
+        }
+
+        td.total {
+            background-color: lightgrey;
+        }
+
+        .right {
+            text-align: right;
+        }
+    </style>
+
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>&nbsp;</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        <tr>
+            <td>Chicken fingers</td>
+            <td>
+                <input name="qnt_1" type="text" id="qnt_1" value="0" size="3" data-price="100" />
+            </td>
+            <td>€100</td>
+        </tr>
+        <tr>
+            <td>Item B</td>
+            <td><input name="qnt_2" type="text" id="qnt_2" value="0" size="3" data-price="50" /></td>
+            <td>€50</td>
+        </tr>
+        <tr>
+            <td>Item C</td>
+            <td><input name="qnt_3" type="text" id="qnt_3" value="0" size="3" data-price="30" /></td>
+            <td>€30</td>
+        </tr>
+        <tr>
+            <td>Item D</td>
+            <td><input name="qnt_4" type="text" id="qnt_4" value="0" size="3" data-price="24" /></td>
+            <td>€24</td>
+        </tr>
+        <tr>
+            <td>Item E</td>
+            <td><input name="veggie" type="text" id="veggie_1" value="0" size="3" data-cost="24" /></td>
+            <td>€24</td>
+        </tr>
+        <tr>
+            <td>Item F</td>
+            <td><input name="veggie" type="text" id="veggie_2" value="0" size="3" data-veg="true" data-cost="24" /></td>
+            <td>€24</td>
+        </tr>
+        <tr>
+            <td>Item G</td>
+            <td><input name="number" type="number" id="num_1" value="0" size="3" min="0" data-value="24" /></td>
+            <td>€24</td>
+        </tr>
+        
+        <tr>
+            <td class="total right"><strong>Vegetarian:</strong></td>
+            <td class="total right"><strong>Total:</strong></td>
+            <td class="total"><strong>
+                    <div id="ItemsTotal">€0</div>
+                    <div id="vegetarian">€0</div>
+                    <div id="totalInputs">€0</div>
+                    <div id="sum">sum</div>
+                    <button id="calculator">Calculator</button>
+                </strong></td>
+        </tr>
+    </table>
+   
+    <script>
+        var total_Items = 4;
+
+        function CalculateItemsValue() {
+            var total = 0;
+
+            for (let i = 1; i <= total_Items; i++) {
+                itemID = document.getElementById("qnt_" + i);
+                total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
+
+            }
+            document.getElementById('ItemsTotal').innerHTML = "€" + total;
+        }
+
+        document.querySelectorAll('[id^="qnt_"]').forEach(item => {
+            item.addEventListener('keyup', CalculateItemsValue);
+        });
+
+    </script>
+
+    <script>
+        var total_items = 2;
+
+        function Vegetarian() {
+            var total = 0;
+
+            for (let i = 1; i <= total_items; i++) {
+                itemID = document.getElementById("veggie_" + i);
+
+                total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-cost"));
+            }
+
+            document.getElementById('vegetarian').innerHTML = "€" + total;
+        }
+
+        document.querySelectorAll('[id^="veggie_"]').forEach(item => {
+            item.addEventListener('keyup', Vegetarian);
+
+        });
+    </script>
+    <script>
+        var itemTotal = 1;
+
+        function numInput() {
+            var total = 0;
+
+            for (let i = 1; i <= itemTotal; i++) {
+                itemID = document.getElementById("num_" + i);
+
+                total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-value"));
+            }
+
+            document.getElementById('totalInputs').innerHTML = "€" + total;
+        }
+
+        document.querySelectorAll('[id^="num_"]').forEach(item => {
+            item.addEventListener('change', numInput);
+
+        });
+        </script>
+        
+</body>
+
+</html>

@@ -55,8 +55,6 @@ myPassword.onblur = function () {
     document.getElementById("pass_criteria").style.display = "none";
 }
 
-document.getElementById('large-button').addEventListener('click', staff_Validation);
-
 //LOGIN VALIDATION
 
 /**
@@ -68,6 +66,8 @@ document.getElementById('large-button').addEventListener('click', staff_Validati
  * -If incorrect, it also changes the input field background to red.
  * 
  */
+ document.getElementById('large-button').addEventListener('click', staff_Validation);
+
 function staff_Validation() {
 
     var password = document.getElementById('pword').value;
@@ -92,7 +92,45 @@ function staff_Validation() {
     
 }
 
+/**
+ * I named this function 'pass_show'.
+ * When hovering the 'eye' icon in the login validator, input type will be text, i.e., it will be possible to see what is being typed.
+ */  
+document.getElementById('eye').addEventListener('mouseover', pass_show);
+
+function pass_show() {
+    var password = document.getElementById("pword");
+    if (password.type === "password") {
+      password.type = "text";
+    } 
+  }
+
+  /**
+ * I named this function 'pass_visualization'.
+ * When unhovering the 'eye' icon in the login validator, the content in the input field will go back to being password type, i.e., password will be secret.
+ */
+  document.getElementById('eye').addEventListener('mouseout', pass_hide);
+
+function pass_hide() {
+    var password = document.getElementById("pword");
+    if (password.type !== "password") {
+      password.type = "password";
+    } 
+  }
+
 //USER GENERATION - PROFILES 
+
+/**
+ * This is an anonymous function, i.e., it has no name.
+ * When the user clicks on the button to check customers, the picture in my HTML code has its visibility changed to hidden.
+ * I also changes the 'output' background color from black (done with CSS) to white.
+ */
+var customers = document.getElementById('getRandCustomers');
+ customers.onclick = function () {
+
+    document.getElementById("client").style.visibility = "hidden";
+    document.getElementById("output").style.backgroundColor = "white";
+}
 
 /**
  * I named this function "getRandCustomers". It is triggered when clicking on the namesake button.
@@ -129,26 +167,36 @@ function getRandCustomers() {
 
         <!--Inline CSS here-->
         <div style="border: 1px dotted powderblue">
-        <br>
+        <div style="background-color:#f2f2f2">
             <h4> ${profile.name.first} ${profile.name.last}</h4>
+            <hr>
             <p> ${profile.gender} - ${profile.nat}</p>
+            <hr>
             <img id=pic" src=${profile.picture.thumbnail} width="8%">
             
             <p> Age: ${profile.dob.age}</p>
             <hr>
+            </div>
+
+            <div style="background-color: #c9aaaa">
             
           <h4>Address info</h4>
-           
-            <p>${profile.location.city}</p>
-            <p>${profile.location.state}</p>
-            <p>${profile.location.postcode}</p>
-
+          <hr>
+            <p> City: ${profile.location.city}</p>
             <hr>
+            <p>State: ${profile.location.state}</p>
+            <hr>
+            <p>Eircode: ${profile.location.postcode}</p>
+        </div>
+
+           <div style="background-color:#c5e2dc">
             <h4>Contact Details</h4>
+            <hr>
             <p> Contact: ${profile.cell}</p>
+            <hr>
             <p> Email: ${profile.email}</p>
             <br><br> 
-           
+           </div>
             </div>
             `;
             });
@@ -174,26 +222,8 @@ function getTotalCost() {
     }
     document.getElementById('totalPrice').innerHTML = "€" + total;
 }
-//document.querySelectorAll('[id^="qnt_"]').forEach(item => {
-//  item.addEventListener('keyup', getCost);
-//});
-
-
-//IF INPUTE TYPE IS TEXT - done in class - SKETCH
-
-var total_items = 17;
-
-function CalculateItemsValue() {
-    var total = 0;
-    for (let i = 1; i <= total_items; i++) {
-        itemID = document.getElementById("qnt_" + i);
-        total = total + parseInt(itemID.value) * parseInt(itemID.getAttribute("data-price"));
-
-    }
-    document.getElementById('ItemsTotal').innerHTML = "$" + total;
-}
 document.querySelectorAll('[id^="qnt_"]').forEach(item => {
-    item.addEventListener('keyup', CalculateItemsValue);
+  item.addEventListener('click', getTotalCost);
 });
 
 //AUDIO FILE FUNCTION

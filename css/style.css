@@ -5,7 +5,7 @@ body {
     margin:20px;
 }
 /*Changing the font-family of all h1, h2 and p elements.*/
-h1, h2, p  {
+h1, h2  {
     font-family: cursive;
 }
 
@@ -20,26 +20,37 @@ button:hover {
 }
 
 /*  Set the margin-bottom to 0 to eliminate the gap between the jumbotron and my navbar.
-    Set the background-color using rgb and adding some opacity to it.
+    Set a background image for this class.
     Set the color for every text inside the jumbotron using hexadecimal.*/
 .jumbotron {
     margin:10px 0 0px 0;
-    background-color: rgb(0,0,0, 0.7);
+    background-image: url(../img/jumbotron.jpg);
+    background-size:auto;
     color: #fff;
+}
+
+/*Changing the h1 elements inside this class.*/
+.jumbotron h1{
+font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+font-size: 50px;
+font-style: italic;
 }
 
 /*Change the background-color of my navbar elements when I hover my mouse onto it - not active class.*/
 .nav-item a:hover:not(.active) {
-    background-color: rgb(182, 176, 176);
-}
-/*Change the background-color of my active item in the navbar*/
-.nav-item.active {
-    background-color: grey;
+    background-color: #FF3028;
 }
 
-/*Setting white solid border to all navbar elements.*/
+/*Change the background-color of my active item in the navbar*/
+.nav-item.active {
+    background-color: rgba(4, 247, 4, 0.8);
+}
+
+/*Setting a solid border to all navbar elements.
+  Setting a background-image as well.*/
 .navbar {
-    border: 1px solid white;
+    border: 1px solid black;
+    background-image: url(../img/wallpaper.png);
 }
 
 /*Setting a bit of padding for the items in the navbar and increasing the size of their font.*/
@@ -58,19 +69,23 @@ button:hover {
     Set the margin (top and bottom) to 10px to add some gap between this element and the previous and next divs.
     Setting a background color for this element (using the name of the color).
     Adding some padding to it.
-    Adding a border to this element.*/
+    Adding a border to this element.
+    Adding text-decoration to the headings that belong to this class.
+    Adding a background-image.*/
 .text_heading {
     text-align: center;
     margin: 10px 0;
     color: white;
     padding: 1px;
-    border: white solid 1px;
+    border: black solid 1px;
+    text-decoration: underline overline #FF3028;
+    background-image: url(../img/wallpaper.png);
 }
-
-/*Added some top and left-padding to this element in order to align it where I wanted it to be positioned.*/
-.pagination {
-    padding-top: 10px;
-    padding-left: 400px;
+/*Changing the font of all h1 elements inside this class.*/
+.text_heading h1 {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+    font-style: italic;
 }
 
 /*Setting width, height and margin properties to this element.*/
@@ -79,26 +94,31 @@ button:hover {
     height:70%;
     margin-left: 170px;
 }
+/*Added some top and left-padding to this element in order to align it where I wanted it to be positioned.*/
+.pagination {
+    padding-top: 10px;
+    padding-left: 400px;
+}
 
 /*  Setting width, height, margin, border and padding properties to this div element.
-    Setting a background color for this element (using rgb).
+    Setting a background color for this element (using hexadecimal).
     Setting border-radius to make the edges a bit round, instead of square.
     Setting the overflow as hidden instead of scroll.*/
 .login_box {
     width: 700px;
     height: 100%;
-    margin: auto;
+    margin: 50px auto;
     overflow: hidden;
     padding: 80px;
-    background: #1e3d37;
+    background-color: #1e3d37;
     border-radius: 25px;
-    border: 5px solid white;
+    border: 5px solid rgb(68, 192, 68);
 }
 
-/*Setting width, padding, margin and border properties to this specific button element.
-  Text color inside this button should be white.
-  I changed the cursor to default, so instead of having a small hand with a finger point up, I'll have the standard cursor.*/
-#large-button {
+/*Setting width, padding, margin and border properties to these specific button elements.
+  Text color inside the button should be white.
+  I changed the cursor to default, so instead of having a small hand with a finger pointing up, I'll have the standard cursor.*/
+#large-button, #large-button2 {
     width: 100%;
     color: white;
     padding: 15px;
@@ -126,7 +146,7 @@ button:hover {
 /* Setting a specific text color for every label element.
    Increasing the font-size and setting the margin to bring this label to the center of its div.*/
 label {
-    color: orangered;
+    color: #FF3028;
     font-size: 25px;
     margin-left: 210px;   
 }
@@ -146,6 +166,11 @@ label {
     color:red;
 }
 
+/*Setting margin-left to this element to make it more centralized.*/
+#eye {
+  margin-left: 250px;
+}
+
 /*Set both of these to display none, because the content within these elements should be hidden, since javaScript is being
   implemented to change this behaviour.
   Setting text color, aligning text to the center, increasing the font and establishing a bold effect.*/
@@ -157,16 +182,42 @@ font-size: 20px;
 font-weight: bold;
 }
 
+/*Setting the width for the elements of this class.*/
+.locker {
+  width: 50px;
+}
+
+/*Setting padding, margin and border properties to this specific button element.
+  Text color inside this button should be white.
+  I changed the cursor to 'grab', so instead of having a small hand with a finger pointing up, I'll have a small hand 'grabbing'.*/
+#getRandCustomers {
+    color: white;
+    padding: 15px;
+    margin-left: 450px;
+    border: none;
+    cursor:grab;
+}
+
 /*Setting a background-color for this div element by using the name of the color and adding some padding to it.*/
 #randomCustomers {
-    background-color: white;
+    background-color: black;
     padding: 20px;    
 }
 
-/*Setting border and padding properties to this div.*/
+/*Setting border and padding properties to this div.
+  Setting a background-color as well.*/
 #output {
-    border: powderblue 1px solid;
+    border: none;
     padding: 50px;
+    background-color: black;
+}
+
+/*Setting width and margin properties for this element.
+  Setting visibility to 'visible', since js is being used to change this behaviour to hidden.*/
+#client {
+  width: 50%;
+  visibility: visible;
+  margin-left: 250px;
 }
 
 /*Setting border and padding properties for the div menu.
@@ -178,11 +229,14 @@ font-weight: bold;
       background-color: black;
   }
 
-/*Increasing the font-size for this element and aligning it to the center of the div in which it is located*/
+/*Increasing the font-size for this element and aligning it to the center of the div in which it is located.
+  Also adding a background-image.*/
 #heading {
       font-size: 70px;
       text-align: center;
-  }
+      padding: 70px;
+      background-image: url(../img/menu.jpg);
+}
 
 /*Establishing a background-color for these divs as well as text color and border properties.*/
 .table_of_contents,
@@ -197,6 +251,17 @@ font-weight: bold;
       border: 1px solid black;
   }
 
+/*All <p> elements within these divs will be cursive.*/
+.table_of_contents,
+.table_of_contents1,
+.table_of_contents2,
+.table_of_contents3,
+.table_of_contents4,
+.table_of_contents5  p {
+
+     font-family: cursive;
+    
+  }
 /*Adding some padding to the heading, row and column elements of a table.*/
 th, tr, td {
 
@@ -218,12 +283,14 @@ tr:nth-child(even) {
       background-color: #f2f2f2
   }
 
-/*Setting a background-color for both of these div elements.*/
-#totalPrice, #vegetarianCost {
+/*Setting a background-color for these div elements.*/
+#totalStarters, #totalPizza, #totalDessert, #totalDrinks, #totalVeggie, #totalNonVeg, #vegetarianCost {
       background-color: rgb(22, 197, 22);
   }
 
-  /*PAGE 2*/
+  #totalPrice {
+    background-color: rgb(228, 206, 15);
+}
 
 /*Setting text color for the elements within this div.*/
 .content {
@@ -244,35 +311,54 @@ tr:nth-child(even) {
 
 /*Setting it to display none, because the content within this element should be hidden, since javaScript is being 
   implemented to change this behaviour.
-  Setting text color for the elements within this div.*/
-.history {
+  Setting text color for the elements within this div.
+  Adding some border properties and background-color.*/
+  .discover {
     display: none;
-    color:white;
+    color: white;
+    border: 2px  solid white;
+    border-radius: 3px;
+    background-color: rgb(25, 136, 25);
 }
 
 /*Setting some margin, border and padding to this element.
   Setting border-radius to make the edges a bit round, instead of square.*/
 #group {
   
-    margin-left: 200px;
+    margin-left: 250px;
     border-radius: 13px;
     padding-bottom: 20px;
  }
 
-/*Setting it to display none, because the content within this element should be hidden, since javaScript is being 
+ /*Setting it to display none, because the content within this element should be hidden, since javaScript is being 
   implemented to change this behaviour.
-  Setting text color for the elements within this div.*/
-.discover {
-    display: none;
-    color: white;
+  Setting text color for the elements within this div.
+  Adding some border properties and background-color.*/
+.history {
+  display: none;
+  color:white;
+  border: 2px  solid white;
+  border-radius: 3px;
+  background-color: salmon;
 }
 
 /*Setting it to display none, because the content within this element should be hidden, since javaScript is being 
-  implemented to change this behaviour.
-  Adding some margin-left so that this element is more centralized.*/
-#founders{
+  implemented to change this behaviour.*/
+.wall-of-history{
     display: none; 
-    margin-left: 150px;
+    width: 100%;
+}
+
+/*Setting padding, margin and border properties to this specific button element.
+  Text color inside this button should be white.
+  I changed the cursor to 'grab', so instead of having a small hand with a finger pointing up, I'll have a small hand 'grabbing'.*/
+#gal {
+    color: white;
+    padding: 13px;
+    margin-bottom: 30px;
+    margin-left: 520px;
+    border: none;
+    cursor:grab;
 }
 
 /*Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.*/
@@ -280,11 +366,21 @@ tr:nth-child(even) {
     display: none;
 }
 
-/*Setting some margin, border and padding to this element.*/
-#show {
-    
-    margin: 0 0 10px 600px;
-  }
+/*Setting the margin to make this element more centralized.*/
+#review_rate {
+  margin-left: 400px;
+  border-radius: 10px;
+}
+
+#getJSON {
+
+  margin-left: 100px;
+  margin-bottom: 20px;
+}
+
+#show {   
+    margin: 0 0 20px 600px;
+}
   
 /*Setting a background-color. Chose white so it would differ to the other half -different background for the other grid.
   All text inside this div class will be aligned to the center.
