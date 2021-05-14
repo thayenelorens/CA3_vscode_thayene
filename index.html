@@ -12,8 +12,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-    <!-- Font Awesome 4.7.0 - For the icons-->
+    <!-- Font Awesome 4.7.0 - For icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--Google fonts link - Bahiana-->
+    <link href='https://fonts.googleapis.com/css?family=Bahiana' rel='stylesheet'>
 
     <!-- My CSS file-->
     <link rel="stylesheet" type=text/css href="css/style.css">
@@ -34,23 +37,39 @@
         <!-- Using Bootstrap 4 jumbotron-->
         <div class="jumbotron">
             <h1>MAMMA MIA PIZZERIA</h1>
-            <p><i>Making the finest pizza since 1857</i></p>
+            <p><i>Making the finest pizza since 1957</i></p>
         </div>
         <!--End of jumbotron-->
 
         <!--Using Bootstrap to insert a navigation bar.-->
-        <!--Lines 37-48 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
+        <!--Lines xx have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <!--Home will look active in this page.-->
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
+              
+                <!--Lines 53-67 have been sourced from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar-->
+                <!--I mixed two different types of navbars-->
+                <div class="dropdown">
+                     <!--Home will look active in this page.-->
+                    <li class="nav-item active">
+                    <button id="drop" class="dropbtn">Home 
+                      <i class="fa fa-caret-down"></i>
+                    </button></li>
+                    <div id="down" class="dropdown-content">
+                        <li class="nav-item">
+                      <a class="nav-link" href="#login_box">Staff Login</a></li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="#randomCustomers">Customers</a></li>
+                      <li class="nav-item">
+                      <a class="nav-link" href="#menu">Menu</a></li>
+                    </li> 
+                    </div>
+                  </div> 
+                  <li class="nav-item">
                     <a class="nav-link" href="page2.html">Page 2</a>
-                </li>
             </ul>
         </nav>
+        
+        <br><br>
         <!--End of navbar-->
 
         <!--Welcome message-->
@@ -81,7 +100,7 @@
         <!--LOGIN-->
 
         <!--I created this div for the staff password validator-->
-        <div class="login_box">
+        <div id="login_box">
 
             <div class="username">
                 <!--The block of code below (lines 68-74) calls two methods that change the attribute of an image-->
@@ -186,11 +205,12 @@
                     <!--Table headers-->
                     <tr>
                         <th id="starters">
-                            <h1>STARTERS</h1>
+                            <h1>Starters</h1>
                         </th>
                         <th>
                             <h1><span class="badge badge-secondary">QUANTITY</span></h1>
                         </th>
+                        <th>&nbsp;</th>
                         <th>
                             <h1><span class="badge badge-secondary">PRICE</span></h1>
                         </th>
@@ -204,8 +224,9 @@
                             <p>Fire-baked baguette topped with garlic, olive oil and butter. Serverd with prosciutto on
                                 the side.</p>
                         </td>
-                        <td><input name="starter_1" type="number" id="starter_1" value="0" min="0" size="3"
+                        <td><input name="item_1" type="number" class="starters" id="item_1" value="0" min="0" size="3"
                                 data-price="7.50"></td>
+                        <td>&nbsp;</td>
                         <td>
                             <h1><span class="badge badge-dark">€7.50</span></h1>
                         </td>
@@ -218,8 +239,9 @@
                             <p>Chicken wings served with our finest dips: <i>barbecue, hot sauce and sweet chilli
                                     sauce</i></p>
                         </td>
-                        <td><input name="starter_2" type="number" id="starter_2" value="0" min="0" size="3"
+                        <td><input name="item_2" type="number" class="starters" id="item_2" value="0" min="0" size="3"
                                 data-price="6.50"></td>
+                        <td>&nbsp;</td>
                         <td>
                             <h1><span class="badge badge-dark">€6.50</span></h1>
                         </td>
@@ -231,8 +253,9 @@
                             <h1><b>Today's Soup</b><span class="badge badge-warning">Seasonal</span></h1>
                             <p>Ask the waiter</p>
                         </td>
-                        <td><input name="starter_3" type="number" id="starter_3" value="0" min="0" size="3"
+                        <td><input name="item_3" type="number" class="starters" id="item_3" value="0" min="0" size="3"
                                 data-price="5.90"></td>
+                        <td>&nbsp;</td>
                         <td>
                             <h1><span class="badge badge-dark">€5.90</span></h1>
                         </td>
@@ -244,8 +267,9 @@
                             <h1><b>Fried Calamari</b><span class="badge badge-success">For two</span></h1>
                             <p>Fried calamari served with a side salad and garlic mayo dip</p>
                         </td>
-                        <td><input name="starter_4" type="number" id="starter_4" value="0" min="0" size="3"
+                        <td><input name="item_4" type="number" class="starters" id="item_4" value="0" min="0" size="3"
                                 data-price="6.50"></td>
+                        <td>&nbsp;</td>
                         <td>
                             <h1><span class="badge badge-dark">€6.50</span></h1>
                         </td>
@@ -256,10 +280,11 @@
             <div id="table_of_contents2">
                 <tr>
                     <th id="pizza">
-                        <h1 id="table_heading">PIZZA</h1>
+                        <h1 id="table_heading">Pizza</h1>
                     </th>
-                    <th></th>
-                    <th></th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
 
@@ -268,8 +293,10 @@
                         <h1><b>Formaggio</b></h1>
                         <p>Four cheeses (mozzarella, parmesan, pecorino, cashel blue cheese)</p>
                     </td>
-                    <td><input name="main_1" type="number" id="main_1" value="0" min="0" size="3" data-price="13.50">
+                    <td><input name="item_5" type="number" class="mains" id="item_5" value="0" min="0" size="3"
+                            data-price="13.50">
                     </td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€13.50</span></h1>
                     </td>
@@ -282,8 +309,10 @@
                         <p>Fresh tomatoes, mozzarella, parmesan, basil, bacon, calabreza, onions and extra virgin oil
                         </p>
                     </td>
-                    <td><input name="main_2" type="number" id="main_2" value="0" min="0" size="3" data-price="11.50">
+                    <td><input name="item_6" type="number" class="mains" id="item_6" value="0" min="0" size="3"
+                            data-price="11.50">
                     </td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€11.50</span></h1>
                     </td>
@@ -296,8 +325,10 @@
                         <p>Fresh tomatoes, mozzarella, bacon, prosciutto, scamorza, mushrooms, garlic, oregano oil and
                             fresh basil</p>
                     </td>
-                    <td><input name="main_3" type="number" id="main_3" value="0" min="0" size="3" data-price="18.00">
+                    <td><input name="item_7" type="number" class="mains" id="item_7" value="0" min="0" size="3"
+                            data-price="18.00">
                     </td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€18.00</span></h1>
                     </td>
@@ -310,8 +341,10 @@
                         <p>Fresh tomatoes, mozzarella, hot pepperoni, hot sausage, beef, parmesan, basil and extra
                             virgin oil</p>
                     </td>
-                    <td><input name="main_4" type="number" id="main_4" value="0" min="0" size="3" data-price="15.50">
+                    <td><input name="item_8" type="number" class="mains" id="item_8" value="0" min="0" size="3"
+                            data-price="15.50">
                     </td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€15.50</span></h1>
                     </td>
@@ -324,8 +357,9 @@
                     <th id="desserts">
                         <h1>DESSERTS</h1>
                     </th>
-                    <th></th>
-                    <th></th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
 
@@ -334,8 +368,9 @@
                         <h1><b>Strawberry Cheesecake</b><span class="badge badge-warning">Popular</span></h1>
                         <p>Topped with fresh strawberries</p>
                     </td>
-                    <td><input name="dessert_1" type="number" id="dessert_1" value="0" min="0" size="3"
+                    <td><input name="item_9" type="number" class="desserts" id="item_9" value="0" min="0" size="3"
                             data-price="7.00"></td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€7.00</span></h1>
                     </td>
@@ -348,8 +383,9 @@
                         <p>Hot chocolate brownie filled with chocolate sauce. Served with vanilla ice cream on the side
                         </p>
                     </td>
-                    <td><input name="dessert_2" type="number" id="dessert_2" value="0" min="0" size="3"
+                    <td><input name="item_10" type="number" class="desserts" id="item_10" value="0" min="0" size="3"
                             data-price="9.50"></td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€9.50</span></h1>
                     </td>
@@ -362,8 +398,9 @@
                         <p>Two scoops of our homemade vanilla ice cream.</p>
                         <p><i>Sauces: chocolate, strawberry or raspberries</i></p>
                     </td>
-                    <td><input name="dessert_3" type="number" id="dessert_3" value="0" min="0" size="3"
+                    <td><input name="item_11" type="number" class="desserts" id="item_11" value="0" min="0" size="3"
                             data-price="9.50"></td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€9.50</span></h1>
                     </td>
@@ -377,8 +414,9 @@
                     <th id="drinks">
                         <h1>DRINKS</h1>
                     </th>
-                    <th></th>
-                    <th></th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
 
@@ -387,8 +425,10 @@
                         <h1><b>300 ml Soft Drink cans</b></h1>
                         <p>Coke, club orange, sprite and Guaraná</p>
                     </td>
-                    <td><input name="drinks_1" type="number" id="drinks_1" value="0" min="0" size="3" data-price="1.50">
+                    <td><input name="item_12" type="number" class="drinks" id="item_12" value="0" min="0" size="3"
+                            data-price="1.50">
                     </td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€1.50</span></h1>
                     </td>
@@ -400,8 +440,10 @@
                         <h1><b>500 ml Bottles of water</b></h1>
                         <p>San Pellegrino sparkling and Tipperary still water</p>
                     </td>
-                    <td><input name="drinks_2" type="number" id="drinks_2" value="0" min="0" size="3" data-price="2.50">
+                    <td><input name="item_13" type="number" class="drinks" id="item_13" value="0" min="0" size="3"
+                            data-price="2.50">
                     </td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€2.50</span></h1>
                     </td>
@@ -413,8 +455,9 @@
                         <h1><b>Cocktails</b></h1>
                         <p>Pornstar martini, Flat white martini, piña colada and non-alcoholic fruit cocktail</p>
                     </td>
-                    <td><input name="drinks_3" type="number" id="drinks_3" value="0" min="0" size="3"
+                    <td><input name="item_14" type="number" class="drinks" id="item_14" value="0" min="0" size="3"
                             data-price="12.50"></td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€12.50</span></h1>
                     </td>
@@ -427,8 +470,9 @@
                     <th id="vegetarian">
                         <h1>VEGETARIAN</h1>
                     </th>
-                    <th></th>
-                    <th></th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
 
@@ -438,8 +482,9 @@
                         <h1><b>Margherita</b></h1>
                         <p>Fresh tomatoes, fresh mozzarella, fresh basil, bacon</p>
                     </td>
-                    <td><input name="veggie_1" type="number" id="veggie_1" value="0" min="0" size="3"
+                    <td><input name="item_15" type="number" class="veggie" id="item_15" value="0" min="0" size="3"
                             data-price="10.00"></td>
+                    <td>&nbsp;</td>
 
                     <td>
                         <h1><span class="badge badge-dark">€10.00</span></h1>
@@ -453,8 +498,9 @@
                         <p>Tomato sauce, rosted aubergine, red onion, cherry tomatoes, garlic oil and balsamic vinegar
                         </p>
                     </td>
-                    <td><input name="veggie_2" type="number" id="veggie_2" value="0" min="0" size="3"
+                    <td><input name="item_16" type="number" class="veggie" id="item_16" value="0" min="0" size="3"
                             data-price="15.00"></td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€15.00</span></h1>
                     </td>
@@ -466,8 +512,9 @@
                         <h1><b>Chicken Caesar Salad</b></h1>
                         <p>Chicken, anchovies, croutons, free-range egg, Caesar dressing</p>
                     </td>
-                    <td><input name="veggie_3" type="number" id="veggie_3" value="0" min="0" size="3"
+                    <td><input name="item_17" type="number" class="veggie" id="item_17" value="0" min="0" size="3"
                             data-price="14.75"></td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€14.75</span></h1>
                     </td>
@@ -481,7 +528,9 @@
                             coconut cream, and cashews.
                             The crunchy crust is made with rolled oats, almonds, and coconut oil</p>
                     </td>
-                    <td><input name="veggie_4" type="number" id="veggie_4" value="0" data-price="14.50"></td>
+                    <td><input name="item_18" type="number" class="veggie" id="item_18" value="0" data-price="14.50">
+                    </td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€14.50</span></h1>
                     </td>
@@ -492,8 +541,10 @@
                         <h1><b>Bruschetta</b></h1>
                         <p>Fire-baked flat bread filled with cherry tomatoes, mozzarella and olive oil</p>
                     </td>
-                    <td><input name="veggie_5" type="number" id="veggie_5" value="0" min="0" size="3" data-price="6.50">
+                    <td><input name="item_19" type="number" class="veggie" id="item_19" value="0" min="0" size="3"
+                            data-price="6.50">
                     </td>
+                    <td>&nbsp;</td>
                     <td>
                         <h1><span class="badge badge-dark">€6.50</span></h1>
                     </td>
@@ -505,6 +556,18 @@
 
                 <tr>
                     <td>&nbsp;</td>
+                    <th>
+                        <h1>Bill</h1>
+                    </th>
+                    <th>&nbsp;</h1>
+                    </th>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
                     <td>
                         <h3>Starters</h3>
                     </td>
@@ -513,6 +576,8 @@
                             <div id="totalStarters">€0</div>
                         </h2>
                     </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
 
                 <tr>
@@ -525,6 +590,8 @@
                             <div id="totalPizza">€0</div>
                         </h2>
                     </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
 
                 <tr>
@@ -537,6 +604,8 @@
                             <div id="totalDessert">€0</div>
                         </h2>
                     </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
 
                 <tr>
@@ -549,6 +618,8 @@
                             <div id="totalDrinks">€0</div>
                         </h2>
                     </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
 
                 <tr>
@@ -562,7 +633,8 @@
                             <div id="totalVeggie">€0</div>
                         </h2>
                     </td>
-
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
 
                 <tr>
@@ -570,19 +642,28 @@
                     <td>
                         <h3>Non-vegetarian cost</h3>
                     </td>
-                   <td><h2><div id="totalNonVeg">€0</div></h2></td>
+                    <td>
+                        <h2>
+                            <div id="totalNonVeg">€0</div>
+                        </h2>
+                    </td>
+                    <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                 </tr>
 
                 <tr>
                     <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>
-                        <h1><b>Total:</b></h1>
+                        <h1 class="total"><b>Total:</b></h1>
                     </td>
                     <td>
                         <h2>
-                            <div id="totalPrice">€0</div>
+                            <div class="total" id="totalPrice">€0</div>
                         </h2>
                     </td>
+
+                    <td>&nbsp;</td>
                 </tr>
                 </table>
                 <!--End of table-->
@@ -604,141 +685,6 @@
         <br><br>
         <!--End of pagination-->
         <!--End-->
-        <script>
-            var starters_total = 4;
-
-            function Starters() {
-
-                var total = 0.0;
-
-                for (let i = 1; i <= starters_total; i++) {
-                    items = document.getElementById("starter_" + i);
-
-                    total = total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
-                }
-
-                document.getElementById('totalStarters').innerHTML = "€" + total;
-            }
-
-            document.querySelectorAll('[id^="starter_"]').forEach(starter => {
-                starter.addEventListener('change', Starters);
-
-            });
-        </script>
-
-        <script>
-            var main_total = 4;
-
-            function Main() {
-
-                var total = 0.0;
-
-                for (let i = 1; i <= main_total; i++) {
-                    pizza = document.getElementById("main_" + i);
-
-                    total = total + parseInt(pizza.value) * parseFloat(pizza.getAttribute("data-price"));
-                }
-
-                document.getElementById('totalPizza').innerHTML = "€" + total;
-            }
-
-            document.querySelectorAll('[id^="main_"]').forEach(main => {
-                main.addEventListener('change', Main);
-
-            });
-        </script>
-
-        <script>
-            var dessert_total = 3;
-
-            function Dessert() {
-
-                var total = 0.0;
-
-                for (let i = 1; i <= dessert_total; i++) {
-                    sweets = document.getElementById("dessert_" + i);
-
-                    total = total + parseInt(sweets.value) * parseFloat(sweets.getAttribute("data-price"));
-                }
-
-                document.getElementById('totalDessert').innerHTML = "€" + total;
-            }
-
-            document.querySelectorAll('[id^="dessert_"]').forEach(main => {
-                main.addEventListener('change', Dessert);
-
-            });
-        </script>
-
-        <script>
-            var drinks_total = 3;
-
-            function Drinks() {
-
-                var total = 0.0;
-
-                for (let i = 1; i <= drinks_total; i++) {
-                    drinks = document.getElementById("drinks_" + i);
-
-                    total = total + parseInt(drinks.value) * parseFloat(drinks.getAttribute("data-price"));
-                }
-
-                document.getElementById('totalDrinks').innerHTML = "€" + total;
-            }
-
-            document.querySelectorAll('[id^="drinks_"]').forEach(drinks => {
-                drinks.addEventListener('change', Drinks);
-
-            });
-        </script>
-        <script>
-            var veg_total = 5;
-
-            function Vegetarian() {
-
-                var total = 0.0;
-
-                for (let i = 1; i <= veg_total; i++) {
-                    vegetarian = document.getElementById("veggie_" + i);
-
-                    total = total + parseInt(vegetarian.value) * parseFloat(vegetarian.getAttribute("data-price"));
-                }
-
-                document.getElementById('totalVeggie').innerHTML = "€" + total;
-            }
-
-            document.querySelectorAll('[id^="veggie_"]').forEach(drinks => {
-                drinks.addEventListener('change', Vegetarian);
-
-            });
-        </script>
-
-        <!--Mudar isso-->
-        <script>
-            var non_veggie = 14;
-
-            function Non_Vegetarian() {
-
-                var total = 0.0;
-
-                for (let i = 1; i <= non_veggie; i++) {
-                   
-                    non_veg = document.getElementById("starter_" + i);
-
-                    if (non_veg !== Drinks && non_veg !==Vegetarian && non_veg!==Dessert) {
-           
-                        alert("No such item - ");
-                    }
-                    total = total + parseInt(non_veg.value) * parseFloat(non_veg.getAttribute("data-price"));
-                }
-
-                document.getElementById('totalNonVeg').innerHTML = "€" + total;
-            }
-
-            
-
-        
-        </script>
 </body>
 
 </html>

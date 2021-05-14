@@ -21,6 +21,8 @@ function login2() {
     document.getElementById('myImage').src = 'img/Claire.jpg';
 }
 
+
+
 //LOGIN CRITERIA - MESSAGE BOX
 
 //First I declared a variable to store the 'pword' element - related to the input field for the password.
@@ -159,7 +161,7 @@ function getRandCustomers() {
         .then((res) => res.json())
         .then((data) => {
             var customers = data.results;
-            var output = '<h1>Customers</h1>';
+            var output = '<h1 style="font-size: 80px;">Customers</h1>';
 
             customers.forEach(function (profile) {
 
@@ -168,7 +170,7 @@ function getRandCustomers() {
         <!--Inline CSS here-->
         <div style="border: 1px dotted powderblue">
         <div style="background-color:#f2f2f2">
-            <h4> ${profile.name.first} ${profile.name.last}</h4>
+            <h1> ${profile.name.first} ${profile.name.last}</h1>
             <hr>
             <p> ${profile.gender} - ${profile.nat}</p>
             <hr>
@@ -180,7 +182,7 @@ function getRandCustomers() {
 
             <div style="background-color: #c9aaaa">
             
-          <h4>Address info</h4>
+          <h1>Address info</h1>
           <hr>
             <p> City: ${profile.location.city}</p>
             <hr>
@@ -190,7 +192,7 @@ function getRandCustomers() {
         </div>
 
            <div style="background-color:#c5e2dc">
-            <h4>Contact Details</h4>
+            <h1>Contact Details</h1>
             <hr>
             <p> Contact: ${profile.cell}</p>
             <hr>
@@ -206,25 +208,57 @@ function getRandCustomers() {
 
 //MENU
 
-var total_items = 17;
 
-function getTotalCost() {
+function Bill_Calculator(){
+    
+    var amount = 19;
+    var starters_total = 0;
+    var mains_total = 0;
+    var desserts_total =0;
+    var drinks_total = 0;
+    var veggie_total =0;
+    var nonVeg_total =0;
+    var final_total = 0;
 
-    var total = 0.0;
-    var checkbox;
-    for (let i = 1; i <= total_items; i++) {
-        checkbox = document.getElementById("opt_" + i);
-        if (checkbox.checked == true) {
-            total = total + parseInt(checkbox.value) * parseFloat(checkbox.getAttribute("data-price"));
-            //parseInt + parseFloat??
+
+        for (let i = 1; i <= amount; i++) {
+           items =document.getElementById("item_" + i);
+
+           if(items.className == "starters"){
+           starters_total = starters_total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
+           }
+           else if(items.className =="mains"){
+            mains_total = mains_total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
         }
+        else if(items.className =="desserts"){
+            desserts_total = desserts_total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
+        }
+        else if(items.className =="drinks"){
+            drinks_total = drinks_total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
+        }
+        else if(items.className =="veggie"){
+            veggie_total = veggie_total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
+        }
+       
+        nonVeg_total = starters_total + mains_total;
+
+        final_total = starters_total + mains_total + desserts_total + drinks_total + veggie_total;
+        }
+        document.getElementById('totalStarters').innerHTML = "€" + starters_total;
+        document.getElementById('totalPizza').innerHTML = "€" + mains_total;
+        document.getElementById('totalDessert').innerHTML = "€" + desserts_total;
+        document.getElementById('totalDrinks').innerHTML = "€" + drinks_total;
+        document.getElementById('totalVeggie').innerHTML = "€" + veggie_total;
+        document.getElementById('totalNonVeg').innerHTML = "€" + nonVeg_total;
+        document.getElementById('totalPrice').innerHTML = "€" + final_total;
 
     }
-    document.getElementById('totalPrice').innerHTML = "€" + total;
-}
-document.querySelectorAll('[id^="qnt_"]').forEach(item => {
-  item.addEventListener('click', getTotalCost);
-});
+
+    document.querySelectorAll('[id^="item_"]').forEach(item => {
+        item.addEventListener('change', Bill_Calculator);
+    });
+
+var total_items = 17;
 
 //AUDIO FILE FUNCTION
 

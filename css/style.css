@@ -3,10 +3,12 @@ Selected a bit of margin to the body of this document.*/
 body {
     background-image: url(../img/body.jpg);
     margin:20px;
+    font-family: 'Bahiana';
 }
+
 /*Changing the font-family of all h1, h2 and p elements.*/
-h1, h2  {
-    font-family: cursive;
+h1, h2, h3, p  {
+  font-family: 'Bahiana';  
 }
 
 /*By hovering any button element the opacity should change.*/
@@ -31,19 +33,26 @@ button:hover {
 
 /*Changing the h1 elements inside this class.*/
 .jumbotron h1{
-font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-font-size: 50px;
-font-style: italic;
+font-size: 100px;
+text-align: left;
+text-decoration:underline overline #FF3028;
+}
+.jumbotron p{
+  font-size: 25px;
 }
 
 /*Change the background-color of my navbar elements when I hover my mouse onto it - not active class.*/
 .nav-item a:hover:not(.active) {
     background-color: #FF3028;
 }
+.dropdown:hover .dropbtn {
+  background-color: #FF3028;
+}
 
 /*Change the background-color of my active item in the navbar*/
 .nav-item.active {
     background-color: rgba(4, 247, 4, 0.8);
+    text-decoration:underline #fff;
 }
 
 /*Setting a solid border to all navbar elements.
@@ -56,13 +65,31 @@ font-style: italic;
 /*Setting a bit of padding for the items in the navbar and increasing the size of their font.*/
 .nav-item {
     padding: 1px;
-    font-size: 20px;
+    font-size: 30px;
 }
 
 /*Setting padding and margin properties for the <li> elements of the navbar.*/
 .navbar-nav>li {
     padding: 0 20px;
     margin: 0 15px;
+}
+
+.dropdown .dropbtn {
+  font-size: 30px;  
+  border: none;
+  color: white;
+  padding: 6px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown-content {
+  display: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /*  Aligning my page heading to the center of the page.
@@ -76,16 +103,15 @@ font-style: italic;
     text-align: center;
     margin: 10px 0;
     color: white;
-    padding: 1px;
+    padding-top: 20px;
     border: black solid 1px;
     text-decoration: underline overline #FF3028;
     background-image: url(../img/wallpaper.png);
 }
 /*Changing the font of all h1 elements inside this class.*/
 .text_heading h1 {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 50px;
-    font-style: italic;
+  font-family: 'Bahiana';
+  font-size: 60px;
 }
 
 /*Setting width, height and margin properties to this element.*/
@@ -98,13 +124,14 @@ font-style: italic;
 .pagination {
     padding-top: 10px;
     padding-left: 400px;
+    font-size: 30px;
 }
 
 /*  Setting width, height, margin, border and padding properties to this div element.
     Setting a background color for this element (using hexadecimal).
     Setting border-radius to make the edges a bit round, instead of square.
     Setting the overflow as hidden instead of scroll.*/
-.login_box {
+#login_box {
     width: 700px;
     height: 100%;
     margin: 50px auto;
@@ -115,16 +142,21 @@ font-style: italic;
     border: 5px solid rgb(68, 192, 68);
 }
 
+.btn {
+  font-size: 30px;
+}
+
 /*Setting width, padding, margin and border properties to these specific button elements.
   Text color inside the button should be white.
   I changed the cursor to default, so instead of having a small hand with a finger pointing up, I'll have the standard cursor.*/
-#large-button, #large-button2 {
+ #large-button, #large-button2 {
     width: 100%;
     color: white;
     padding: 15px;
     margin: auto;
     border: none;
     cursor:default;
+    font-size: 30px;
 }
 
 /*Setting some padding to this div element.
@@ -141,13 +173,14 @@ font-style: italic;
     border: 1px solid whitesmoke;
     color:bisque;
     display: none;
+    font-size: 22px;
 }
 
 /* Setting a specific text color for every label element.
    Increasing the font-size and setting the margin to bring this label to the center of its div.*/
 label {
     color: #FF3028;
-    font-size: 25px;
+    font-size: 50px;
     margin-left: 210px;   
 }
 
@@ -159,11 +192,15 @@ label {
     padding: 10px 10px;
     border: 2px solid white;
     border-radius: 3px;
+    font-size: 25px;
+    font-family: cursive;
 }
 
 /*Changing text color of password input field placeholder.*/
 #pword::placeholder {
-    color:red;
+    color:#FF3028;
+    font-size: 25px;
+    font-family: "Bahiana";
 }
 
 /*Setting margin-left to this element to make it more centralized.*/
@@ -175,16 +212,16 @@ label {
   implemented to change this behaviour.
   Setting text color, aligning text to the center, increasing the font and establishing a bold effect.*/
 #invalid, #valid {
-color: red;
+color: #FF3028;
 display: none;
 text-align: center;
-font-size: 20px;
+font-size: 30px;
 font-weight: bold;
 }
 
 /*Setting the width for the elements of this class.*/
 .locker {
-  width: 50px;
+  width: 40px;
 }
 
 /*Setting padding, margin and border properties to this specific button element.
@@ -232,7 +269,8 @@ font-weight: bold;
 /*Increasing the font-size for this element and aligning it to the center of the div in which it is located.
   Also adding a background-image.*/
 #heading {
-      font-size: 70px;
+      font-family: 'Bahiana';
+      font-size: 150px;
       text-align: center;
       padding: 70px;
       background-image: url(../img/menu.jpg);
@@ -259,13 +297,33 @@ font-weight: bold;
 .table_of_contents4,
 .table_of_contents5  p {
 
-     font-family: cursive;
+  font-size: 32px;
     
+}
+
+.badge {
+    font-size: 37px;
   }
+
+#starters h1, #pizza h1, #desserts h1, #drinks h1, #vegetarian h1 {
+
+    font-size: 80px;
+  }
+  
+table h3, table h2{
+    font-size: 35px;
+  }
+
+.total {
+
+    font-size: 65px;
+}
+
 /*Adding some padding to the heading, row and column elements of a table.*/
 th, tr, td {
 
       padding: 10px 25px;
+   
   }
 
 /*Changing the background-color of all heading elements.
@@ -275,6 +333,7 @@ th {
       background-color: black;
       color: white;
       padding: 30px;
+  
   }
 
 /*The :nth-child(even) selects all the even rows of this table.
@@ -286,6 +345,7 @@ tr:nth-child(even) {
 /*Setting a background-color for these div elements.*/
 #totalStarters, #totalPizza, #totalDessert, #totalDrinks, #totalVeggie, #totalNonVeg, #vegetarianCost {
       background-color: rgb(22, 197, 22);
+      font-size: 35px;
   }
 
   #totalPrice {
@@ -293,8 +353,9 @@ tr:nth-child(even) {
 }
 
 /*Setting text color for the elements within this div.*/
-.content {
+.content  {
     color: white;
+    font-size: 30px;
 }
 
 /*Setting width, border and padding properties to this element.
@@ -349,6 +410,12 @@ tr:nth-child(even) {
     width: 100%;
 }
 
+#animation {
+  background-image: url(../img/pizza.gif);
+  background-repeat: no-repeat;
+  padding:200px;
+}
+
 /*Setting padding, margin and border properties to this specific button element.
   Text color inside this button should be white.
   I changed the cursor to 'grab', so instead of having a small hand with a finger pointing up, I'll have a small hand 'grabbing'.*/
@@ -399,10 +466,22 @@ Added some padding-top to align the content within this div to the content from 
     display: none;    
     padding-top: 24px;
   }
+.reviews h1 {
+  font-size: 70px;
+}
 
 /*Added some padding to this element.
 Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.*/
 #panel1 {
     padding: 50px;
     display: none;
+    font-size: 35px;;
+  }
+.jumbotron h2 {
+  font-size: 70px;
+  text-decoration:overline underline #FF3028;
+}
+#github {
+    background-color: black;
+    color:white;
   }
