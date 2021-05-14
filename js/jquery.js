@@ -89,7 +89,7 @@ $(document).ready(function () {
  */
 $(document).ready(function () {
   $("#gal").click(function () {
-    $(".gallery").fadeIn(4000);
+    $("#gallery").fadeIn(4000);
   });
 });
 

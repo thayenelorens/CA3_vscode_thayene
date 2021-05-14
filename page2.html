@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
-  <!--CSS comes here-->
+  <!-- My CSS file-->
   <link rel="stylesheet" type=text/css href="css/style.css">
 
   <!--Google fonts link - Bahiana-->
@@ -25,11 +25,11 @@
   <!-- My JavaScript file - I opted to put this link in the head section by using the attribute "defer"-->
   <script defer src="js/script.js"></script>
 
-  <!-- My JQuery file-->
+  <!-- My JQuery file - I opted to put this link in the head section by using the attribute "defer"-->
   <script defer src="js/jquery.js"></script>
 
   <!--My home page title-->
-  <title>Mamma Mia</title>
+  <title>About us</title>
 
 </head>
 
@@ -39,8 +39,8 @@
   <!--This div embodies all my other divs-->
   <div class="container">
 
-    <!--Using Bootstrap to insert a navigation bar.-->
-    <!--Lines 41-50 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_fixed_sticky&stacked=h-->
+    <!--Using Bootstrap 4 to insert a navigation bar.-->
+    <!--Lines 44-54 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_fixed_sticky&stacked=h-->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
       <ul class="navbar-nav">
         <li class="nav-item">
@@ -79,7 +79,7 @@
           in 1957.</p>
         <p>What started as a small business is now one of the biggest chains in the country with its 17 branches
           spreaded in national territory.
-          In <i>Mamma Mia</i>> we are proud of our homemade dough and sauces that are a family secret recipe that has
+          In <i>Mamma Mia </i> we are proud of our homemade dough and sauces that are a family secret recipe that has
           been passed
           over all these years.
         </p>
@@ -114,8 +114,9 @@
 
       <!--This button triggers a jQuery function that changes the behaviour of the div below-->
       <button class="btn btn-primary" id="large-button2">View</button><br><br>
+
       <!--Using Bootstrap to create a gallery.-->
-      <!--Lines 111-141 have been sourced from:https://mdbootstrap.com/docs/standard/extended/gallery/#!-->
+      <!--Lines 120-144 have been sourced from:https://mdbootstrap.com/docs/standard/extended/gallery/#!-->
       <div class="row">
 
         <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
@@ -148,36 +149,39 @@
         <h1>About the owners</h1><br>
       </div>
 
-
       <!--Using Bootstrap to create a basic 50/50 grid layout-->
       <div class="row">
         <div class="col-sm-6">
           <img src="img/twins.jpeg" alt="GIF" title="GIF">
-      
         </div>
         <!--End of the left column-->
 
         <div class="col-sm-6">
           <br>
-          <button id="btn1" class="btn btn-warning">Animate</button>
-          <button  id="btn2" class="btn btn-warning">Reset</button>
+          <!--These buttons trigger a jQuery function that changes the behaviour of the background image below-->
+          <button id="btn1" class="btn btn-warning">Click me</button>
+          <button id="btn2" class="btn btn-warning">Reset</button>
           <br><br>
+          <!--There's only a background image within this div-->
           <div id="animation">
-        </div>
-        <button id="btn3" class="btn btn-success">Animate</button>
-        <button id="btn4" class="btn btn-success">Reset</button>
-        <br><br>
-          <div id="text" style="border:1px solid black">
+          </div>
+
+          <!--These buttons trigger a jQuery function that changes the behaviour of the border of the div below-->
+          <button id="btn3" class="btn btn-success">Click me</button>
+          <button id="btn4" class="btn btn-success">Reset</button>
+          <br><br>
+          <div id="text">
             <p>Thayene Lorens and her twin sister are nowadays the owners of Mamma Mia pizzeria. They have
               kept their family secret for decades and have become very known in this Food & Beverage business.
-            They intend to take their brand to other countries, specially to North America.
-          Their advice for future generations is to always believe in oneself.</p>
-          <br><br>
+              They intend to take their brand to other countries, specially to North America.
+              Their advice for future generations is to always believe in oneself.</p>
+            <img src="img/disney.jpg" width="70%">
+            <br>
             <h3>Don't stop believing!</h3>
-         
+
           </div>
         </div>
-      <!--End of left column-->
+        <!--End of right column-->
       </div>
       <!--End of 50/50 grid-->
 
@@ -191,7 +195,7 @@
         <!--This button triggers a jQuery function that changes the behaviour of the "gallery" below-->
         <button class="btn btn-danger" id="gal">Gallery</button>
 
-        <div class="gallery">
+        <div id="gallery">
           <!--Using Bootstrap to create a gallery.-->
           <!--Lines 118-209 have been sourced from:https://mdbootstrap.com/docs/standard/extended/gallery/#!-->
           <div class="row">
@@ -202,8 +206,7 @@
 
               <img src="img/tofu-cheesecake.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Tofu cheesecake" />
 
-              <img src="img/garlic-bread.jpg" class="w-100 shadow-1-strong rounded mb-4"
-              alt="garlic bread"/>
+              <img src="img/garlic-bread.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="garlic bread" />
 
             </div>
 
@@ -215,7 +218,7 @@
                 title="petit gateau" />
 
               <img src="img/bruschetta.jpg" class="w-100 shadow-1-strong rounded mb-4" alt="Bruschetta"
-                title="bruschetta" /> 
+                title="bruschetta" />
 
             </div>
 
@@ -244,7 +247,7 @@
       <img id="review_rate" src="img/review-rate.jpg">
       <hr>
       <!--This button triggers a jSON function that displays a short array with info from 'customers'
-      that I created. It is displayed in the div "people below."-->
+      that I've created. It is displayed in the div "people" below."-->
       <button class="btn btn-secondary" id="getJSON">Customers</button>
       <!--This button triggers a jQuery function that changes the behaviour of the "reviews" section below-->
       <button class="btn btn-secondary" id="show">Reviews</button>
@@ -257,6 +260,7 @@
           <div class="row">
             <div id="people" class="col-sm-6">
             </div>
+            <!--End of left column-->
 
             <div class="col-sm-6">
               <div class="reviews">
@@ -282,20 +286,18 @@
                 <br><br>
               </div>
             </div>
+            <!--End of right column-->
           </div>
+          <!--End of 50/50 grid-->
         </div>
         <!--End of the 50/50 grid-->
       </div>
-
-      <!--<img src="img/review-rate.jpg" width= 50%>-->
-
 
       <!-- Using Bootstrap 4 jumbotron-->
       <div class="jumbotron">
 
         <!--Using Bootstrap for to create a 3 column grid system (33.33% each)-->
         <div class="container-fluid">
-          <!-- Control the column width, and how they should appear on different devices -->
           <div class="row">
             <div class="col-sm-4">
               <h2>Opening hours</h2>
@@ -304,6 +306,7 @@
               <p>Wednesday 15:00 - 02:00</p>
               <p>Thursday 15::00 - 02:00</p>
             </div>
+            <!--End of left grid-->
             <div class="col-sm-4">
               <p>&nbsp;</p>
               <p>&nbsp;</p>
@@ -311,67 +314,71 @@
               <p>Saturday 10:00 - 02:00</p>
               <p>Sunday 12:00 - 20:00</p>
             </div>
+            <!--End of middle grid-->
             <div class="col-sm-4">
+              <!--This button triggers a jQuery function that changes the behavior of the "panel1" div below-->
               <button class="btn btn-primary" id="contact1">Contact</button>
               <div id="panel1">
                 <h2>CONTACT</h2>
                 <hr>
                 <p>Student name: Thayene Lorens</p>
                 <p>Student number: 2020293</p>
-                 <!--target blank, opens link in different page-->
+                <!--target blank, opens link in different page-->
                 <p>Email: <a href="mailto:thayenelorens@gmail.com" title="Contact me" target=_blank
-                class="btn btn-warning">thayenelorens@gmail.com</a></p>
+                    class="btn btn-warning">thayenelorens@gmail.com</a></p>
                 <p>Professor: John Snel</p>
                 <!--target blank, opens link in different page-->
-               <p>Click here: <a href="https://github.com/thayenelorens/CA3_vscode_thayene.git"
-                target="_blank" title="Github" target=_blank
-                class="btn btn-warning">Github link</a></p>
+                <p>Click here: <a href="https://github.com/thayenelorens/CA3_vscode_thayene.git" target="_blank"
+                    title="Github" target=_blank class="btn btn-warning">Github link</a></p>
               </div>
             </div>
+            <!--End of right grid-->
           </div>
+          <!--End of 50/50 grid-->
         </div>
-      </div>
       </div>
       <!--End of jumbotron-->
 
-      <!--Using Bootstrap 4 to implement pagination-->
-      <!--Lines 300- 307 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
-      <ul class="pagination">
-        <!--I enabled the "previous" option, since I have a home page-->
-        <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
-        <!--I set Page 2 as my active page-->
-        <li class="page-item active"><a class="page-link" href="page2.html">Page 2</a></li>
-        <!--I disabled the "next" option, since this is the last page of the website-->
-        <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
-      </ul>
-      <br><br>
 
-      <!--I have done this code here at the end of the page. In this case I did not know how to do it in an external file.-->
-      <script>
+    <!--Using Bootstrap 4 to implement pagination-->
+    <!--Lines 345- 352 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
+    <ul class="pagination">
+      <!--I enabled the "previous" option, since I have a home page-->
+      <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
+      <!--I set Page 2 as my active page-->
+      <li class="page-item active"><a class="page-link" href="page2.html">Page 2</a></li>
+      <!--I disabled the "next" option, since this is the last page of the website-->
+      <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
+    </ul>
+    <br><br>
+    </div>
 
-        /**
-          * I named this function "getJSON". It is triggered when clicking on the namesake button.
-          * I created a jSON external file and stored it in the js folder. This file will provide data related to previous customers.
-          * I only created three profiles.
-          * I set it to change the 'people' div in my HTML code and display the following information:
-          * -Heading
-          * -First name + lastname
-          * -Email
-          * -Picture thumbnail
-          * I used a forEach loop to display all data listed above.*/
+    <!--I have done this code here at the end of the page. In this specific case I did not know how to do it in an external file.-->
+    <script>
 
-        document.getElementById('getJSON').addEventListener('click', getJSON);
+      /**
+        * I named this function "getJSON". It is triggered when clicking on the namesake button.
+        * I created a jSON external file and stored it in the js folder. This file will provide data related to previous customers.
+        * I only created three profiles.
+        * I set it to change the 'people' div in my HTML code and display the following information:
+        * -Heading
+        * -First name + lastname
+        * -Email
+        * -Thumbnail picture
+        * I used a forEach loop to display all data listed above.*/
 
-        function getJSON() {
+      document.getElementById('getJSON').addEventListener('click', getJSON);
 
-          fetch('js/people.json')
-            .then((action) => action.json())
-            .then((dat) => {
+      function getJSON() {
 
-              let result = '<br><br><h1 style="font-size:70px">Customers</h1>';
+        fetch('js/people.json')
+          .then((action) => action.json())
+          .then((dat) => {
 
-              dat.forEach(function (person) {
-                result += `
+            let result = '<br><br><h1 style="font-size:70px">Customers</h1>';
+
+            dat.forEach(function (person) {
+              result += `
         <br>
        <div style="font-size:50px; padding:20px">
            <h3>Name: ${person.name}</h3>
@@ -380,14 +387,14 @@
         </div>
         <br><br>                     
     `;
-              });
-              document.getElementById('people').innerHTML = result;
-            })
+            });
+            document.getElementById('people').innerHTML = result;
+          })
 
-        };
-      </script>
+      };
+    </script>
 
-      <!--End of script-->
+    <!--End of script-->
 
 </body>
 

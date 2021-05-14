@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+    <!-- My CSS file-->
+    <link rel="stylesheet" type=text/css href="css/style.css">
+
     <!-- Font Awesome 4.7.0 - For icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!--Google fonts link - Bahiana-->
     <link href='https://fonts.googleapis.com/css?family=Bahiana' rel='stylesheet'>
 
-    <!-- My CSS file-->
-    <link rel="stylesheet" type=text/css href="css/style.css">
 
     <!-- My JavaScript file - I opted to put this link in the head section by using the attribute "defer"-->
     <script defer src="js/script.js"></script>
@@ -42,43 +43,48 @@
         <!--End of jumbotron-->
 
         <!--Using Bootstrap to insert a navigation bar.-->
-        <!--Lines xx have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
+        <!-- I mixed two types of nav bar for my webpage.
+            References: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h
+                        https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar -->
+
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <ul class="navbar-nav">
-              
-                <!--Lines 53-67 have been sourced from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar-->
-                <!--I mixed two different types of navbars-->
                 <div class="dropdown">
-                     <!--Home will look active in this page.-->
+                    <!--Home will look active in this page.-->
                     <li class="nav-item active">
-                    <button id="drop" class="dropbtn">Home 
-                      <i class="fa fa-caret-down"></i>
-                    </button></li>
+                        <button id="drop" class="dropbtn">Home
+                            <!--icon for the arrow pointing downwards-->
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+                    </li>
                     <div id="down" class="dropdown-content">
                         <li class="nav-item">
-                      <a class="nav-link" href="#login_box">Staff Login</a></li>
-                      <li class="nav-item">
-                      <a class="nav-link" href="#randomCustomers">Customers</a></li>
-                      <li class="nav-item">
-                      <a class="nav-link" href="#menu">Menu</a></li>
-                    </li> 
+                            <!-- Using # makes it possible to be redirected to the desired section under this Id-->
+                            <a class="nav-link" href="#login_box">Staff Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#randomCustomers">Customers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#menu">Menu</a>
+                        </li>
                     </div>
-                  </div> 
-                  <li class="nav-item">
+                </div>
+                <li class="nav-item">
                     <a class="nav-link" href="page2.html">Page 2</a>
+                </li>
             </ul>
         </nav>
-        
-        <br><br>
         <!--End of navbar-->
 
-        <!--Welcome message-->
-        <!--By making a class for the heading, I can commit style changes in the CSS external file, where all of the elements from this class present in both pages will be altered accordingly.-->
-        <div class="text_heading">
+        <br><br>
 
+        <!--Welcome message-->
+        <!--By making a class for the heading, I can commit style changes in the CSS external file, where all of the elements from this class, present in both pages, will be altered accordingly.-->
+        <div class="text_heading">
             <h1>WELCOME TO MAMMA MIA</h1>
             <hr>
-            <!--Lines 59-61 were sourced from: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play-->
+            <!--Lines 88-95 were sourced from: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play-->
             <audio id="bellanotte">
                 <!--I created an audio file w/ an mp3 audio track called "bellanotte"-->
                 <source src="audio/bellanotte.mp3" type="audio/mp3">
@@ -91,6 +97,7 @@
 
         <!-- I added a title property: when hovering the mouse over the photo, the 'GIF' word appears-->
         <img id="welcome_pic" src="img/pizza_making.gif" alt="pizza making" title="GIF">
+
         <hr>
 
         <div class="text_heading">
@@ -103,7 +110,7 @@
         <div id="login_box">
 
             <div class="username">
-                <!--The block of code below (lines 68-74) calls two methods that change the attribute of an image-->
+                <!--The block of code below (lines 115-121) calls two methods that change the attribute of an image-->
                 <!--Calling the 'login' function present in my js external file-->
                 <button class="btn btn-success" onclick="login()">Login as Brad</button>
 
@@ -119,22 +126,25 @@
             <form>
                 <!--Creating a label for the password field-->
                 <label for="staff_pass" id="pass"><b>Password</b></label>
-                <!--Input type set as "password" - so it is hidden by the bullet points when typing. I opted for putting the "pattern" attribute for my regex-->
+                <!--Input type set as "password" - so it is hidden by bullet points when typing. I opted for applying the "pattern" attribute for my regex-->
                 <input type="password" pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[^A-Za-z0-9\n\r]).{8,}$"
                     name="pword" id="pword" placeholder="Enter Password">
 
                 <!--Using font awesome 4 to use this icon-->
-                <i id="eye" class="fa fa-eye-slash" style="font-size:36px; color:white"></i>
+                <i id="eye" class="fa fa-eye-slash"></i>
 
+                <!--Invalid output + locker pic if input does not match my regex (check js file)-->
                 <div id="invalid">Invalid password
                     <br><br><img class="locker" src="img/lock.jpeg">
                 </div>
+
+                <!--Valid output + unlocked pic if input matches my regex (check js file)-->
                 <div id="valid">Valid password
                     <br><br><img class="locker" src="img/unlock.jpeg">
                 </div>
                 <br><br>
 
-                <!--By pressing this button the "validate" function is triggered-->
+                <!--By pressing this button the "staff_Validation" function is triggered-->
                 <button onclick="staff_Validation()" class="btn btn-primary" id="large-button"
                     type="button">Login</button>
                 <br><br>
@@ -151,15 +161,16 @@
             <!--End of the form-->
         </div>
 
-        <!--User Generation: This section is for the output of 5 random customer profiles-->
+        <!--User Generation: This section displays 5 random customer profiles-->
         <div id="randomCustomers">
-            <!--This button triggers the function "getRandomCustomers" present in my js file -->
+            <!--This button triggers the function "getRandCustomers" present in my js file -->
             <button class="btn btn-success" id="getRandCustomers">Check Customers</button>
             <br><br>
 
             <!--The result from the javaScript is displayed into this div. -->
             <div id="output">
 
+                <!--GIF to be hidden using js (check js file)-->
                 <img id="client" src="img/customers.gif">
 
             </div>
@@ -170,15 +181,15 @@
             <h1 id="heading">THE MENU</h1>
 
             <!--Using Bootstrap to insert a navigation bar.-->
-            <!--Lines 126-148 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
+            <!--Lines 185-213 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <ul class="navbar-nav">
                     <!--"MENU" option will look active in this page.-->
                     <li class="nav-item active">
                         <a class="nav-link" href="#">MENU</a>
                     </li>
-                    <!--All the href are linked with the id of my header elements <th> from the table to be displayed. 
-            So, when clicking on the items in the navbar, you'll be directed to the specific part you want to check
+                    <!--All the href are linked with the id of my header elements <th> from the table I've created. 
+            So, when clicking on the items in the navbar, you'll be redirected to the specific part you want to check
             from the menu.-->
                     <li class="nav-item">
                         <a class="nav-link" href="#starters">STARTERS</a>
@@ -194,6 +205,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#vegetarian">VEGETARIAN</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="page2.html">Photos</a>
                     </li>
                 </ul>
             </nav>
@@ -216,7 +230,7 @@
                         </th>
                         <th>&nbsp;</th>
                     </tr>
-                    <!--When ticking the checkbox the function getTotalCost is triggered-->
+                    
                     <tr>
                         <td>
                             <br>
@@ -534,6 +548,7 @@
                     <td>
                         <h1><span class="badge badge-dark">€14.50</span></h1>
                     </td>
+                    <td>&nbsp;</td>
                 </tr>
 
                 <tr>
@@ -563,7 +578,6 @@
                     </th>
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
-
                 </tr>
 
                 <tr>
@@ -672,19 +686,21 @@
         <!--End of menu-->
 
         <!--Using Bootstrap 4 to implement pagination-->
-        <!--Lines 541- 549 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
+        <!--Lines 690- 698 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
         <ul class="pagination">
             <!--I disabled the opion "previous", since this is the 1st page of the website-->
             <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
             <!--I set Home as my active page-->
             <!--Title links for both home and next pages, target:_self means that the next page will open in the same window/tab as it was clicked-->
             <li class="page-item active"><a class="page-link" href="index.html" title="home" target=_self>Home</a></li>
-            <!--My next page is page 1-->
+            <!--My next page is page 2-->
             <li class="page-item"><a class="page-link" href="page2.html" title="Page 1" target=_self>Next</a></li>
         </ul>
         <br><br>
-        <!--End of pagination-->
-        <!--End-->
+    </div>
+    <br><br>
+    <!--End of pagination-->
+    <!--End-->
 </body>
 
 </html>

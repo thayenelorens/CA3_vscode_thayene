@@ -1,14 +1,12 @@
+/*CSS */
+
 /*Change the background-image of my body section. The image is stored in the img folder.
-Selected a bit of margin to the body of this document.*/    
+Selected a bit of margin to the body of this document.
+Changed the font-family.*/    
 body {
     background-image: url(../img/body.jpg);
     margin:20px;
     font-family: 'Bahiana';
-}
-
-/*Changing the font-family of all h1, h2 and p elements.*/
-h1, h2, h3, p  {
-  font-family: 'Bahiana';  
 }
 
 /*By hovering any button element the opacity should change.*/
@@ -37,28 +35,31 @@ font-size: 100px;
 text-align: left;
 text-decoration:underline overline #FF3028;
 }
-.jumbotron p{
+
+/*Changing the p elements inside this class.*/
+.jumbotron p {
   font-size: 25px;
 }
 
-/*Change the background-color of my navbar elements when I hover my mouse onto it - not active class.*/
+/*Change the background-color of my non-active navbar elements when hovering the cursor onto it.*/
 .nav-item a:hover:not(.active) {
     background-color: #FF3028;
 }
+
+/*Change the background-color of my dropdown elements when hovering the cursor onto it.*/
 .dropdown:hover .dropbtn {
   background-color: #FF3028;
 }
 
-/*Change the background-color of my active item in the navbar*/
+/*Change the background-color of my active item in the navbar.
+  Change text-decoration.*/
 .nav-item.active {
     background-color: rgba(4, 247, 4, 0.8);
     text-decoration:underline #fff;
 }
 
-/*Setting a solid border to all navbar elements.
-  Setting a background-image as well.*/
+/* Setting a background-image to the navbar.*/
 .navbar {
-    border: 1px solid black;
     background-image: url(../img/wallpaper.png);
 }
 
@@ -74,29 +75,32 @@ text-decoration:underline overline #FF3028;
     margin: 0 15px;
 }
 
-.dropdown .dropbtn {
-  font-size: 30px;  
+/*Setting border, margin and padding properties for the the elements within these classes.
+  Inheriting the background settings from its parent element, as well as type of font.
+  Adding text-decoration settings.*/
+.dropdown .dropbtn { 
   border: none;
   color: white;
   padding: 6px 16px;
   background-color: inherit;
   font-family: inherit;
   margin: 0;
+  text-decoration:underline #fff;
 }
 
+/*Setting dropwdown-content to none.*/
 .dropdown-content {
   display: none;
 }
 
+/*Setting dropwdown-content to be displayed when hovering the mouse onto it.*/
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
 /*  Aligning my page heading to the center of the page.
     Set the margin (top and bottom) to 10px to add some gap between this element and the previous and next divs.
-    Setting a background color for this element (using the name of the color).
-    Adding some padding to it.
-    Adding a border to this element.
+    Adding some padding and border to it.
     Adding text-decoration to the headings that belong to this class.
     Adding a background-image.*/
 .text_heading {
@@ -108,9 +112,10 @@ text-decoration:underline overline #FF3028;
     text-decoration: underline overline #FF3028;
     background-image: url(../img/wallpaper.png);
 }
+
 /*Changing the font of all h1 elements inside this class.*/
 .text_heading h1 {
-  font-family: 'Bahiana';
+
   font-size: 60px;
 }
 
@@ -120,7 +125,9 @@ text-decoration:underline overline #FF3028;
     height:70%;
     margin-left: 170px;
 }
-/*Added some top and left-padding to this element in order to align it where I wanted it to be positioned.*/
+
+/*Added some top and left-padding to this element in order to align it where I wanted it to be positioned.
+  Increasing the font-size.*/
 .pagination {
     padding-top: 10px;
     padding-left: 400px;
@@ -140,10 +147,6 @@ text-decoration:underline overline #FF3028;
     background-color: #1e3d37;
     border-radius: 25px;
     border: 5px solid rgb(68, 192, 68);
-}
-
-.btn {
-  font-size: 30px;
 }
 
 /*Setting width, padding, margin and border properties to these specific button elements.
@@ -166,7 +169,13 @@ text-decoration:underline overline #FF3028;
     margin-left: 60px;
 }
 
-/*Added some padding, border, text color to this div element.
+/*Setting the color and size of this element.*/
+#eye {
+  color: white;
+  font-size:36px;
+}
+
+/*Added some padding, border, text color to this div element. Added the size of the font.
   Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.*/
 #pass_criteria {
     padding: 15px;
@@ -177,7 +186,7 @@ text-decoration:underline overline #FF3028;
 }
 
 /* Setting a specific text color for every label element.
-   Increasing the font-size and setting the margin to bring this label to the center of its div.*/
+   Increasing the font-size and setting the margin to bring this label to the center of the div that embodies it.*/
 label {
     color: #FF3028;
     font-size: 50px;
@@ -185,7 +194,8 @@ label {
 }
 
 /*Establishing some width, margin, padding and border to the password input field.
-  Setting border-radius to make the edges a bit round, instead of square.*/
+  Setting border-radius to make the edges a bit round, instead of square.
+  I changed the font-family here to make it clearer if input contained lowercase and uppercase.*/
 #pword {
     width: 100%;
     margin: 8px 0;
@@ -196,7 +206,7 @@ label {
     font-family: cursive;
 }
 
-/*Changing text color of password input field placeholder.*/
+/*Changing text color, family and size of password input field placeholder.*/
 #pword::placeholder {
     color:#FF3028;
     font-size: 25px;
@@ -210,7 +220,7 @@ label {
 
 /*Set both of these to display none, because the content within these elements should be hidden, since javaScript is being
   implemented to change this behaviour.
-  Setting text color, aligning text to the center, increasing the font and establishing a bold effect.*/
+  Setting text color, aligning it to the center, increasing the font and establishing a bold effect.*/
 #invalid, #valid {
 color: #FF3028;
 display: none;
@@ -276,7 +286,7 @@ font-weight: bold;
       background-image: url(../img/menu.jpg);
 }
 
-/*Establishing a background-color for these divs as well as text color and border properties.*/
+/*Establishing a background-color for these divs as well as text color, size and border properties.*/
 .table_of_contents,
 .table_of_contents1,
 .table_of_contents2,
@@ -287,32 +297,24 @@ font-weight: bold;
       background-color: white;
       color: black;
       border: 1px solid black;
+      font-size: 32px;
   }
 
-/*All <p> elements within these divs will be cursive.*/
-.table_of_contents,
-.table_of_contents1,
-.table_of_contents2,
-.table_of_contents3,
-.table_of_contents4,
-.table_of_contents5  p {
-
-  font-size: 32px;
-    
-}
-
+/*Increasing the font-size of the text within this class.*/
 .badge {
     font-size: 37px;
-  }
+}
 
+/*Increasing the font-size of all <h1> within these elements.*/
 #starters h1, #pizza h1, #desserts h1, #drinks h1, #vegetarian h1 {
 
     font-size: 80px;
-  }
+}
   
 table h3, table h2{
     font-size: 35px;
-  }
+}
+
 
 .total {
 
@@ -332,9 +334,8 @@ th, tr, td {
 th {
       background-color: black;
       color: white;
-      padding: 30px;
-  
-  }
+      padding: 30px;  
+}
 
 /*The :nth-child(even) selects all the even rows of this table.
     Setting that all the even rows will have a specific background-color, which is different from the odd rows within the same table.*/
@@ -342,13 +343,13 @@ tr:nth-child(even) {
       background-color: #f2f2f2
   }
 
-/*Setting a background-color for these div elements.*/
+/*Setting a background-color for these div elements and increasing the font-size.*/
 #totalStarters, #totalPizza, #totalDessert, #totalDrinks, #totalVeggie, #totalNonVeg, #vegetarianCost {
       background-color: rgb(22, 197, 22);
       font-size: 35px;
   }
 
-  #totalPrice {
+#totalPrice {
     background-color: rgb(228, 206, 15);
 }
 
@@ -360,7 +361,7 @@ tr:nth-child(even) {
 
 /*Setting width, border and padding properties to this element.
   Added some text color to it.
-  I changed the cursor to default, so instead of having a small hand with a finger point up, I'll have the standard cursor.*/
+  I changed the cursor to default, so instead of having a small hand with a finger pointing up, I'll have the standard cursor.*/
 #toggle {
     width: 100%;
     color: white;
@@ -410,6 +411,12 @@ tr:nth-child(even) {
     width: 100%;
 }
 
+/*Increasing the font-size of this element.*/
+.btn {
+  font-size: 30px;
+}
+
+/*Setting a background image for this div element and adding some padding to it.*/
 #animation {
   background-image: url(../img/pizza.gif);
   background-repeat: no-repeat;
@@ -429,27 +436,35 @@ tr:nth-child(even) {
 }
 
 /*Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.*/
-.gallery {
-    display: none;
+#gallery {
+    
+  display: none;
 }
 
-/*Setting the margin to make this element more centralized.*/
+/*Setting border properties to this element.*/
+#text {
+  border:1px solid black;
+}
+
+/*Setting the margin to make this element more centralized and border-radius to make it rounder around the edges.*/
 #review_rate {
   margin-left: 400px;
   border-radius: 10px;
 }
 
+/*Setting margin properties to this element.*/
 #getJSON {
 
   margin-left: 100px;
   margin-bottom: 20px;
 }
 
+/*Setting margin properties to this element.*/
 #show {   
     margin: 0 0 20px 600px;
 }
   
-/*Setting a background-color. Chose white so it would differ to the other half -different background for the other grid.
+/*Setting a background-color. 
   All text inside this div class will be aligned to the center.
   Setting a border: color, type of line and density of it.
   Setting text color.*/
@@ -460,28 +475,31 @@ tr:nth-child(even) {
     color:black; 
 }
 
-/*/*Setting it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.
+/*Setting it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.
 Added some padding-top to align the content within this div to the content from the other half of this 50/50 grid.*/
 .reviews {
     display: none;    
     padding-top: 24px;
   }
+
+/*Increasing the size of all h1 elements within this class.*/
 .reviews h1 {
   font-size: 70px;
 }
 
 /*Added some padding to this element.
-Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.*/
+Set it to display none, because the content within this element should be hidden, since javaScript is being implemented to change this behaviour.
+Increasing the font-size.*/
 #panel1 {
     padding: 50px;
     display: none;
     font-size: 35px;;
-  }
+}
+
+/*Changing some font properties of all h2 elements within this class.*/
 .jumbotron h2 {
   font-size: 70px;
   text-decoration:overline underline #FF3028;
 }
-#github {
-    background-color: black;
-    color:white;
-  }
+
+/*END*/

@@ -208,6 +208,9 @@ function getRandCustomers() {
 
 //MENU
 
+/**
+ * 
+ */
 
 function Bill_Calculator(){
     
