@@ -127,7 +127,6 @@ $(document).ready(function(){
   });
 });
 
-
 /**
  * In this function once the document is ready or loaded and the user clicks the button whose id is "btn3",
  * the 'text' element will have its border thicker. On the other hand, when clicking on the "btn4" button,

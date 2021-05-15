@@ -23,7 +23,7 @@ button:hover {
     Set a background image for this class.
     Set the color for every text inside the jumbotron using hexadecimal.*/
 .jumbotron {
-    margin:10px 0 0px 0;
+    margin:10px 0 0 0;
     background-image: url(../img/jumbotron.jpg);
     background-size:auto;
     color: #fff;
@@ -283,7 +283,7 @@ font-weight: bold;
       font-size: 150px;
       text-align: center;
       padding: 70px;
-      background-image: url(../img/menu.jpg);
+      background-image: url(../img/menu.jpeg);
 }
 
 /*Establishing a background-color for these divs as well as text color, size and border properties.*/

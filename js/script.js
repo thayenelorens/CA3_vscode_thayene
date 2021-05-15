@@ -209,28 +209,49 @@ function getRandCustomers() {
 //MENU
 
 /**
+ * I named this function 'Bill_Calculator'.
  * 
  */
-
 function Bill_Calculator(){
     
-    var amount = 19;
-    var starters_total = 0;
-    var mains_total = 0;
-    var desserts_total =0;
-    var drinks_total = 0;
-    var veggie_total =0;
-    var nonVeg_total =0;
+    var amount = 19; // = The total amount of items in the menu;
+
+    //initializing these variables so I can later store the 'total' of each item > total = quantity * price.
+    var starters_total = 0.0; 
+    var mains_total = 0.0;
+    var desserts_total = 0.0;
+    var drinks_total = 0.0;
+    var veggie_total = 0.0;
+    var nonVeg_total = 0.0;
+
+    //initializing this variable so I can print the final total of the bill.
     var final_total = 0;
 
-
+        //using a for loop that will run according to the amount of items present in the menu.
         for (let i = 1; i <= amount; i++) {
-           items =document.getElementById("item_" + i);
+        
+        //storing all items whose id is equals to "item_" + i, i.e., + a number. It starts with 1, since my first item is "item_1".
+        //It loops through the items, from "item_1" to "item_19".
+        items = document.getElementById("item_" + i);
 
-           if(items.className == "starters"){
+        /**
+         * If the items match a specific class, there should be a calculation of the items.value * the attribute "data-price".
+         * The "items.value" refers to the quantity input by the user.
+         * The attribute "data-price" refers to the price of the item.
+         * I chose to use parseInt for the amount, since it is not possible to choose half item or 1/3 of an item, for example. Only whole numbers.
+         * I chose to use parseFloat for the price, since the cost of an item is normally represented by decimal numbers.
+         * The variables initialized above were set to 0.0, but now will be assigned a new value, depending on the amount chosen by the user and the price of the item in question.
+         * Selecting all "item_" elements by their classes was practical for the output, once I had to split the bill by categories, 
+         * such as: starters, mains, desserts, drinks and vegetarian.
+         * The non vegetarian cost will only be the sum of the items that belong to the "starters" and "mains" classes.
+         * The final total will be the sum of all the variables I've created for the calculation, apart from the nonVeg_total,
+         * because, as mentioned above, it refers to the starters and mains, so including this variable would imply
+         * calculating it twice, creating a wrong output.
+         */
+        if(items.className == "starters"){
            starters_total = starters_total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
-           }
-           else if(items.className =="mains"){
+        }
+        else if(items.className =="mains"){
             mains_total = mains_total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
         }
         else if(items.className =="desserts"){
@@ -242,11 +263,19 @@ function Bill_Calculator(){
         else if(items.className =="veggie"){
             veggie_total = veggie_total + parseInt(items.value) * parseFloat(items.getAttribute("data-price"));
         }
-       
+
+        //The non vegetarian cost, before set to 0.0 is now the total of the sum of starters and mains.
         nonVeg_total = starters_total + mains_total;
 
+        //The final total: It sums the (price * amount) - of everything the client selects.
         final_total = starters_total + mains_total + desserts_total + drinks_total + veggie_total;
         }
+
+        /**
+         * The output of each calculation of my bill will be displayed in their respective divs (selected by their ids).
+         * These divs are present in the table of my HTML file.
+         * Here, I chose to change the innerHTML of these div contents and display the € symbol + the result of each calculation stored in their appropriate variable.
+         */
         document.getElementById('totalStarters').innerHTML = "€" + starters_total;
         document.getElementById('totalPizza').innerHTML = "€" + mains_total;
         document.getElementById('totalDessert').innerHTML = "€" + desserts_total;
@@ -257,11 +286,17 @@ function Bill_Calculator(){
 
     }
 
+    /**
+     * Here, I am selecting all my items whose id is "item_" and adding an event listener that will trigger this function by the "change" event.
+     * As I chose to apply input type "number" for the quantity inputs in the table, I thought the 'change' event would be
+     * more suitable as it occurs when the element loses focus, after the content has been changed.
+     * Using a forEach loop to loop through all my items.
+     * Using querySelectorAll to target all items whose id starts with "item_".
+     */
     document.querySelectorAll('[id^="item_"]').forEach(item => {
         item.addEventListener('change', Bill_Calculator);
     });
 
-var total_items = 17;
 
 //AUDIO FILE FUNCTION
 
