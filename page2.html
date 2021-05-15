@@ -65,7 +65,7 @@
 
       <p><i>Click here to find out a bit about our history and tradition</i></p>
 
-      <!--This button triggers a jQuery function that changes the behaviour of the "history" div below-->
+      <!--This button triggers a jQuery function that changes the behaviour of the "discover" div below-->
       <button class="btn btn-success" id="toggle">Find out more</button>
 
       <div class="discover">
@@ -87,7 +87,7 @@
 
       <br><br>
 
-      <!--This button triggers a jQuery function that changes the behaviour of the "discovery" div below-->
+      <!--This button triggers a jQuery function that changes the behaviour of the "history" div below-->
       <button id="large-button" class=" btn btn-danger">History</button>
 
       <div class="history">
@@ -288,9 +288,8 @@
             </div>
             <!--End of right column-->
           </div>
-          <!--End of 50/50 grid-->
+          <!--End of the 50/50 grid-->
         </div>
-        <!--End of the 50/50 grid-->
       </div>
 
       <!-- Using Bootstrap 4 jumbotron-->
@@ -304,7 +303,7 @@
               <br>
               <p>Monday &amp; Tuesday CLOSED</p>
               <p>Wednesday 15:00 - 02:00</p>
-              <p>Thursday 15::00 - 02:00</p>
+              <p>Thursday 15:00 - 02:00</p>
             </div>
             <!--End of left grid-->
             <div class="col-sm-4">
@@ -320,14 +319,14 @@
               <button class="btn btn-primary" id="contact1">Contact</button>
               <div id="panel1">
                 <h2>CONTACT</h2>
-                <hr>
+                <br>
                 <p>Student name: Thayene Lorens</p>
                 <p>Student number: 2020293</p>
-                <!--target blank, opens link in different page-->
+                <!--target blank, opens link in a different page-->
                 <p>Email: <a href="mailto:thayenelorens@gmail.com" title="Contact me" target=_blank
                     class="btn btn-warning">thayenelorens@gmail.com</a></p>
                 <p>Professor: John Snel</p>
-                <!--target blank, opens link in different page-->
+                <!--target blank, opens link in a different page-->
                 <p>Click here: <a href="https://github.com/thayenelorens/CA3_vscode_thayene.git" target="_blank"
                     title="Github" target=_blank class="btn btn-warning">Github link</a></p>
               </div>
@@ -339,9 +338,8 @@
       </div>
       <!--End of jumbotron-->
 
-
     <!--Using Bootstrap 4 to implement pagination-->
-    <!--Lines 345- 352 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
+    <!--Lines 343- 352 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
     <ul class="pagination">
       <!--I enabled the "previous" option, since I have a home page-->
       <li class="page-item"><a class="page-link" href="index.html">Previous</a></li>
@@ -358,13 +356,12 @@
 
       /**
         * I named this function "getJSON". It is triggered when clicking on the namesake button.
-        * I created a jSON external file and stored it in the js folder. This file will provide data related to previous customers.
-        * I only created three profiles.
+        * I created a jSON external file and stored it in the js folder. This file will provide data related to previous made up customers.
+        * I have only created three profiles.
         * I set it to change the 'people' div in my HTML code and display the following information:
         * -Heading
         * -First name + lastname
         * -Email
-        * -Thumbnail picture
         * I used a forEach loop to display all data listed above.*/
 
       document.getElementById('getJSON').addEventListener('click', getJSON);

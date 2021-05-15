@@ -1,4 +1,4 @@
-/*The codes were written here in this JavaScript external file and invoked in the body of page 1.
+/*The plain js codes were written here in this JavaScript external file and invoked in the body of page 1.
 This is an efficient way of programming JavaScript once the code doesn't get mixed with the HTML elements.*/
 
 //LOGIN USER FUNCTIONS
@@ -20,7 +20,6 @@ function login() {
 function login2() {
     document.getElementById('myImage').src = 'img/Claire.jpg';
 }
-
 
 
 //LOGIN CRITERIA - MESSAGE BOX
@@ -66,6 +65,7 @@ myPassword.onblur = function () {
  * -If correct, it also changes the input field background to yellow.
  * -If the passord does not meet criteria, it displays an invalid message instead, while it does not display a valid message.
  * -If incorrect, it also changes the input field background to red.
+ * -If the user clicks on the login button, but types no password, an alert message is displayed.
  * 
  */
  document.getElementById('large-button').addEventListener('click', staff_Validation);
@@ -82,9 +82,8 @@ function staff_Validation() {
 
     }
     else if(password == ""){
-        document.getElementById('valid').style.display = "none";
-        document.getElementById('invalid').style.display = "none";
-        alert("Please, enter a password");
+
+        alert("Please, enter a password!");
     }
     else {
         document.getElementById('invalid').style.display = "block";
@@ -95,12 +94,12 @@ function staff_Validation() {
 }
 
 /**
- * I named this function 'pass_show'.
+ * I named this function 'reveal_Pass'.
  * When hovering the 'eye' icon in the login validator, input type will be text, i.e., it will be possible to see what is being typed.
  */  
-document.getElementById('eye').addEventListener('mouseover', pass_show);
+document.getElementById('eye').addEventListener('mouseover', reveal_Pass);
 
-function pass_show() {
+function reveal_Pass() {
     var password = document.getElementById("pword");
     if (password.type === "password") {
       password.type = "text";
@@ -108,7 +107,7 @@ function pass_show() {
   }
 
   /**
- * I named this function 'pass_visualization'.
+ * I named this function 'pass_hide'.
  * When unhovering the 'eye' icon in the login validator, the content in the input field will go back to being password type, i.e., password will be secret.
  */
   document.getElementById('eye').addEventListener('mouseout', pass_hide);
@@ -142,13 +141,14 @@ var customers = document.getElementById('getRandCustomers');
  * -Heading
  * -First name + lastname
  * -Gender + nationality
- * -Picture thumbnail
+ * -Large picture 
  * -Age
  * -City
  * -State
  * -Postcode
  * -Cellphone
  * -Email
+ * -I used inline CSS in this function.
  * 
  * I used a forEach loop to display all data listed above.
  */
@@ -168,18 +168,17 @@ function getRandCustomers() {
                 output += `
 
         <!--Inline CSS here-->
-        <div style="border: 1px dotted powderblue">
-        <div style="background-color:#f2f2f2">
+        <div style="border: 1px dotted powderblue; font-size: 25px;">
+        
             <h1> ${profile.name.first} ${profile.name.last}</h1>
             <hr>
             <p> ${profile.gender} - ${profile.nat}</p>
             <hr>
-            <img id=pic" src=${profile.picture.thumbnail} width="8%">
-            
+            <img src=${profile.picture.large} width="15%">
+            <hr>            
             <p> Age: ${profile.dob.age}</p>
             <hr>
-            </div>
-
+           
             <div style="background-color: #c9aaaa">
             
           <h1>Address info</h1>
@@ -224,13 +223,13 @@ function Bill_Calculator(){
     var veggie_total = 0.0;
     var nonVeg_total = 0.0;
 
-    //initializing this variable so I can print the final total of the bill.
+    //initializing this variable so I can later print the final total of the bill.
     var final_total = 0;
 
         //using a for loop that will run according to the amount of items present in the menu.
         for (let i = 1; i <= amount; i++) {
         
-        //storing all items whose id is equals to "item_" + i, i.e., + a number. It starts with 1, since my first item is "item_1".
+        //storing all items whose id is equals to "item_" + i, i.e., + a number. My index starts with 1, since my first item is "item_1".
         //It loops through the items, from "item_1" to "item_19".
         items = document.getElementById("item_" + i);
 
@@ -267,7 +266,7 @@ function Bill_Calculator(){
         //The non vegetarian cost, before set to 0.0 is now the total of the sum of starters and mains.
         nonVeg_total = starters_total + mains_total;
 
-        //The final total: It sums the (price * amount) - of everything the client selects.
+        //The final total: It sums the (price * amount) - of everything the client selects (from all classes listed above).
         final_total = starters_total + mains_total + desserts_total + drinks_total + veggie_total;
         }
 
@@ -288,8 +287,8 @@ function Bill_Calculator(){
 
     /**
      * Here, I am selecting all my items whose id is "item_" and adding an event listener that will trigger this function by the "change" event.
-     * As I chose to apply input type "number" for the quantity inputs in the table, I thought the 'change' event would be
-     * more suitable as it occurs when the element loses focus, after the content has been changed.
+     * As I chose to apply input type "number" for the quantity inputs in the table, I thought the 'change' event would be a
+     * more suitable option as it occurs when the element loses focus, after the content has been changed.
      * Using a forEach loop to loop through all my items.
      * Using querySelectorAll to target all items whose id starts with "item_".
      */
@@ -311,7 +310,6 @@ var track = document.getElementById("bellanotte");
             track.play();
         }
 /**
- * First I created a variable "track" to store the element "bellanotte", which happens to be an audio file.
  * I named this function "pause".
  * It gets my audio track and pauses it after clicking the button present in my HTML.
  */

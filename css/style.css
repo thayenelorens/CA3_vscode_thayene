@@ -24,7 +24,7 @@ button:hover {
     Set the color for every text inside the jumbotron using hexadecimal.*/
 .jumbotron {
     margin:10px 0 0 0;
-    background-image: url(../img/jumbotron.jpg);
+    background-image: url(../img/jumbotron.webp);
     background-size:auto;
     color: #fff;
 }
@@ -113,7 +113,7 @@ text-decoration:underline overline #FF3028;
     background-image: url(../img/wallpaper.png);
 }
 
-/*Changing the font of all h1 elements inside this class.*/
+/*Changing specifically the font of all h1 elements inside this class.*/
 .text_heading h1 {
 
   font-size: 60px;
@@ -169,10 +169,11 @@ text-decoration:underline overline #FF3028;
     margin-left: 60px;
 }
 
-/*Setting the color and size of this element.*/
+/*Setting the color, size and margin of this element.*/
 #eye {
   color: white;
   font-size:36px;
+  margin-left: 250px;
 }
 
 /*Added some padding, border, text color to this div element. Added the size of the font.
@@ -211,11 +212,6 @@ label {
     color:#FF3028;
     font-size: 25px;
     font-family: "Bahiana";
-}
-
-/*Setting margin-left to this element to make it more centralized.*/
-#eye {
-  margin-left: 250px;
 }
 
 /*Set both of these to display none, because the content within these elements should be hidden, since javaScript is being
@@ -262,9 +258,9 @@ font-weight: bold;
 /*Setting width and margin properties for this element.
   Setting visibility to 'visible', since js is being used to change this behaviour to hidden.*/
 #client {
-  width: 50%;
+  width: 70%;
   visibility: visible;
-  margin-left: 250px;
+  margin-left: 150px;
 }
 
 /*Setting border and padding properties for the div menu.
@@ -340,7 +336,7 @@ th {
 /*The :nth-child(even) selects all the even rows of this table.
     Setting that all the even rows will have a specific background-color, which is different from the odd rows within the same table.*/
 tr:nth-child(even) {
-      background-color: #f2f2f2
+      background-color: #f2f2f2;
   }
 
 /*Setting a background-color for these div elements and increasing the font-size.*/
@@ -500,6 +496,10 @@ Increasing the font-size.*/
 .jumbotron h2 {
   font-size: 70px;
   text-decoration:overline underline #FF3028;
+}
+
+.col-sm-4 p {
+  font-size: 30px;
 }
 
 /*END*/

@@ -35,19 +35,12 @@
     <!--This div embodies all my other divs-->
     <div class="container">
 
-        <!-- Using Bootstrap 4 jumbotron-->
-        <div class="jumbotron">
-            <h1>MAMMA MIA PIZZERIA</h1>
-            <p><i>Making the finest pizza since 1957</i></p>
-        </div>
-        <!--End of jumbotron-->
-
         <!--Using Bootstrap to insert a navigation bar.-->
-        <!-- I mixed two types of nav bar for my webpage.
-            References: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h
-                        https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar -->
+        <!-- I mixed two types of nav bar for this page.
+            References: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_dropdown_navbar
+                        https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_fixed_sticky&stacked=h -->
 
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
             <ul class="navbar-nav">
                 <div class="dropdown">
                     <!--Home will look active in this page.-->
@@ -59,7 +52,7 @@
                     </li>
                     <div id="down" class="dropdown-content">
                         <li class="nav-item">
-                            <!-- Using # makes it possible to be redirected to the desired section under this Id-->
+                            <!-- Using # makes it possible to be redirected to the desired section under this id-->
                             <a class="nav-link" href="#login_box">Staff Login</a>
                         </li>
                         <li class="nav-item">
@@ -77,14 +70,19 @@
         </nav>
         <!--End of navbar-->
 
-        <br><br>
+        <!-- Using Bootstrap 4 jumbotron-->
+        <div class="jumbotron">
+            <h1>MAMMA MIA PIZZERIA</h1>
+            <p><i>Making the finest pizza since 1957</i></p>
+        </div>
+        <!--End of jumbotron-->
 
         <!--Welcome message-->
         <!--By making a class for the heading, I can commit style changes in the CSS external file, where all of the elements from this class, present in both pages, will be altered accordingly.-->
         <div class="text_heading">
             <h1>WELCOME TO MAMMA MIA</h1>
             <hr>
-            <!--Lines 88-95 were sourced from: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play-->
+            <!--Lines 86-94 were sourced from: https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_audio_play-->
             <audio id="bellanotte">
                 <!--I created an audio file w/ an mp3 audio track called "bellanotte"-->
                 <source src="audio/bellanotte.mp3" type="audio/mp3">
@@ -110,7 +108,7 @@
         <div id="login_box">
 
             <div class="username">
-                <!--The block of code below (lines 115-121) calls two methods that change the attribute of an image-->
+                <!--The block of code below (lines 113-121) calls two methods that changes the attribute of an image-->
                 <!--Calling the 'login' function present in my js external file-->
                 <button class="btn btn-success" onclick="login()">Login as Brad</button>
 
@@ -145,7 +143,7 @@
                 <br><br>
 
                 <!--By pressing this button the "staff_Validation" function is triggered-->
-                <button onclick="staff_Validation()" class="btn btn-primary" id="large-button"
+                <button class="btn btn-primary" id="large-button"
                     type="button">Login</button>
                 <br><br>
 
@@ -181,7 +179,7 @@
             <h1 id="heading">THE MENU</h1>
 
             <!--Using Bootstrap to insert a navigation bar.-->
-            <!--Lines 185-213 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
+            <!--Lines 183-211 have been sourced from: https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_navbar_color&stacked=h -->
             <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                 <ul class="navbar-nav">
                     <!--"MENU" option will look active in this page.-->
@@ -230,7 +228,7 @@
                         </th>
                         <th>&nbsp;</th>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <br>
@@ -538,7 +536,7 @@
                 <tr>
                     <td>
                         <h1><b>Tofu Cheesecake</b></h1>
-                        <p>TDessert prepared without any dairy or eggs, made with tofu instead, it comes filled with
+                        <p>Dessert prepared without any dairy or eggs, made with tofu instead, it comes filled with
                             coconut cream, and cashews.
                             The crunchy crust is made with rolled oats, almonds, and coconut oil</p>
                     </td>
@@ -686,7 +684,7 @@
         <!--End of menu-->
 
         <!--Using Bootstrap 4 to implement pagination-->
-        <!--Lines 690- 698 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
+        <!--Lines 688- 696 have been sourced from:https://www.w3schools.com/bootstrap4/tryit.asp?filename=trybs_pagination_active&stacked=h-->
         <ul class="pagination">
             <!--I disabled the opion "previous", since this is the 1st page of the website-->
             <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
@@ -698,6 +696,7 @@
         </ul>
         <!--End of pagination-->
         <br><br>
+
     </div>
     <!--End-->
 </body>
